@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.streamlit/secrets.toml
+*.log
+streamlit*.out.log
+streamlit*.err.log
+outputs/
+abrir_dashboard_*.html
+iniciar_dashboard.bat
+iniciar_dashboard.ps1
+generate_reports.py
+research_methods.py
+markov_exports.py
+.DS_Store
+Thumbs.db

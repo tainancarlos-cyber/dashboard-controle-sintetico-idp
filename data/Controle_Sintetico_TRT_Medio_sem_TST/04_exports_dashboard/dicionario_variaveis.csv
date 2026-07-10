@@ -1,0 +1,18 @@
+variavel;descricao;uso_no_modelo
+dpj;Despesa total observada no Justiça em Números;Variável principal de H1
+dpe;Despesa com pessoal;Variável de controle e proxy de despesa obrigatória
+drh;Despesa com recursos humanos;Variável de controle e proxy de pressão de pessoal/RH
+odck;Outras despesas correntes e de capital;Proxy de despesa discricionária/comprimível
+dk;Despesas de capital;Proxy de investimento/capital
+ln_dpj;Logaritmo da despesa total;Outcome do modelo H1
+ln_dpe;Logaritmo da despesa com pessoal;Preditor/controle
+ln_drh;Logaritmo da despesa com recursos humanos;Preditor/controle
+ln_odck;Logaritmo de ODCK;Transformação auxiliar
+ln_dk;Logaritmo das despesas de capital;Outcome do modelo H3
+share_dpe;DPE dividido por DPJ;Participação da despesa com pessoal na despesa total
+share_drh;DRH dividido por DPJ;Participação de RH na despesa total
+share_odck;ODCK dividido por DPJ;Outcome do modelo H2
+share_dk;DK dividido por DPJ;Outcome do modelo H3
+ln_odck_dpe;Log de ODCK menos log de DPE;Razão relativa entre despesa discricionária e pessoal
+ln_odck_drh;Log de ODCK menos log de DRH;Razão relativa entre despesa discricionária e RH
+ln_dk_dpj;Log de DK menos log de DPJ;Razão relativa entre capital e despesa total

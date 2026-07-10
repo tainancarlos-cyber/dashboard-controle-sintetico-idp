@@ -1,0 +1,361 @@
+unidade_tratada;modelo;outcome;ano;periodo;pos_intervencao;medida;valor
+TRT_MEDIO;H1_lndpj;ln_dpj;2010;Pré-intervenção;FALSE;observado;19,912938649917052203
+TRT_MEDIO;H1_lndpj;ln_dpj;2010;Pré-intervenção;FALSE;sintetico;19,770967061530612341
+TRT_MEDIO;H1_lndpj;ln_dpj;2010;Pré-intervenção;FALSE;gap;0,141971588386439862
+TRT_MEDIO;H1_lndpj;ln_dpj;2010;Pré-intervenção;FALSE;gap_percentual_aproximado;15,254390243985515241
+TRT_MEDIO;H1_lndpj;ln_dpj;2011;Pré-intervenção;FALSE;observado;19,963512407004404992
+TRT_MEDIO;H1_lndpj;ln_dpj;2011;Pré-intervenção;FALSE;sintetico;19,964887336877779944
+TRT_MEDIO;H1_lndpj;ln_dpj;2011;Pré-intervenção;FALSE;gap;-0,001374929873374953
+TRT_MEDIO;H1_lndpj;ln_dpj;2011;Pré-intervenção;FALSE;gap_percentual_aproximado;-0,137398509034969418
+TRT_MEDIO;H1_lndpj;ln_dpj;2012;Pré-intervenção;FALSE;observado;20,030666849986726419
+TRT_MEDIO;H1_lndpj;ln_dpj;2012;Pré-intervenção;FALSE;sintetico;20,053014303562612497
+TRT_MEDIO;H1_lndpj;ln_dpj;2012;Pré-intervenção;FALSE;gap;-0,022347453575886078
+TRT_MEDIO;H1_lndpj;ln_dpj;2012;Pré-intervenção;FALSE;gap_percentual_aproximado;-2,209959897484148339
+TRT_MEDIO;H1_lndpj;ln_dpj;2013;Pré-intervenção;FALSE;observado;20,122776460978823110
+TRT_MEDIO;H1_lndpj;ln_dpj;2013;Pré-intervenção;FALSE;sintetico;20,134663892146424047
+TRT_MEDIO;H1_lndpj;ln_dpj;2013;Pré-intervenção;FALSE;gap;-0,011887431167600937
+TRT_MEDIO;H1_lndpj;ln_dpj;2013;Pré-intervenção;FALSE;gap_percentual_aproximado;-1,181705479849626261
+TRT_MEDIO;H1_lndpj;ln_dpj;2014;Pré-intervenção;FALSE;observado;20,198674091033872458
+TRT_MEDIO;H1_lndpj;ln_dpj;2014;Pré-intervenção;FALSE;sintetico;20,233381550113886505
+TRT_MEDIO;H1_lndpj;ln_dpj;2014;Pré-intervenção;FALSE;gap;-0,034707459080014047
+TRT_MEDIO;H1_lndpj;ln_dpj;2014;Pré-intervenção;FALSE;gap_percentual_aproximado;-3,411206332324123736
+TRT_MEDIO;H1_lndpj;ln_dpj;2015;Pré-intervenção;FALSE;observado;20,354750405415483527
+TRT_MEDIO;H1_lndpj;ln_dpj;2015;Pré-intervenção;FALSE;sintetico;20,397124204628017452
+TRT_MEDIO;H1_lndpj;ln_dpj;2015;Pré-intervenção;FALSE;gap;-0,042373799212533925
+TRT_MEDIO;H1_lndpj;ln_dpj;2015;Pré-intervenção;FALSE;gap_percentual_aproximado;-4,148857721531395981
+TRT_MEDIO;H1_lndpj;ln_dpj;2016;Pré-intervenção;FALSE;observado;20,384511386112698972
+TRT_MEDIO;H1_lndpj;ln_dpj;2016;Pré-intervenção;FALSE;sintetico;20,506833526613178265
+TRT_MEDIO;H1_lndpj;ln_dpj;2016;Pré-intervenção;FALSE;gap;-0,122322140500479293
+TRT_MEDIO;H1_lndpj;ln_dpj;2016;Pré-intervenção;FALSE;gap_percentual_aproximado;-11,513672771281658669
+TRT_MEDIO;H1_lndpj;ln_dpj;2017;Pós-EC 95;TRUE;observado;20,453608143283137366
+TRT_MEDIO;H1_lndpj;ln_dpj;2017;Pós-EC 95;TRUE;sintetico;20,557692346310279419
+TRT_MEDIO;H1_lndpj;ln_dpj;2017;Pós-EC 95;TRUE;gap;-0,104084203027142053
+TRT_MEDIO;H1_lndpj;ln_dpj;2017;Pós-EC 95;TRUE;gap_percentual_aproximado;-9,885058528215362017
+TRT_MEDIO;H1_lndpj;ln_dpj;2018;Pós-EC 95;TRUE;observado;20,496505071906000239
+TRT_MEDIO;H1_lndpj;ln_dpj;2018;Pós-EC 95;TRUE;sintetico;20,621688591415846759
+TRT_MEDIO;H1_lndpj;ln_dpj;2018;Pós-EC 95;TRUE;gap;-0,125183519509846519
+TRT_MEDIO;H1_lndpj;ln_dpj;2018;Pós-EC 95;TRUE;gap_percentual_aproximado;-11,766503795432935675
+TRT_MEDIO;H1_lndpj;ln_dpj;2019;Pós-EC 95;TRUE;observado;20,567632354289376195
+TRT_MEDIO;H1_lndpj;ln_dpj;2019;Pós-EC 95;TRUE;sintetico;20,602295647444432092
+TRT_MEDIO;H1_lndpj;ln_dpj;2019;Pós-EC 95;TRUE;gap;-0,034663293155055896
+TRT_MEDIO;H1_lndpj;ln_dpj;2019;Pós-EC 95;TRUE;gap_percentual_aproximado;-3,406940304705374789
+TRT_MEDIO;H1_lndpj;ln_dpj;2020;Pós-EC 95;TRUE;observado;20,535149173496371588
+TRT_MEDIO;H1_lndpj;ln_dpj;2020;Pós-EC 95;TRUE;sintetico;20,565379720410778219
+TRT_MEDIO;H1_lndpj;ln_dpj;2020;Pós-EC 95;TRUE;gap;-0,030230546914406631
+TRT_MEDIO;H1_lndpj;ln_dpj;2020;Pós-EC 95;TRUE;gap_percentual_aproximado;-2,977817388633086093
+TRT_MEDIO;H1_lndpj;ln_dpj;2021;Pós-EC 95;TRUE;observado;20,542852855757768538
+TRT_MEDIO;H1_lndpj;ln_dpj;2021;Pós-EC 95;TRUE;sintetico;20,598977842426041462
+TRT_MEDIO;H1_lndpj;ln_dpj;2021;Pós-EC 95;TRUE;gap;-0,056124986668272925
+TRT_MEDIO;H1_lndpj;ln_dpj;2021;Pós-EC 95;TRUE;gap_percentual_aproximado;-5,457903651077911533
+TRT_MEDIO;H1_lndpj;ln_dpj;2022;Pós-EC 95;TRUE;observado;20,619683469029780554
+TRT_MEDIO;H1_lndpj;ln_dpj;2022;Pós-EC 95;TRUE;sintetico;20,736824591369334314
+TRT_MEDIO;H1_lndpj;ln_dpj;2022;Pós-EC 95;TRUE;gap;-0,117141122339553760
+TRT_MEDIO;H1_lndpj;ln_dpj;2022;Pós-EC 95;TRUE;gap_percentual_aproximado;-11,054033832242350144
+TRT_MEDIO;H1_lndpj;ln_dpj;2023;Novo arcabouço fiscal;TRUE;observado;20,681966535673165453
+TRT_MEDIO;H1_lndpj;ln_dpj;2023;Novo arcabouço fiscal;TRUE;sintetico;20,870940893829331486
+TRT_MEDIO;H1_lndpj;ln_dpj;2023;Novo arcabouço fiscal;TRUE;gap;-0,188974358156166033
+TRT_MEDIO;H1_lndpj;ln_dpj;2023;Novo arcabouço fiscal;TRUE;gap_percentual_aproximado;-17,219226706079492573
+TRT_MEDIO;H1_lndpj;ln_dpj;2024;Novo arcabouço fiscal;TRUE;observado;20,784042066716839514
+TRT_MEDIO;H1_lndpj;ln_dpj;2024;Novo arcabouço fiscal;TRUE;sintetico;21,008714491629909560
+TRT_MEDIO;H1_lndpj;ln_dpj;2024;Novo arcabouço fiscal;TRUE;gap;-0,224672424913070046
+TRT_MEDIO;H1_lndpj;ln_dpj;2024;Novo arcabouço fiscal;TRUE;gap_percentual_aproximado;-20,122216437360329166
+TRT_MEDIO;H2_share_odck;share_odck;2010;Pré-intervenção;FALSE;observado;0,045158563506045364
+TRT_MEDIO;H2_share_odck;share_odck;2010;Pré-intervenção;FALSE;sintetico;0,052030577511864677
+TRT_MEDIO;H2_share_odck;share_odck;2010;Pré-intervenção;FALSE;gap;-0,006872014005819313
+TRT_MEDIO;H2_share_odck;share_odck;2010;Pré-intervenção;FALSE;gap_percentual_aproximado;NA
+TRT_MEDIO;H2_share_odck;share_odck;2011;Pré-intervenção;FALSE;observado;0,050558918735821121
+TRT_MEDIO;H2_share_odck;share_odck;2011;Pré-intervenção;FALSE;sintetico;0,066779801174383313
+TRT_MEDIO;H2_share_odck;share_odck;2011;Pré-intervenção;FALSE;gap;-0,016220882438562192
+TRT_MEDIO;H2_share_odck;share_odck;2011;Pré-intervenção;FALSE;gap_percentual_aproximado;NA
+TRT_MEDIO;H2_share_odck;share_odck;2012;Pré-intervenção;FALSE;observado;0,078396655130282822
+TRT_MEDIO;H2_share_odck;share_odck;2012;Pré-intervenção;FALSE;sintetico;0,068994608039252101
+TRT_MEDIO;H2_share_odck;share_odck;2012;Pré-intervenção;FALSE;gap;0,009402047091030721
+TRT_MEDIO;H2_share_odck;share_odck;2012;Pré-intervenção;FALSE;gap_percentual_aproximado;NA
+TRT_MEDIO;H2_share_odck;share_odck;2013;Pré-intervenção;FALSE;observado;0,072997425612817246
+TRT_MEDIO;H2_share_odck;share_odck;2013;Pré-intervenção;FALSE;sintetico;0,111148509123240036
+TRT_MEDIO;H2_share_odck;share_odck;2013;Pré-intervenção;FALSE;gap;-0,038151083510422790
+TRT_MEDIO;H2_share_odck;share_odck;2013;Pré-intervenção;FALSE;gap_percentual_aproximado;NA
+TRT_MEDIO;H2_share_odck;share_odck;2014;Pré-intervenção;FALSE;observado;0,065448790058350984
+TRT_MEDIO;H2_share_odck;share_odck;2014;Pré-intervenção;FALSE;sintetico;0,061833194270752533
+TRT_MEDIO;H2_share_odck;share_odck;2014;Pré-intervenção;FALSE;gap;0,003615595787598451
+TRT_MEDIO;H2_share_odck;share_odck;2014;Pré-intervenção;FALSE;gap_percentual_aproximado;NA
+TRT_MEDIO;H2_share_odck;share_odck;2015;Pré-intervenção;FALSE;observado;0,078487010999096496
+TRT_MEDIO;H2_share_odck;share_odck;2015;Pré-intervenção;FALSE;sintetico;0,076136164187211364
+TRT_MEDIO;H2_share_odck;share_odck;2015;Pré-intervenção;FALSE;gap;0,002350846811885132
+TRT_MEDIO;H2_share_odck;share_odck;2015;Pré-intervenção;FALSE;gap_percentual_aproximado;NA
+TRT_MEDIO;H2_share_odck;share_odck;2016;Pré-intervenção;FALSE;observado;0,057724007651977924
+TRT_MEDIO;H2_share_odck;share_odck;2016;Pré-intervenção;FALSE;sintetico;0,096596568832611293
+TRT_MEDIO;H2_share_odck;share_odck;2016;Pré-intervenção;FALSE;gap;-0,038872561180633369
+TRT_MEDIO;H2_share_odck;share_odck;2016;Pré-intervenção;FALSE;gap_percentual_aproximado;NA
+TRT_MEDIO;H2_share_odck;share_odck;2017;Pós-EC 95;TRUE;observado;0,062255268274470109
+TRT_MEDIO;H2_share_odck;share_odck;2017;Pós-EC 95;TRUE;sintetico;0,067227340095531704
+TRT_MEDIO;H2_share_odck;share_odck;2017;Pós-EC 95;TRUE;gap;-0,004972071821061595
+TRT_MEDIO;H2_share_odck;share_odck;2017;Pós-EC 95;TRUE;gap_percentual_aproximado;NA
+TRT_MEDIO;H2_share_odck;share_odck;2018;Pós-EC 95;TRUE;observado;0,074991063342740000
+TRT_MEDIO;H2_share_odck;share_odck;2018;Pós-EC 95;TRUE;sintetico;0,083682364464540221
+TRT_MEDIO;H2_share_odck;share_odck;2018;Pós-EC 95;TRUE;gap;-0,008691301121800221
+TRT_MEDIO;H2_share_odck;share_odck;2018;Pós-EC 95;TRUE;gap_percentual_aproximado;NA
+TRT_MEDIO;H2_share_odck;share_odck;2019;Pós-EC 95;TRUE;observado;0,069473023764703476
+TRT_MEDIO;H2_share_odck;share_odck;2019;Pós-EC 95;TRUE;sintetico;0,102794015054490984
+TRT_MEDIO;H2_share_odck;share_odck;2019;Pós-EC 95;TRUE;gap;-0,033320991289787508
+TRT_MEDIO;H2_share_odck;share_odck;2019;Pós-EC 95;TRUE;gap_percentual_aproximado;NA
+TRT_MEDIO;H2_share_odck;share_odck;2020;Pós-EC 95;TRUE;observado;0,037154932186439935
+TRT_MEDIO;H2_share_odck;share_odck;2020;Pós-EC 95;TRUE;sintetico;0,075388310498914521
+TRT_MEDIO;H2_share_odck;share_odck;2020;Pós-EC 95;TRUE;gap;-0,038233378312474586
+TRT_MEDIO;H2_share_odck;share_odck;2020;Pós-EC 95;TRUE;gap_percentual_aproximado;NA
+TRT_MEDIO;H2_share_odck;share_odck;2021;Pós-EC 95;TRUE;observado;0,031512646767462203
+TRT_MEDIO;H2_share_odck;share_odck;2021;Pós-EC 95;TRUE;sintetico;0,066471534708495622
+TRT_MEDIO;H2_share_odck;share_odck;2021;Pós-EC 95;TRUE;gap;-0,034958887941033419
+TRT_MEDIO;H2_share_odck;share_odck;2021;Pós-EC 95;TRUE;gap_percentual_aproximado;NA
+TRT_MEDIO;H2_share_odck;share_odck;2022;Pós-EC 95;TRUE;observado;0,041280475464783264
+TRT_MEDIO;H2_share_odck;share_odck;2022;Pós-EC 95;TRUE;sintetico;0,092288442562413461
+TRT_MEDIO;H2_share_odck;share_odck;2022;Pós-EC 95;TRUE;gap;-0,051007967097630197
+TRT_MEDIO;H2_share_odck;share_odck;2022;Pós-EC 95;TRUE;gap_percentual_aproximado;NA
+TRT_MEDIO;H2_share_odck;share_odck;2023;Novo arcabouço fiscal;TRUE;observado;0,050405499285857622
+TRT_MEDIO;H2_share_odck;share_odck;2023;Novo arcabouço fiscal;TRUE;sintetico;0,081039795544724694
+TRT_MEDIO;H2_share_odck;share_odck;2023;Novo arcabouço fiscal;TRUE;gap;-0,030634296258867072
+TRT_MEDIO;H2_share_odck;share_odck;2023;Novo arcabouço fiscal;TRUE;gap_percentual_aproximado;NA
+TRT_MEDIO;H2_share_odck;share_odck;2024;Novo arcabouço fiscal;TRUE;observado;0,046239761245899305
+TRT_MEDIO;H2_share_odck;share_odck;2024;Novo arcabouço fiscal;TRUE;sintetico;0,114206730215458310
+TRT_MEDIO;H2_share_odck;share_odck;2024;Novo arcabouço fiscal;TRUE;gap;-0,067966968969559005
+TRT_MEDIO;H2_share_odck;share_odck;2024;Novo arcabouço fiscal;TRUE;gap_percentual_aproximado;NA
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2010;Pré-intervenção;FALSE;observado;-3,023530649411100057
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2010;Pré-intervenção;FALSE;sintetico;-2,622290582908742174
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2010;Pré-intervenção;FALSE;gap;-0,401240066502357884
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2010;Pré-intervenção;FALSE;gap_percentual_aproximado;-33,051068021495531468
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2011;Pré-intervenção;FALSE;observado;-2,894757506379693979
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2011;Pré-intervenção;FALSE;sintetico;-2,712115791541656051
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2011;Pré-intervenção;FALSE;gap;-0,182641714838037927
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2011;Pré-intervenção;FALSE;gap_percentual_aproximado;-16,693342233247143724
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2012;Pré-intervenção;FALSE;observado;-2,427597975073975789
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2012;Pré-intervenção;FALSE;sintetico;-2,807944188701694710
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2012;Pré-intervenção;FALSE;gap;0,380346213627718921
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2012;Pré-intervenção;FALSE;gap_percentual_aproximado;46,279093993435395760
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2013;Pré-intervenção;FALSE;observado;-2,498581272273234788
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2013;Pré-intervenção;FALSE;sintetico;-2,191596943141974840
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2013;Pré-intervenção;FALSE;gap;-0,306984329131259948
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2013;Pré-intervenção;FALSE;gap_percentual_aproximado;-26,433787071841173599
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2014;Pré-intervenção;FALSE;observado;-2,611368855984970594
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2014;Pré-intervenção;FALSE;sintetico;-2,528912491918989147
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2014;Pré-intervenção;FALSE;gap;-0,082456364065981447
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2014;Pré-intervenção;FALSE;gap_percentual_aproximado;-7,914838079938069093
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2015;Pré-intervenção;FALSE;observado;-2,350846240335663140
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2015;Pré-intervenção;FALSE;sintetico;-2,176676894455891631
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2015;Pré-intervenção;FALSE;gap;-0,174169345879771509
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2015;Pré-intervenção;FALSE;gap_percentual_aproximado;-15,984539111062334271
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2016;Pré-intervenção;FALSE;observado;-2,686239374409634451
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2016;Pré-intervenção;FALSE;sintetico;-1,990522097481518982
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2016;Pré-intervenção;FALSE;gap;-0,695717276928115469
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2016;Pré-intervenção;FALSE;gap_percentual_aproximado;-50,128339824904969646
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2017;Pós-EC 95;TRUE;observado;-2,610316574253520372
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2017;Pós-EC 95;TRUE;sintetico;-2,347371867550906543
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2017;Pós-EC 95;TRUE;gap;-0,262944706702613828
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2017;Pós-EC 95;TRUE;gap_percentual_aproximado;-23,121559523932077695
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2018;Pós-EC 95;TRUE;observado;-2,410453703166734130
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2018;Pós-EC 95;TRUE;sintetico;-2,316176381460147038
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2018;Pós-EC 95;TRUE;gap;-0,094277321706587092
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2018;Pós-EC 95;TRUE;gap_percentual_aproximado;-8,996964392786210851
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2019;Pós-EC 95;TRUE;observado;-2,509428407737502198
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2019;Pós-EC 95;TRUE;sintetico;-2,155035620382905748
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2019;Pós-EC 95;TRUE;gap;-0,354392787354596450
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2019;Pós-EC 95;TRUE;gap_percentual_aproximado;-29,840066612007532854
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2020;Pós-EC 95;TRUE;observado;-3,181829384054264409
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2020;Pós-EC 95;TRUE;sintetico;-2,401493485357102831
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2020;Pós-EC 95;TRUE;gap;-0,780335898697161578
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2020;Pós-EC 95;TRUE;gap_percentual_aproximado;-54,174794081913837829
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2021;Pós-EC 95;TRUE;observado;-3,353107730890343419
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2021;Pós-EC 95;TRUE;sintetico;-2,355245154727104495
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2021;Pós-EC 95;TRUE;gap;-0,997862576163238923
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2021;Pós-EC 95;TRUE;gap_percentual_aproximado;-63,133340359945030684
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2022;Pós-EC 95;TRUE;observado;-3,049053188282066174
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2022;Pós-EC 95;TRUE;sintetico;-2,013107934393031595
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2022;Pós-EC 95;TRUE;gap;-1,035945253889034579
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2022;Pós-EC 95;TRUE;gap_percentual_aproximado;-64,510923954483843090
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2023;Novo arcabouço fiscal;TRUE;observado;-2,821523935196101007
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2023;Novo arcabouço fiscal;TRUE;sintetico;-2,171957741072168879
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2023;Novo arcabouço fiscal;TRUE;gap;-0,649566194123932128
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2023;Novo arcabouço fiscal;TRUE;gap_percentual_aproximado;-47,772770758509011557
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2024;Novo arcabouço fiscal;TRUE;observado;-2,905864739464696811
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2024;Novo arcabouço fiscal;TRUE;sintetico;-1,970150454958389252
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2024;Novo arcabouço fiscal;TRUE;gap;-0,935714284506307559
+TRT_MEDIO;H2_ln_odck_dpe;ln_odck_dpe;2024;Novo arcabouço fiscal;TRUE;gap_percentual_aproximado;-60,769445234435018222
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2010;Pré-intervenção;FALSE;observado;-3,051365314294542941
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2010;Pré-intervenção;FALSE;sintetico;-2,712787959757054335
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2010;Pré-intervenção;FALSE;gap;-0,338577354537488606
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2010;Pré-intervenção;FALSE;gap_percentual_aproximado;-28,721635979253544946
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2011;Pré-intervenção;FALSE;observado;-2,932734072103020395
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2011;Pré-intervenção;FALSE;sintetico;-2,726303428315791866
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2011;Pré-intervenção;FALSE;gap;-0,206430643787228529
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2011;Pré-intervenção;FALSE;gap_percentual_aproximado;-18,651732042172440629
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2012;Pré-intervenção;FALSE;observado;-2,464333633760755760
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2012;Pré-intervenção;FALSE;sintetico;-2,827509038923863738
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2012;Pré-intervenção;FALSE;gap;0,363175405163107978
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2012;Pré-intervenção;FALSE;gap_percentual_aproximado;43,788805011073336004
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2013;Pré-intervenção;FALSE;observado;-2,541532144681966088
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2013;Pré-intervenção;FALSE;sintetico;-2,234318425020253240
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2013;Pré-intervenção;FALSE;gap;-0,307213719661712847
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2013;Pré-intervenção;FALSE;gap_percentual_aproximado;-26,450660529068535709
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2014;Pré-intervenção;FALSE;observado;-2,658798395002531123
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2014;Pré-intervenção;FALSE;sintetico;-2,588740270176404845
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2014;Pré-intervenção;FALSE;gap;-0,070058124826126278
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2014;Pré-intervenção;FALSE;gap_percentual_aproximado;-6,766037374770139223
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2015;Pré-intervenção;FALSE;observado;-2,463083709541326272
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2015;Pré-intervenção;FALSE;sintetico;-2,338414636240338407
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2015;Pré-intervenção;FALSE;gap;-0,124669073300987865
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2015;Pré-intervenção;FALSE;gap_percentual_aproximado;-11,721100730100076248
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2016;Pré-intervenção;FALSE;observado;-2,792625030200930780
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2016;Pré-intervenção;FALSE;sintetico;-2,145355067580946962
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2016;Pré-intervenção;FALSE;gap;-0,647269962619983819
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2016;Pré-intervenção;FALSE;gap_percentual_aproximado;-47,652707155201298406
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2017;Pós-EC 95;TRUE;observado;-2,712234588625090481
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2017;Pós-EC 95;TRUE;sintetico;-2,498000831869199967
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2017;Pós-EC 95;TRUE;gap;-0,214233756755890514
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2017;Pós-EC 95;TRUE;gap_percentual_aproximado;-19,284031606073902765
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2018;Pós-EC 95;TRUE;observado;-2,512434432340246104
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2018;Pós-EC 95;TRUE;sintetico;-2,473778537005223210
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2018;Pós-EC 95;TRUE;gap;-0,038655895335022894
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2018;Pós-EC 95;TRUE;gap_percentual_aproximado;-3,791829100204058278
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2019;Pós-EC 95;TRUE;observado;-2,594812521250354109
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2019;Pós-EC 95;TRUE;sintetico;-2,309128225778166232
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2019;Pós-EC 95;TRUE;gap;-0,285684295472187877
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2019;Pós-EC 95;TRUE;gap_percentual_aproximado;-24,850016960081543260
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2020;Pós-EC 95;TRUE;observado;-3,254795956250809752
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2020;Pós-EC 95;TRUE;sintetico;-2,548331280095190277
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2020;Pós-EC 95;TRUE;gap;-0,706464676155619475
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2020;Pós-EC 95;TRUE;gap_percentual_aproximado;-50,661460504983054420
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2021;Pós-EC 95;TRUE;observado;-3,425346437985002268
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2021;Pós-EC 95;TRUE;sintetico;-2,524067626435553713
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2021;Pós-EC 95;TRUE;gap;-0,901278811549448555
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2021;Pós-EC 95;TRUE;gap_percentual_aproximado;-59,394993393392638836
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2022;Pós-EC 95;TRUE;observado;-3,145208900648512440
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2022;Pós-EC 95;TRUE;sintetico;-2,194328635602483146
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2022;Pós-EC 95;TRUE;gap;-0,950880265046029294
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2022;Pós-EC 95;TRUE;gap_percentual_aproximado;-61,359926135792541402
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2023;Novo arcabouço fiscal;TRUE;observado;-2,935934750568176099
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2023;Novo arcabouço fiscal;TRUE;sintetico;-2,371734106171243361
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2023;Novo arcabouço fiscal;TRUE;gap;-0,564200644396932738
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2023;Novo arcabouço fiscal;TRUE;gap_percentual_aproximado;-43,118534974383081249
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2024;Novo arcabouço fiscal;TRUE;observado;-3,026572237553956768
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2024;Novo arcabouço fiscal;TRUE;sintetico;-2,157706825945504114
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2024;Novo arcabouço fiscal;TRUE;gap;-0,868865411608452654
+TRT_MEDIO;H2_ln_odck_drh;ln_odck_drh;2024;Novo arcabouço fiscal;TRUE;gap_percentual_aproximado;-58,057284342971058777
+TRT_MEDIO;H3_share_dk;share_dk;2010;Pré-intervenção;FALSE;observado;0,015265461148628376
+TRT_MEDIO;H3_share_dk;share_dk;2010;Pré-intervenção;FALSE;sintetico;0,020583520651974399
+TRT_MEDIO;H3_share_dk;share_dk;2010;Pré-intervenção;FALSE;gap;-0,005318059503346023
+TRT_MEDIO;H3_share_dk;share_dk;2010;Pré-intervenção;FALSE;gap_percentual_aproximado;NA
+TRT_MEDIO;H3_share_dk;share_dk;2011;Pré-intervenção;FALSE;observado;0,021519034555269066
+TRT_MEDIO;H3_share_dk;share_dk;2011;Pré-intervenção;FALSE;sintetico;0,017285941264845200
+TRT_MEDIO;H3_share_dk;share_dk;2011;Pré-intervenção;FALSE;gap;0,004233093290423866
+TRT_MEDIO;H3_share_dk;share_dk;2011;Pré-intervenção;FALSE;gap_percentual_aproximado;NA
+TRT_MEDIO;H3_share_dk;share_dk;2012;Pré-intervenção;FALSE;observado;0,026806028241922120
+TRT_MEDIO;H3_share_dk;share_dk;2012;Pré-intervenção;FALSE;sintetico;0,027101960811374604
+TRT_MEDIO;H3_share_dk;share_dk;2012;Pré-intervenção;FALSE;gap;-0,000295932569452484
+TRT_MEDIO;H3_share_dk;share_dk;2012;Pré-intervenção;FALSE;gap_percentual_aproximado;NA
+TRT_MEDIO;H3_share_dk;share_dk;2013;Pré-intervenção;FALSE;observado;0,029531317771085891
+TRT_MEDIO;H3_share_dk;share_dk;2013;Pré-intervenção;FALSE;sintetico;0,033597169127767473
+TRT_MEDIO;H3_share_dk;share_dk;2013;Pré-intervenção;FALSE;gap;-0,004065851356681582
+TRT_MEDIO;H3_share_dk;share_dk;2013;Pré-intervenção;FALSE;gap_percentual_aproximado;NA
+TRT_MEDIO;H3_share_dk;share_dk;2014;Pré-intervenção;FALSE;observado;0,020712622949525857
+TRT_MEDIO;H3_share_dk;share_dk;2014;Pré-intervenção;FALSE;sintetico;0,016299134870959613
+TRT_MEDIO;H3_share_dk;share_dk;2014;Pré-intervenção;FALSE;gap;0,004413488078566244
+TRT_MEDIO;H3_share_dk;share_dk;2014;Pré-intervenção;FALSE;gap_percentual_aproximado;NA
+TRT_MEDIO;H3_share_dk;share_dk;2015;Pré-intervenção;FALSE;observado;0,012007838959996525
+TRT_MEDIO;H3_share_dk;share_dk;2015;Pré-intervenção;FALSE;sintetico;0,017508388070518275
+TRT_MEDIO;H3_share_dk;share_dk;2015;Pré-intervenção;FALSE;gap;-0,005500549110521750
+TRT_MEDIO;H3_share_dk;share_dk;2015;Pré-intervenção;FALSE;gap_percentual_aproximado;NA
+TRT_MEDIO;H3_share_dk;share_dk;2016;Pré-intervenção;FALSE;observado;0,008865372281181021
+TRT_MEDIO;H3_share_dk;share_dk;2016;Pré-intervenção;FALSE;sintetico;0,013769186911276540
+TRT_MEDIO;H3_share_dk;share_dk;2016;Pré-intervenção;FALSE;gap;-0,004903814630095519
+TRT_MEDIO;H3_share_dk;share_dk;2016;Pré-intervenção;FALSE;gap_percentual_aproximado;NA
+TRT_MEDIO;H3_share_dk;share_dk;2017;Pós-EC 95;TRUE;observado;0,014977083354762326
+TRT_MEDIO;H3_share_dk;share_dk;2017;Pós-EC 95;TRUE;sintetico;0,012680160412994497
+TRT_MEDIO;H3_share_dk;share_dk;2017;Pós-EC 95;TRUE;gap;0,002296922941767829
+TRT_MEDIO;H3_share_dk;share_dk;2017;Pós-EC 95;TRUE;gap_percentual_aproximado;NA
+TRT_MEDIO;H3_share_dk;share_dk;2018;Pós-EC 95;TRUE;observado;0,028452788399122651
+TRT_MEDIO;H3_share_dk;share_dk;2018;Pós-EC 95;TRUE;sintetico;0,026039700531098130
+TRT_MEDIO;H3_share_dk;share_dk;2018;Pós-EC 95;TRUE;gap;0,002413087868024522
+TRT_MEDIO;H3_share_dk;share_dk;2018;Pós-EC 95;TRUE;gap_percentual_aproximado;NA
+TRT_MEDIO;H3_share_dk;share_dk;2019;Pós-EC 95;TRUE;observado;0,027895586381160430
+TRT_MEDIO;H3_share_dk;share_dk;2019;Pós-EC 95;TRUE;sintetico;0,015470955083632236
+TRT_MEDIO;H3_share_dk;share_dk;2019;Pós-EC 95;TRUE;gap;0,012424631297528193
+TRT_MEDIO;H3_share_dk;share_dk;2019;Pós-EC 95;TRUE;gap_percentual_aproximado;NA
+TRT_MEDIO;H3_share_dk;share_dk;2020;Pós-EC 95;TRUE;observado;0,007978231365159016
+TRT_MEDIO;H3_share_dk;share_dk;2020;Pós-EC 95;TRUE;sintetico;0,016610058748228261
+TRT_MEDIO;H3_share_dk;share_dk;2020;Pós-EC 95;TRUE;gap;-0,008631827383069245
+TRT_MEDIO;H3_share_dk;share_dk;2020;Pós-EC 95;TRUE;gap_percentual_aproximado;NA
+TRT_MEDIO;H3_share_dk;share_dk;2021;Pós-EC 95;TRUE;observado;0,004809952431310127
+TRT_MEDIO;H3_share_dk;share_dk;2021;Pós-EC 95;TRUE;sintetico;0,011024917604544398
+TRT_MEDIO;H3_share_dk;share_dk;2021;Pós-EC 95;TRUE;gap;-0,006214965173234271
+TRT_MEDIO;H3_share_dk;share_dk;2021;Pós-EC 95;TRUE;gap_percentual_aproximado;NA
+TRT_MEDIO;H3_share_dk;share_dk;2022;Pós-EC 95;TRUE;observado;0,008312540859356093
+TRT_MEDIO;H3_share_dk;share_dk;2022;Pós-EC 95;TRUE;sintetico;0,030838102613377716
+TRT_MEDIO;H3_share_dk;share_dk;2022;Pós-EC 95;TRUE;gap;-0,022525561754021622
+TRT_MEDIO;H3_share_dk;share_dk;2022;Pós-EC 95;TRUE;gap_percentual_aproximado;NA
+TRT_MEDIO;H3_share_dk;share_dk;2023;Novo arcabouço fiscal;TRUE;observado;0,012626352846619964
+TRT_MEDIO;H3_share_dk;share_dk;2023;Novo arcabouço fiscal;TRUE;sintetico;0,028665243185941963
+TRT_MEDIO;H3_share_dk;share_dk;2023;Novo arcabouço fiscal;TRUE;gap;-0,016038890339322001
+TRT_MEDIO;H3_share_dk;share_dk;2023;Novo arcabouço fiscal;TRUE;gap_percentual_aproximado;NA
+TRT_MEDIO;H3_share_dk;share_dk;2024;Novo arcabouço fiscal;TRUE;observado;0,011416306384526420
+TRT_MEDIO;H3_share_dk;share_dk;2024;Novo arcabouço fiscal;TRUE;sintetico;0,026672859478417809
+TRT_MEDIO;H3_share_dk;share_dk;2024;Novo arcabouço fiscal;TRUE;gap;-0,015256553093891389
+TRT_MEDIO;H3_share_dk;share_dk;2024;Novo arcabouço fiscal;TRUE;gap_percentual_aproximado;NA
+TRT_MEDIO;H3_lndk;ln_dk;2010;Pré-intervenção;FALSE;observado;15,730776351259519785
+TRT_MEDIO;H3_lndk;ln_dk;2010;Pré-intervenção;FALSE;sintetico;15,948823859244027901
+TRT_MEDIO;H3_lndk;ln_dk;2010;Pré-intervenção;FALSE;gap;-0,218047507984508115
+TRT_MEDIO;H3_lndk;ln_dk;2010;Pré-intervenção;FALSE;gap_percentual_aproximado;-19,591275980502096843
+TRT_MEDIO;H3_lndk;ln_dk;2011;Pré-intervenção;FALSE;observado;16,124695096840603981
+TRT_MEDIO;H3_lndk;ln_dk;2011;Pré-intervenção;FALSE;sintetico;15,608251118004790925
+TRT_MEDIO;H3_lndk;ln_dk;2011;Pré-intervenção;FALSE;gap;0,516443978835813056
+TRT_MEDIO;H3_lndk;ln_dk;2011;Pré-intervenção;FALSE;gap_percentual_aproximado;67,605694604386073365
+TRT_MEDIO;H3_lndk;ln_dk;2012;Pré-intervenção;FALSE;observado;16,411538440197819710
+TRT_MEDIO;H3_lndk;ln_dk;2012;Pré-intervenção;FALSE;sintetico;16,407695906333749747
+TRT_MEDIO;H3_lndk;ln_dk;2012;Pré-intervenção;FALSE;gap;0,003842533864069964
+TRT_MEDIO;H3_lndk;ln_dk;2012;Pré-intervenção;FALSE;gap_percentual_aproximado;0,384992586228682931
+TRT_MEDIO;H3_lndk;ln_dk;2013;Pré-intervenção;FALSE;observado;16,600472561490406065
+TRT_MEDIO;H3_lndk;ln_dk;2013;Pré-intervenção;FALSE;sintetico;16,658721123886000015
+TRT_MEDIO;H3_lndk;ln_dk;2013;Pré-intervenção;FALSE;gap;-0,058248562395593950
+TRT_MEDIO;H3_lndk;ln_dk;2013;Pré-intervenção;FALSE;gap_percentual_aproximado;-5,658457930626648036
+TRT_MEDIO;H3_lndk;ln_dk;2014;Pré-intervenção;FALSE;observado;16,321662210684699801
+TRT_MEDIO;H3_lndk;ln_dk;2014;Pré-intervenção;FALSE;sintetico;16,199934166189361662
+TRT_MEDIO;H3_lndk;ln_dk;2014;Pré-intervenção;FALSE;gap;0,121728044495338139
+TRT_MEDIO;H3_lndk;ln_dk;2014;Pré-intervenção;FALSE;gap_percentual_aproximado;12,944690070782982616
+TRT_MEDIO;H3_lndk;ln_dk;2015;Pré-intervenção;FALSE;observado;15,932554928556337259
+TRT_MEDIO;H3_lndk;ln_dk;2015;Pré-intervenção;FALSE;sintetico;15,832827788714842754
+TRT_MEDIO;H3_lndk;ln_dk;2015;Pré-intervenção;FALSE;gap;0,099727139841494505
+TRT_MEDIO;H3_lndk;ln_dk;2015;Pré-intervenção;FALSE;gap_percentual_aproximado;10,486940210148487651
+TRT_MEDIO;H3_lndk;ln_dk;2016;Pré-intervenção;FALSE;observado;15,658909197143445979
+TRT_MEDIO;H3_lndk;ln_dk;2016;Pré-intervenção;FALSE;sintetico;15,968990160827182478
+TRT_MEDIO;H3_lndk;ln_dk;2016;Pré-intervenção;FALSE;gap;-0,310080963683736499
+TRT_MEDIO;H3_lndk;ln_dk;2016;Pré-intervenção;FALSE;gap_percentual_aproximado;-26,661242393926109173
+TRT_MEDIO;H3_lndk;ln_dk;2017;Pós-EC 95;TRUE;observado;16,252374206938853263
+TRT_MEDIO;H3_lndk;ln_dk;2017;Pós-EC 95;TRUE;sintetico;15,720670876657024451
+TRT_MEDIO;H3_lndk;ln_dk;2017;Pós-EC 95;TRUE;gap;0,531703330281828812
+TRT_MEDIO;H3_lndk;ln_dk;2017;Pós-EC 95;TRUE;gap_percentual_aproximado;70,182861745160508349
+TRT_MEDIO;H3_lndk;ln_dk;2018;Pós-EC 95;TRUE;observado;16,936996002044558907
+TRT_MEDIO;H3_lndk;ln_dk;2018;Pós-EC 95;TRUE;sintetico;16,373116683630591695
+TRT_MEDIO;H3_lndk;ln_dk;2018;Pós-EC 95;TRUE;gap;0,563879318413967212
+TRT_MEDIO;H3_lndk;ln_dk;2018;Pós-EC 95;TRUE;gap_percentual_aproximado;75,747710644669140834
+TRT_MEDIO;H3_lndk;ln_dk;2019;Pós-EC 95;TRUE;observado;16,988345598113181012
+TRT_MEDIO;H3_lndk;ln_dk;2019;Pós-EC 95;TRUE;sintetico;16,010237719291716019
+TRT_MEDIO;H3_lndk;ln_dk;2019;Pós-EC 95;TRUE;gap;0,978107878821464993
+TRT_MEDIO;H3_lndk;ln_dk;2019;Pós-EC 95;TRUE;gap_percentual_aproximado;165,941953437796598791
+TRT_MEDIO;H3_lndk;ln_dk;2020;Pós-EC 95;TRUE;observado;15,704110798049368825
+TRT_MEDIO;H3_lndk;ln_dk;2020;Pós-EC 95;TRUE;sintetico;15,562139944999334062
+TRT_MEDIO;H3_lndk;ln_dk;2020;Pós-EC 95;TRUE;gap;0,141970853050034762
+TRT_MEDIO;H3_lndk;ln_dk;2020;Pós-EC 95;TRUE;gap_percentual_aproximado;15,254305493267693805
+TRT_MEDIO;H3_lndk;ln_dk;2021;Pós-EC 95;TRUE;observado;15,205785019113156054
+TRT_MEDIO;H3_lndk;ln_dk;2021;Pós-EC 95;TRUE;sintetico;15,487758870201345118
+TRT_MEDIO;H3_lndk;ln_dk;2021;Pós-EC 95;TRUE;gap;-0,281973851088189065
+TRT_MEDIO;H3_lndk;ln_dk;2021;Pós-EC 95;TRUE;gap_percentual_aproximado;-24,570659177297748954
+TRT_MEDIO;H3_lndk;ln_dk;2022;Pós-EC 95;TRUE;observado;15,829693643749024545
+TRT_MEDIO;H3_lndk;ln_dk;2022;Pós-EC 95;TRUE;sintetico;16,966652309454968162
+TRT_MEDIO;H3_lndk;ln_dk;2022;Pós-EC 95;TRUE;gap;-1,136958665705943616
+TRT_MEDIO;H3_lndk;ln_dk;2022;Pós-EC 95;TRUE;gap_percentual_aproximado;-67,920682100682910232
+TRT_MEDIO;H3_lndk;ln_dk;2023;Novo arcabouço fiscal;TRUE;observado;16,309997463776188198
+TRT_MEDIO;H3_lndk;ln_dk;2023;Novo arcabouço fiscal;TRUE;sintetico;16,887302623728267292
+TRT_MEDIO;H3_lndk;ln_dk;2023;Novo arcabouço fiscal;TRUE;gap;-0,577305159952079094
+TRT_MEDIO;H3_lndk;ln_dk;2023;Novo arcabouço fiscal;TRUE;gap_percentual_aproximado;-43,859076202957666624
+TRT_MEDIO;H3_lndk;ln_dk;2024;Novo arcabouço fiscal;TRUE;observado;16,311329587205026570
+TRT_MEDIO;H3_lndk;ln_dk;2024;Novo arcabouço fiscal;TRUE;sintetico;16,962402217722825526
+TRT_MEDIO;H3_lndk;ln_dk;2024;Novo arcabouço fiscal;TRUE;gap;-0,651072630517798956
+TRT_MEDIO;H3_lndk;ln_dk;2024;Novo arcabouço fiscal;TRUE;gap_percentual_aproximado;-47,851388526188387118

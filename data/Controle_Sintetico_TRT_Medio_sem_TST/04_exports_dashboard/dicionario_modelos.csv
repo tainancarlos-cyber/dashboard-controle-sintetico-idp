@@ -1,0 +1,7 @@
+modelo;hipotese;outcome;descricao
+H1_lndpj;H1;ln_dpj;Teste do efeito da EC 95 sobre a despesa total
+H2_share_odck;H2;share_odck;Teste da participação das despesas discricionárias no gasto total
+H2_ln_odck_dpe;H2;ln_odck_dpe;Teste da razão entre despesas discricionárias e despesas com pessoal
+H2_ln_odck_drh;H2;ln_odck_drh;Teste da razão entre despesas discricionárias e despesas com recursos humanos
+H3_share_dk;H3;share_dk;Teste da participação das despesas de capital no gasto total
+H3_lndk;H3;ln_dk;Teste do nível das despesas de capital
