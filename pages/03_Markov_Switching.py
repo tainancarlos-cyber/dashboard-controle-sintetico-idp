@@ -24,11 +24,6 @@ from markov_exports import (
 )
 
 
-st.set_page_config(
-    page_title="Markov Switching | TRT medio",
-    layout="wide",
-)
-
 
 @st.cache_data
 def get_data() -> dict[str, pd.DataFrame]:

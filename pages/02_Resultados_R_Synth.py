@@ -15,11 +15,6 @@ from r_synth_exports import (
 )
 
 
-st.set_page_config(
-    page_title="Resultados R/Synth | TRT medio",
-    layout="wide",
-)
-
 
 @st.cache_data
 def get_data():

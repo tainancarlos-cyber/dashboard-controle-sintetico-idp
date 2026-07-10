@@ -5,8 +5,6 @@ import streamlit as st
 from r_synth_exports import COMPARABILITY_DIR, comparability_image, load_exports
 
 
-st.set_page_config(page_title="Metodo | Controle Sintetico", layout="wide")
-
 
 @st.cache_data
 def get_data():
