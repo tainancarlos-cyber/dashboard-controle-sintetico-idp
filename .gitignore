@@ -10,7 +10,5 @@ iniciar_dashboard.bat
 iniciar_dashboard.ps1
 generate_reports.py
 research_methods.py
-markov_exports.py
-pages/03_Markov_Switching.py
 .DS_Store
 Thumbs.db

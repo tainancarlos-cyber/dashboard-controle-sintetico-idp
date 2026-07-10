@@ -1,0 +1,13 @@
+modelo;hipotese;variavel;descricao;regime_original;regime_ordenado;regime_nome;media_regime;desvio_padrao_regime
+MS_H1_g_lndpj;H1;g_lndpj;Crescimento anual aproximado da despesa total;1;1;Regime baixo;5,8751406140373996;5,50420058907359699
+MS_H1_g_lndpj;H1;g_lndpj;Crescimento anual aproximado da despesa total;2;2;Regime alto;6,7023217642373947;0,91518500593713226
+MS_H2_share_odck;H2;share_odck;Participação das despesas discricionárias na despesa total;2;1;Regime baixo;0,0431572861080674;0,00652165599071327
+MS_H2_share_odck;H2;share_odck;Participação das despesas discricionárias na despesa total;1;2;Regime alto;0,0698580557126066;0,00728586886139291
+MS_H2_ln_odck_dpe;H2;ln_odck_dpe;Razão logarítmica entre ODCK e DPE;1;1;Regime baixo;-3,0317216671350593;0,17254454719674131
+MS_H2_ln_odck_dpe;H2;ln_odck_dpe;Razão logarítmica entre ODCK e DPE;2;2;Regime alto;-2,5132295072456499;0,10856559366286624
+MS_H2_ln_odck_drh;H2;ln_odck_drh;Razão logarítmica entre ODCK e DRH;1;1;Regime baixo;-3,1096668440812323;0,16776360876860749
+MS_H2_ln_odck_drh;H2;ln_odck_drh;Razão logarítmica entre ODCK e DRH;2;2;Regime alto;-2,5934272476481022;0,11399107998338523
+MS_H3_share_dk;H3;share_dk;Participação das despesas de capital na despesa total;2;1;Regime baixo;0,0107520251076420;0,00335519068673696
+MS_H3_share_dk;H3;share_dk;Participação das despesas de capital na despesa total;1;2;Regime alto;0,0258402349445241;0,00344864777897540
+MS_H3_g_lndk;H3;g_lndk;Crescimento anual aproximado das despesas de capital;2;1;Regime baixo;-20,5707642609429371;48,29794074142112237
+MS_H3_g_lndk;H3;g_lndk;Crescimento anual aproximado das despesas de capital;1;2;Regime alto;52,0245297255634185;13,24061154741212576

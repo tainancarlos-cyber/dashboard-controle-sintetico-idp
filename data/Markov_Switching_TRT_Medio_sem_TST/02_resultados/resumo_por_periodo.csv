@@ -1,0 +1,19 @@
+modelo;hipotese;variavel;descricao;periodo;n_anos;media_y;mediana_y;prob_media_regime_baixo;prob_media_regime_alto;anos_regime_baixo;anos_regime_alto
+MS_H1_g_lndpj;H1;g_lndpj;Crescimento anual aproximado da despesa total;Novo arcabouço fiscal;2;8,2179298843529480;8,2179298843529480;0,617387286924862;0,3826127130751376670;1;1
+MS_H1_g_lndpj;H1;g_lndpj;Crescimento anual aproximado da despesa total;Pré-intervenção;6;7,8595456032607798;7,1526036518685387;0,564416187161681;0,4355838128383184293;3;3
+MS_H1_g_lndpj;H1;g_lndpj;Crescimento anual aproximado da despesa total;Pós-EC 95;6;3,9195347152846929;5,5996842896650634;0,584169958769592;0,4158300412304072324;3;3
+MS_H2_share_odck;H2;share_odck;Participação das despesas discricionárias na despesa total;Novo arcabouço fiscal;2;0,0483226302658785;0,0483226302658785;0,998682302948140;0,0013176970518601534;2;0
+MS_H2_share_odck;H2;share_odck;Participação das despesas discricionárias na despesa total;Pré-intervenção;7;0,0641101959563417;0,0654487900583510;0,279940136729282;0,7200598632707178037;2;5
+MS_H2_share_odck;H2;share_odck;Participação das despesas discricionárias na despesa total;Pós-EC 95;6;0,0527779016334332;0,0517678718696267;0,500204266198212;0,4997957338017881002;3;3
+MS_H2_ln_odck_dpe;H2;ln_odck_dpe;Razão logarítmica entre ODCK e DPE;Novo arcabouço fiscal;2;-2,8636943373303989;-2,8636943373303989;0,998744635600719;0,0012553643992804012;2;0
+MS_H2_ln_odck_dpe;H2;ln_odck_dpe;Razão logarítmica entre ODCK e DPE;Pré-intervenção;7;-2,6418459819811817;-2,6113688559849706;0,286770667290642;0,7132293327093585100;2;5
+MS_H2_ln_odck_dpe;H2;ln_odck_dpe;Razão logarítmica entre ODCK e DPE;Pós-EC 95;6;-2,8523648313974053;-2,8296848812677933;0,501311433097423;0,4986885669025765688;3;3
+MS_H2_ln_odck_drh;H2;ln_odck_drh;Razão logarítmica entre ODCK e DRH;Novo arcabouço fiscal;2;-2,9812534940610664;-2,9812534940610664;0,999435319878201;0,0005646801217991629;2;0
+MS_H2_ln_odck_drh;H2;ln_odck_drh;Razão logarítmica entre ODCK e DRH;Pré-intervenção;7;-2,7006388999407247;-2,6587983950025311;0,283710258847526;0,7162897411524741242;2;5
+MS_H2_ln_odck_drh;H2;ln_odck_drh;Razão logarítmica entre ODCK e DRH;Pós-EC 95;6;-2,9408054728500024;-2,9287217446368015;0,501470213416431;0,4985297865835691677;3;3
+MS_H3_share_dk;H3;share_dk;Participação das despesas de capital na despesa total;Novo arcabouço fiscal;2;0,0120213296155732;0,0120213296155732;0,999919308663293;0,0000806913367071296;2;0
+MS_H3_share_dk;H3;share_dk;Participação das despesas de capital na despesa total;Pré-intervenção;7;0,0192439537010870;0,0207126229495259;0,436478138866583;0,5635218611334171790;3;4
+MS_H3_share_dk;H3;share_dk;Participação das despesas de capital na despesa total;Pós-EC 95;6;0,0154043637984784;0,0116448121070592;0,664476926954054;0,3355230730459455302;4;2
+MS_H3_g_lndk;H3;g_lndk;Crescimento anual aproximado das despesas de capital;Novo arcabouço fiscal;2;24,0817971728001012;24,0817971728001012;0,596012765634219;0,4039872343657808229;1;1
+MS_H3_g_lndk;H3;g_lndk;Crescimento anual aproximado das despesas de capital;Pré-intervenção;6;-1,1977859019345634;-4,2355805060152463;0,753447225498722;0,2465527745012782712;5;1
+MS_H3_g_lndk;H3;g_lndk;Crescimento anual aproximado das despesas de capital;Pós-EC 95;6;2,8464074434263082;32,2407302932014659;0,586826816217857;0,4131731837821430720;3;3

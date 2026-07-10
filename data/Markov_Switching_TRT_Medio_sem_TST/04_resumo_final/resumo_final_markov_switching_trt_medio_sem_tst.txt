@@ -1,0 +1,213 @@
+============================================================
+RESUMO FINAL - MARKOV SWITCHING
+TRT MÉDIO SEM TST
+============================================================
+
+1. MODELOS ESTIMADOS COM SUCESSO
+------------------------------------------------------------
+[1] "MS_H1_g_lndpj"     "MS_H2_share_odck"  "MS_H2_ln_odck_dpe" "MS_H2_ln_odck_drh" "MS_H3_share_dk"    "MS_H3_g_lndk"     
+
+
+2. RESUMO DOS MODELOS
+------------------------------------------------------------
+# A tibble: 6 × 16
+  modelo  hipotese variavel descricao n_obs ano_inicial ano_final logLik n_parametros   AIC   BIC media_regime_baixo media_regime_alto diferenca_media_alto…¹ prob_regime_baixo_pos prob_regime_alto_pos
+  <chr>   <chr>    <chr>    <chr>     <int>       <int>     <int>  <dbl>        <int> <dbl> <dbl>              <dbl>             <dbl>                  <dbl>                 <dbl>                <dbl>
+1 MS_H1_… H1       g_lndpj  Crescime…    14        2011      2024     NA           10    NA    NA             5.88              6.70                   0.827                  0.592                0.408
+2 MS_H2_… H2       share_o… Particip…    15        2010      2024     NA           10    NA    NA             0.0432            0.0699                 0.0267                 0.625                0.375
+3 MS_H2_… H2       ln_odck… Razão lo…    15        2010      2024     NA           10    NA    NA            -3.03             -2.51                   0.518                  0.626                0.374
+4 MS_H2_… H2       ln_odck… Razão lo…    15        2010      2024     NA           10    NA    NA            -3.11             -2.59                   0.516                  0.626                0.374
+5 MS_H3_… H3       share_dk Particip…    15        2010      2024     NA           10    NA    NA             0.0108            0.0258                 0.0151                 0.748                0.252
+6 MS_H3_… H3       g_lndk   Crescime…    14        2011      2024     NA           10    NA    NA           -20.6              52.0                   72.6                    0.589                0.411
+# ℹ abbreviated name: ¹​diferenca_media_alto_baixo
+
+
+3. INTERPRETAÇÃO DOS MODELOS
+------------------------------------------------------------
+# A tibble: 6 × 18
+  modelo  hipotese variavel descricao n_obs ano_inicial ano_final logLik n_parametros   AIC   BIC media_regime_baixo media_regime_alto diferenca_media_alto…¹ prob_regime_baixo_pos prob_regime_alto_pos
+  <chr>   <chr>    <chr>    <chr>     <int>       <int>     <int>  <dbl>        <int> <dbl> <dbl>              <dbl>             <dbl>                  <dbl>                 <dbl>                <dbl>
+1 MS_H1_… H1       g_lndpj  Crescime…    14        2011      2024     NA           10    NA    NA             5.88              6.70                   0.827                  0.592                0.408
+2 MS_H2_… H2       share_o… Particip…    15        2010      2024     NA           10    NA    NA             0.0432            0.0699                 0.0267                 0.625                0.375
+3 MS_H2_… H2       ln_odck… Razão lo…    15        2010      2024     NA           10    NA    NA            -3.03             -2.51                   0.518                  0.626                0.374
+4 MS_H2_… H2       ln_odck… Razão lo…    15        2010      2024     NA           10    NA    NA            -3.11             -2.59                   0.516                  0.626                0.374
+5 MS_H3_… H3       share_dk Particip…    15        2010      2024     NA           10    NA    NA             0.0108            0.0258                 0.0151                 0.748                0.252
+6 MS_H3_… H3       g_lndk   Crescime…    14        2011      2024     NA           10    NA    NA           -20.6              52.0                   72.6                    0.589                0.411
+# ℹ abbreviated name: ¹​diferenca_media_alto_baixo
+# ℹ 2 more variables: leitura_pos_intervencao <chr>, interpretacao_hipotese <chr>
+
+
+4. REGIMES ESTIMADOS
+------------------------------------------------------------
+# A tibble: 12 × 9
+   modelo            hipotese variavel    descricao                                                  regime_original regime_ordenado regime_nome  media_regime desvio_padrao_regime
+   <chr>             <chr>    <chr>       <chr>                                                                <int>           <int> <chr>               <dbl>                <dbl>
+ 1 MS_H1_g_lndpj     H1       g_lndpj     Crescimento anual aproximado da despesa total                            1               1 Regime baixo       5.88                5.50   
+ 2 MS_H1_g_lndpj     H1       g_lndpj     Crescimento anual aproximado da despesa total                            2               2 Regime alto        6.70                0.915  
+ 3 MS_H2_share_odck  H2       share_odck  Participação das despesas discricionárias na despesa total               2               1 Regime baixo       0.0432              0.00652
+ 4 MS_H2_share_odck  H2       share_odck  Participação das despesas discricionárias na despesa total               1               2 Regime alto        0.0699              0.00729
+ 5 MS_H2_ln_odck_dpe H2       ln_odck_dpe Razão logarítmica entre ODCK e DPE                                       1               1 Regime baixo      -3.03                0.173  
+ 6 MS_H2_ln_odck_dpe H2       ln_odck_dpe Razão logarítmica entre ODCK e DPE                                       2               2 Regime alto       -2.51                0.109  
+ 7 MS_H2_ln_odck_drh H2       ln_odck_drh Razão logarítmica entre ODCK e DRH                                       1               1 Regime baixo      -3.11                0.168  
+ 8 MS_H2_ln_odck_drh H2       ln_odck_drh Razão logarítmica entre ODCK e DRH                                       2               2 Regime alto       -2.59                0.114  
+ 9 MS_H3_share_dk    H3       share_dk    Participação das despesas de capital na despesa total                    2               1 Regime baixo       0.0108              0.00336
+10 MS_H3_share_dk    H3       share_dk    Participação das despesas de capital na despesa total                    1               2 Regime alto        0.0258              0.00345
+11 MS_H3_g_lndk      H3       g_lndk      Crescimento anual aproximado das despesas de capital                     2               1 Regime baixo     -20.6                48.3    
+12 MS_H3_g_lndk      H3       g_lndk      Crescimento anual aproximado das despesas de capital                     1               2 Regime alto       52.0                13.2    
+
+
+5. PROBABILIDADES DE TRANSIÇÃO
+------------------------------------------------------------
+# A tibble: 24 × 8
+   modelo            hipotese variavel    regime_origem_original regime_origem regime_destino_original regime_destino prob_transicao
+   <chr>             <chr>    <chr>                        <int> <chr>                           <int> <chr>                   <dbl>
+ 1 MS_H1_g_lndpj     H1       g_lndpj                          1 Regime baixo                        1 Regime baixo            0.496
+ 2 MS_H1_g_lndpj     H1       g_lndpj                          1 Regime baixo                        2 Regime alto             0.504
+ 3 MS_H1_g_lndpj     H1       g_lndpj                          2 Regime alto                         1 Regime baixo            0.782
+ 4 MS_H1_g_lndpj     H1       g_lndpj                          2 Regime alto                         2 Regime alto             0.218
+ 5 MS_H2_share_odck  H2       share_odck                       1 Regime alto                         1 Regime alto             0.874
+ 6 MS_H2_share_odck  H2       share_odck                       1 Regime alto                         2 Regime baixo            0.126
+ 7 MS_H2_share_odck  H2       share_odck                       2 Regime baixo                        1 Regime alto             0.170
+ 8 MS_H2_share_odck  H2       share_odck                       2 Regime baixo                        2 Regime baixo            0.830
+ 9 MS_H2_ln_odck_dpe H2       ln_odck_dpe                      1 Regime baixo                        1 Regime baixo            0.831
+10 MS_H2_ln_odck_dpe H2       ln_odck_dpe                      1 Regime baixo                        2 Regime alto             0.169
+11 MS_H2_ln_odck_dpe H2       ln_odck_dpe                      2 Regime alto                         1 Regime baixo            0.127
+12 MS_H2_ln_odck_dpe H2       ln_odck_dpe                      2 Regime alto                         2 Regime alto             0.873
+13 MS_H2_ln_odck_drh H2       ln_odck_drh                      1 Regime baixo                        1 Regime baixo            0.830
+14 MS_H2_ln_odck_drh H2       ln_odck_drh                      1 Regime baixo                        2 Regime alto             0.170
+15 MS_H2_ln_odck_drh H2       ln_odck_drh                      2 Regime alto                         1 Regime baixo            0.127
+16 MS_H2_ln_odck_drh H2       ln_odck_drh                      2 Regime alto                         2 Regime alto             0.873
+17 MS_H3_share_dk    H3       share_dk                         1 Regime alto                         1 Regime alto             0.664
+18 MS_H3_share_dk    H3       share_dk                         1 Regime alto                         2 Regime baixo            0.336
+19 MS_H3_share_dk    H3       share_dk                         2 Regime baixo                        1 Regime alto             0.249
+20 MS_H3_share_dk    H3       share_dk                         2 Regime baixo                        2 Regime baixo            0.751
+21 MS_H3_g_lndk      H3       g_lndk                           1 Regime alto                         1 Regime alto             0.385
+22 MS_H3_g_lndk      H3       g_lndk                           1 Regime alto                         2 Regime baixo            0.615
+23 MS_H3_g_lndk      H3       g_lndk                           2 Regime baixo                        1 Regime alto             0.235
+24 MS_H3_g_lndk      H3       g_lndk                           2 Regime baixo                        2 Regime baixo            0.765
+
+
+6. RESUMO POR PERÍODO
+------------------------------------------------------------
+# A tibble: 18 × 12
+   modelo            hipotese variavel    descricao                                    periodo n_anos media_y mediana_y prob_media_regime_ba…¹ prob_media_regime_alto anos_regime_baixo anos_regime_alto
+   <chr>             <chr>    <chr>       <chr>                                        <chr>    <int>   <dbl>     <dbl>                  <dbl>                  <dbl>             <int>            <int>
+ 1 MS_H1_g_lndpj     H1       g_lndpj     Crescimento anual aproximado da despesa tot… Novo a…      2  8.22      8.22                    0.617              0.383                     1                1
+ 2 MS_H1_g_lndpj     H1       g_lndpj     Crescimento anual aproximado da despesa tot… Pré-in…      6  7.86      7.15                    0.564              0.436                     3                3
+ 3 MS_H1_g_lndpj     H1       g_lndpj     Crescimento anual aproximado da despesa tot… Pós-EC…      6  3.92      5.60                    0.584              0.416                     3                3
+ 4 MS_H2_share_odck  H2       share_odck  Participação das despesas discricionárias n… Novo a…      2  0.0483    0.0483                  0.999              0.00132                   2                0
+ 5 MS_H2_share_odck  H2       share_odck  Participação das despesas discricionárias n… Pré-in…      7  0.0641    0.0654                  0.280              0.720                     2                5
+ 6 MS_H2_share_odck  H2       share_odck  Participação das despesas discricionárias n… Pós-EC…      6  0.0528    0.0518                  0.500              0.500                     3                3
+ 7 MS_H2_ln_odck_dpe H2       ln_odck_dpe Razão logarítmica entre ODCK e DPE           Novo a…      2 -2.86     -2.86                    0.999              0.00126                   2                0
+ 8 MS_H2_ln_odck_dpe H2       ln_odck_dpe Razão logarítmica entre ODCK e DPE           Pré-in…      7 -2.64     -2.61                    0.287              0.713                     2                5
+ 9 MS_H2_ln_odck_dpe H2       ln_odck_dpe Razão logarítmica entre ODCK e DPE           Pós-EC…      6 -2.85     -2.83                    0.501              0.499                     3                3
+10 MS_H2_ln_odck_drh H2       ln_odck_drh Razão logarítmica entre ODCK e DRH           Novo a…      2 -2.98     -2.98                    0.999              0.000565                  2                0
+11 MS_H2_ln_odck_drh H2       ln_odck_drh Razão logarítmica entre ODCK e DRH           Pré-in…      7 -2.70     -2.66                    0.284              0.716                     2                5
+12 MS_H2_ln_odck_drh H2       ln_odck_drh Razão logarítmica entre ODCK e DRH           Pós-EC…      6 -2.94     -2.93                    0.501              0.499                     3                3
+13 MS_H3_share_dk    H3       share_dk    Participação das despesas de capital na des… Novo a…      2  0.0120    0.0120                  1.000              0.0000807                 2                0
+14 MS_H3_share_dk    H3       share_dk    Participação das despesas de capital na des… Pré-in…      7  0.0192    0.0207                  0.436              0.564                     3                4
+15 MS_H3_share_dk    H3       share_dk    Participação das despesas de capital na des… Pós-EC…      6  0.0154    0.0116                  0.664              0.336                     4                2
+16 MS_H3_g_lndk      H3       g_lndk      Crescimento anual aproximado das despesas d… Novo a…      2 24.1      24.1                     0.596              0.404                     1                1
+17 MS_H3_g_lndk      H3       g_lndk      Crescimento anual aproximado das despesas d… Pré-in…      6 -1.20     -4.24                    0.753              0.247                     5                1
+18 MS_H3_g_lndk      H3       g_lndk      Crescimento anual aproximado das despesas d… Pós-EC…      6  2.85     32.2                     0.587              0.413                     3                3
+# ℹ abbreviated name: ¹​prob_media_regime_baixo
+
+
+7. PROBABILIDADES ANUAIS DOS REGIMES
+------------------------------------------------------------
+# A tibble: 88 × 14
+     ano periodo                        y state        S1        S2 regime_mais_provavel regime_ordenado modelo            hipotese variavel    descricao             prob_regime_baixo prob_regime_alto
+   <int> <chr>                      <dbl> <int>     <dbl>     <dbl> <chr>                          <int> <chr>             <chr>    <chr>       <chr>                             <dbl>            <dbl>
+ 1  2011 Pré-intervenção          5.06        2 0         1    e+ 0 Regime alto                        2 MS_H1_g_lndpj     H1       g_lndpj     Crescimento anual ap…      0                   1    e+ 0
+ 2  2012 Pré-intervenção          6.72        2 2.86 e- 1 7.14 e- 1 Regime alto                        2 MS_H1_g_lndpj     H1       g_lndpj     Crescimento anual ap…      0.286               7.14 e- 1
+ 3  2013 Pré-intervenção          9.21        1 9.54 e- 1 4.55 e- 2 Regime baixo                       1 MS_H1_g_lndpj     H1       g_lndpj     Crescimento anual ap…      0.954               4.55 e- 2
+ 4  2014 Pré-intervenção          7.59        2 1.47 e- 1 8.53 e- 1 Regime alto                        2 MS_H1_g_lndpj     H1       g_lndpj     Crescimento anual ap…      0.147               8.53 e- 1
+ 5  2015 Pré-intervenção         15.6         1 1.000e+ 0 4.82 e-20 Regime baixo                       1 MS_H1_g_lndpj     H1       g_lndpj     Crescimento anual ap…      1.000               4.82 e-20
+ 6  2016 Pré-intervenção          2.98        1 9.99 e- 1 9.67 e- 4 Regime baixo                       1 MS_H1_g_lndpj     H1       g_lndpj     Crescimento anual ap…      0.999               9.67 e- 4
+ 7  2017 Pós-EC 95                6.91        2 1.02 e- 1 8.98 e- 1 Regime alto                        2 MS_H1_g_lndpj     H1       g_lndpj     Crescimento anual ap…      0.102               8.98 e- 1
+ 8  2018 Pós-EC 95                4.29        1 9.64 e- 1 3.59 e- 2 Regime baixo                       1 MS_H1_g_lndpj     H1       g_lndpj     Crescimento anual ap…      0.964               3.59 e- 2
+ 9  2019 Pós-EC 95                7.11        2 1.08 e- 1 8.92 e- 1 Regime alto                        2 MS_H1_g_lndpj     H1       g_lndpj     Crescimento anual ap…      0.108               8.92 e- 1
+10  2020 Pós-EC 95               -3.25        1 1    e+ 0 2.86 e-25 Regime baixo                       1 MS_H1_g_lndpj     H1       g_lndpj     Crescimento anual ap…      1                   2.86 e-25
+11  2021 Pós-EC 95                0.770       1 1.000e+ 0 5.75 e- 9 Regime baixo                       1 MS_H1_g_lndpj     H1       g_lndpj     Crescimento anual ap…      1.000               5.75 e- 9
+12  2022 Pós-EC 95                7.68        2 3.32 e- 1 6.68 e- 1 Regime alto                        2 MS_H1_g_lndpj     H1       g_lndpj     Crescimento anual ap…      0.332               6.68 e- 1
+13  2023 Novo arcabouço fiscal    6.23        2 2.37 e- 1 7.63 e- 1 Regime alto                        2 MS_H1_g_lndpj     H1       g_lndpj     Crescimento anual ap…      0.237               7.63 e- 1
+14  2024 Novo arcabouço fiscal   10.2         1 9.98 e- 1 2.42 e- 3 Regime baixo                       1 MS_H1_g_lndpj     H1       g_lndpj     Crescimento anual ap…      0.998               2.42 e- 3
+15  2010 Pré-intervenção          0.0452      2 0         1    e+ 0 Regime baixo                       1 MS_H2_share_odck  H2       share_odck  Participação das des…      1                   0        
+16  2011 Pré-intervenção          0.0506      2 5.10 e- 2 9.49 e- 1 Regime baixo                       1 MS_H2_share_odck  H2       share_odck  Participação das des…      0.949               5.10 e- 2
+17  2012 Pré-intervenção          0.0784      1 1.000e+ 0 9.16 e- 7 Regime alto                        2 MS_H2_share_odck  H2       share_odck  Participação das des…      0.000000916         1.000e+ 0
+18  2013 Pré-intervenção          0.0730      1 1.000e+ 0 9.81 e- 7 Regime alto                        2 MS_H2_share_odck  H2       share_odck  Participação das des…      0.000000981         1.000e+ 0
+19  2014 Pré-intervenção          0.0654      1 1.000e+ 0 1.09 e- 4 Regime alto                        2 MS_H2_share_odck  H2       share_odck  Participação das des…      0.000109            1.000e+ 0
+20  2015 Pré-intervenção          0.0785      1 1.000e+ 0 3.62 e- 8 Regime alto                        2 MS_H2_share_odck  H2       share_odck  Participação das des…      0.0000000362        1.000e+ 0
+21  2016 Pré-intervenção          0.0577      1 9.90 e- 1 1.05 e- 2 Regime alto                        2 MS_H2_share_odck  H2       share_odck  Participação das des…      0.0105              9.90 e- 1
+22  2017 Pós-EC 95                0.0623      1 9.99 e- 1 9.91 e- 4 Regime alto                        2 MS_H2_share_odck  H2       share_odck  Participação das des…      0.000991            9.99 e- 1
+23  2018 Pós-EC 95                0.0750      1 1.000e+ 0 2.81 e- 7 Regime alto                        2 MS_H2_share_odck  H2       share_odck  Participação das des…      0.000000281         1.000e+ 0
+24  2019 Pós-EC 95                0.0695      1 1.000e+ 0 3.09 e- 4 Regime alto                        2 MS_H2_share_odck  H2       share_odck  Participação das des…      0.000309            1.000e+ 0
+25  2020 Pós-EC 95                0.0372      2 6.07 e- 5 1.000e+ 0 Regime baixo                       1 MS_H2_share_odck  H2       share_odck  Participação das des…      1.000               6.07 e- 5
+26  2021 Pós-EC 95                0.0315      2 1.33 e- 7 1.000e+ 0 Regime baixo                       1 MS_H2_share_odck  H2       share_odck  Participação das des…      1.000               1.33 e- 7
+27  2022 Pós-EC 95                0.0413      2 1.39 e- 5 1.000e+ 0 Regime baixo                       1 MS_H2_share_odck  H2       share_odck  Participação das des…      1.000               1.39 e- 5
+28  2023 Novo arcabouço fiscal    0.0504      2 1.51 e- 3 9.98 e- 1 Regime baixo                       1 MS_H2_share_odck  H2       share_odck  Participação das des…      0.998               1.51 e- 3
+29  2024 Novo arcabouço fiscal    0.0462      2 1.12 e- 3 9.99 e- 1 Regime baixo                       1 MS_H2_share_odck  H2       share_odck  Participação das des…      0.999               1.12 e- 3
+30  2010 Pré-intervenção         -3.02        1 1    e+ 0 0         Regime baixo                       1 MS_H2_ln_odck_dpe H2       ln_odck_dpe Razão logarítmica en…      1                   0        
+31  2011 Pré-intervenção         -2.89        1 9.95 e- 1 4.73 e- 3 Regime baixo                       1 MS_H2_ln_odck_dpe H2       ln_odck_dpe Razão logarítmica en…      0.995               4.73 e- 3
+32  2012 Pré-intervenção         -2.43        2 1.78 e- 3 9.98 e- 1 Regime alto                        2 MS_H2_ln_odck_dpe H2       ln_odck_dpe Razão logarítmica en…      0.00178             9.98 e- 1
+33  2013 Pré-intervenção         -2.50        2 1.67 e- 4 1.000e+ 0 Regime alto                        2 MS_H2_ln_odck_dpe H2       ln_odck_dpe Razão logarítmica en…      0.000167            1.000e+ 0
+34  2014 Pré-intervenção         -2.61        2 1.37 e- 3 9.99 e- 1 Regime alto                        2 MS_H2_ln_odck_dpe H2       ln_odck_dpe Razão logarítmica en…      0.00137             9.99 e- 1
+35  2015 Pré-intervenção         -2.35        2 3.03 e- 5 1.000e+ 0 Regime alto                        2 MS_H2_ln_odck_dpe H2       ln_odck_dpe Razão logarítmica en…      0.0000303           1.000e+ 0
+36  2016 Pré-intervenção         -2.69        2 8.77 e- 3 9.91 e- 1 Regime alto                        2 MS_H2_ln_odck_dpe H2       ln_odck_dpe Razão logarítmica en…      0.00877             9.91 e- 1
+37  2017 Pós-EC 95               -2.61        2 1.70 e- 3 9.98 e- 1 Regime alto                        2 MS_H2_ln_odck_dpe H2       ln_odck_dpe Razão logarítmica en…      0.00170             9.98 e- 1
+38  2018 Pós-EC 95               -2.41        2 5.37 e- 5 1.000e+ 0 Regime alto                        2 MS_H2_ln_odck_dpe H2       ln_odck_dpe Razão logarítmica en…      0.0000537           1.000e+ 0
+39  2019 Pós-EC 95               -2.51        2 6.11 e- 3 9.94 e- 1 Regime alto                        2 MS_H2_ln_odck_dpe H2       ln_odck_dpe Razão logarítmica en…      0.00611             9.94 e- 1
+40  2020 Pós-EC 95               -3.18        1 1.000e+ 0 1.41 e- 8 Regime baixo                       1 MS_H2_ln_odck_dpe H2       ln_odck_dpe Razão logarítmica en…      1.000               1.41 e- 8
+41  2021 Pós-EC 95               -3.35        1 1.000e+ 0 2.82 e-14 Regime baixo                       1 MS_H2_ln_odck_dpe H2       ln_odck_dpe Razão logarítmica en…      1.000               2.82 e-14
+42  2022 Pós-EC 95               -3.05        1 1.000e+ 0 2.70 e- 7 Regime baixo                       1 MS_H2_ln_odck_dpe H2       ln_odck_dpe Razão logarítmica en…      1.000               2.70 e- 7
+43  2023 Novo arcabouço fiscal   -2.82        1 9.98 e- 1 1.87 e- 3 Regime baixo                       1 MS_H2_ln_odck_dpe H2       ln_odck_dpe Razão logarítmica en…      0.998               1.87 e- 3
+44  2024 Novo arcabouço fiscal   -2.91        1 9.99 e- 1 6.44 e- 4 Regime baixo                       1 MS_H2_ln_odck_dpe H2       ln_odck_dpe Razão logarítmica en…      0.999               6.44 e- 4
+45  2010 Pré-intervenção         -3.05        1 1    e+ 0 0         Regime baixo                       1 MS_H2_ln_odck_drh H2       ln_odck_drh Razão logarítmica en…      1                   0        
+46  2011 Pré-intervenção         -2.93        1 9.69 e- 1 3.11 e- 2 Regime baixo                       1 MS_H2_ln_odck_drh H2       ln_odck_drh Razão logarítmica en…      0.969               3.11 e- 2
+47  2012 Pré-intervenção         -2.46        2 7.30 e- 4 9.99 e- 1 Regime alto                        2 MS_H2_ln_odck_drh H2       ln_odck_drh Razão logarítmica en…      0.000730            9.99 e- 1
+48  2013 Pré-intervenção         -2.54        2 7.23 e- 5 1.000e+ 0 Regime alto                        2 MS_H2_ln_odck_drh H2       ln_odck_drh Razão logarítmica en…      0.0000723           1.000e+ 0
+49  2014 Pré-intervenção         -2.66        2 6.17 e- 4 9.99 e- 1 Regime alto                        2 MS_H2_ln_odck_drh H2       ln_odck_drh Razão logarítmica en…      0.000617            9.99 e- 1
+50  2015 Pré-intervenção         -2.46        2 3.40 e- 5 1.000e+ 0 Regime alto                        2 MS_H2_ln_odck_drh H2       ln_odck_drh Razão logarítmica en…      0.0000340           1.000e+ 0
+51  2016 Pré-intervenção         -2.79        2 1.56 e- 2 9.84 e- 1 Regime alto                        2 MS_H2_ln_odck_drh H2       ln_odck_drh Razão logarítmica en…      0.0156              9.84 e- 1
+52  2017 Pós-EC 95               -2.71        2 2.97 e- 3 9.97 e- 1 Regime alto                        2 MS_H2_ln_odck_drh H2       ln_odck_drh Razão logarítmica en…      0.00297             9.97 e- 1
+53  2018 Pós-EC 95               -2.51        2 5.73 e- 5 1.000e+ 0 Regime alto                        2 MS_H2_ln_odck_drh H2       ln_odck_drh Razão logarítmica en…      0.0000573           1.000e+ 0
+54  2019 Pós-EC 95               -2.59        2 5.80 e- 3 9.94 e- 1 Regime alto                        2 MS_H2_ln_odck_drh H2       ln_odck_drh Razão logarítmica en…      0.00580             9.94 e- 1
+55  2020 Pós-EC 95               -3.25        1 1.000e+ 0 1.10 e- 7 Regime baixo                       1 MS_H2_ln_odck_drh H2       ln_odck_drh Razão logarítmica en…      1.000               1.10 e- 7
+56  2021 Pós-EC 95               -3.43        1 1.000e+ 0 7.39 e-13 Regime baixo                       1 MS_H2_ln_odck_drh H2       ln_odck_drh Razão logarítmica en…      1.000               7.39 e-13
+57  2022 Pós-EC 95               -3.15        1 1.000e+ 0 3.97 e- 7 Regime baixo                       1 MS_H2_ln_odck_drh H2       ln_odck_drh Razão logarítmica en…      1.000               3.97 e- 7
+58  2023 Novo arcabouço fiscal   -2.94        1 9.99 e- 1 8.73 e- 4 Regime baixo                       1 MS_H2_ln_odck_drh H2       ln_odck_drh Razão logarítmica en…      0.999               8.73 e- 4
+59  2024 Novo arcabouço fiscal   -3.03        1 1.000e+ 0 2.57 e- 4 Regime baixo                       1 MS_H2_ln_odck_drh H2       ln_odck_drh Razão logarítmica en…      1.000               2.57 e- 4
+60  2010 Pré-intervenção          0.0153      2 0         1    e+ 0 Regime baixo                       1 MS_H3_share_dk    H3       share_dk    Participação das des…      1                   0        
+61  2011 Pré-intervenção          0.0215      1 9.85 e- 1 1.46 e- 2 Regime alto                        2 MS_H3_share_dk    H3       share_dk    Participação das des…      0.0146              9.85 e- 1
+62  2012 Pré-intervenção          0.0268      1 1.000e+ 0 2.32 e- 6 Regime alto                        2 MS_H3_share_dk    H3       share_dk    Participação das des…      0.00000232          1.000e+ 0
+63  2013 Pré-intervenção          0.0295      1 1.000e+ 0 6.54 e- 8 Regime alto                        2 MS_H3_share_dk    H3       share_dk    Participação das des…      0.0000000654        1.000e+ 0
+64  2014 Pré-intervenção          0.0207      1 9.59 e- 1 4.11 e- 2 Regime alto                        2 MS_H3_share_dk    H3       share_dk    Participação das des…      0.0411              9.59 e- 1
+65  2015 Pré-intervenção          0.0120      2 2.86 e- 4 1.000e+ 0 Regime baixo                       1 MS_H3_share_dk    H3       share_dk    Participação das des…      1.000               2.86 e- 4
+66  2016 Pré-intervenção          0.00887     2 9.86 e- 7 1.000e+ 0 Regime baixo                       1 MS_H3_share_dk    H3       share_dk    Participação das des…      1.000               9.86 e- 7
+67  2017 Pós-EC 95                0.0150      2 1.31 e- 2 9.87 e- 1 Regime baixo                       1 MS_H3_share_dk    H3       share_dk    Participação das des…      0.987               1.31 e- 2
+68  2018 Pós-EC 95                0.0285      1 1.000e+ 0 1.39 e- 6 Regime alto                        2 MS_H3_share_dk    H3       share_dk    Participação das des…      0.00000139          1.000e+ 0
+69  2019 Pós-EC 95                0.0279      1 1.000e+ 0 2.97 e- 6 Regime alto                        2 MS_H3_share_dk    H3       share_dk    Participação das des…      0.00000297          1.000e+ 0
+70  2020 Pós-EC 95                0.00798     2 1.81 e- 6 1.000e+ 0 Regime baixo                       1 MS_H3_share_dk    H3       share_dk    Participação das des…      1.000               1.81 e- 6
+71  2021 Pós-EC 95                0.00481     2 5.81 e- 9 1.000e+ 0 Regime baixo                       1 MS_H3_share_dk    H3       share_dk    Participação das des…      1.000               5.81 e- 9
+72  2022 Pós-EC 95                0.00831     2 4.61 e- 7 1.000e+ 0 Regime baixo                       1 MS_H3_share_dk    H3       share_dk    Participação das des…      1.000               4.61 e- 7
+73  2023 Novo arcabouço fiscal    0.0126      2 1.09 e- 4 1.000e+ 0 Regime baixo                       1 MS_H3_share_dk    H3       share_dk    Participação das des…      1.000               1.09 e- 4
+74  2024 Novo arcabouço fiscal    0.0114      2 5.23 e- 5 1.000e+ 0 Regime baixo                       1 MS_H3_share_dk    H3       share_dk    Participação das des…      1.000               5.23 e- 5
+75  2011 Pré-intervenção         39.4         1 1    e+ 0 0         Regime alto                        2 MS_H3_g_lndk      H3       g_lndk      Crescimento anual ap…      0                   1    e+ 0
+76  2012 Pré-intervenção         28.7         2 4.07 e- 1 5.93 e- 1 Regime baixo                       1 MS_H3_g_lndk      H3       g_lndk      Crescimento anual ap…      0.593               4.07 e- 1
+77  2013 Pré-intervenção         18.9         2 7.18 e- 2 9.28 e- 1 Regime baixo                       1 MS_H3_g_lndk      H3       g_lndk      Crescimento anual ap…      0.928               7.18 e- 2
+78  2014 Pré-intervenção        -27.9         2 1.21 e- 8 1.000e+ 0 Regime baixo                       1 MS_H3_g_lndk      H3       g_lndk      Crescimento anual ap…      1.000               1.21 e- 8
+79  2015 Pré-intervenção        -38.9         2 5.53 e-11 1.000e+ 0 Regime baixo                       1 MS_H3_g_lndk      H3       g_lndk      Crescimento anual ap…      1.000               5.53 e-11
+80  2016 Pré-intervenção        -27.4         2 2.66 e- 8 1.000e+ 0 Regime baixo                       1 MS_H3_g_lndk      H3       g_lndk      Crescimento anual ap…      1.000               2.66 e- 8
+81  2017 Pós-EC 95               59.3         1 8.39 e- 1 1.61 e- 1 Regime alto                        2 MS_H3_g_lndk      H3       g_lndk      Crescimento anual ap…      0.161               8.39 e- 1
+82  2018 Pós-EC 95               68.5         1 8.03 e- 1 1.97 e- 1 Regime alto                        2 MS_H3_g_lndk      H3       g_lndk      Crescimento anual ap…      0.197               8.03 e- 1
+83  2019 Pós-EC 95                5.13        2 3.58 e- 3 9.96 e- 1 Regime baixo                       1 MS_H3_g_lndk      H3       g_lndk      Crescimento anual ap…      0.996               3.58 e- 3
+84  2020 Pós-EC 95             -128.          2 5.09 e-40 1    e+ 0 Regime baixo                       1 MS_H3_g_lndk      H3       g_lndk      Crescimento anual ap…      1                   5.09 e-40
+85  2021 Pós-EC 95              -49.8         2 2.85 e-13 1.000e+ 0 Regime baixo                       1 MS_H3_g_lndk      H3       g_lndk      Crescimento anual ap…      1.000               2.85 e-13
+86  2022 Pós-EC 95               62.4         1 8.34 e- 1 1.66 e- 1 Regime alto                        2 MS_H3_g_lndk      H3       g_lndk      Crescimento anual ap…      0.166               8.34 e- 1
+87  2023 Novo arcabouço fiscal   48.0         1 8.07 e- 1 1.93 e- 1 Regime alto                        2 MS_H3_g_lndk      H3       g_lndk      Crescimento anual ap…      0.193               8.07 e- 1
+88  2024 Novo arcabouço fiscal    0.133       2 1.04 e- 3 9.99 e- 1 Regime baixo                       1 MS_H3_g_lndk      H3       g_lndk      Crescimento anual ap…      0.999               1.04 e- 3
+
+
+============================================================
+FIM DO RESUMO FINAL
+============================================================

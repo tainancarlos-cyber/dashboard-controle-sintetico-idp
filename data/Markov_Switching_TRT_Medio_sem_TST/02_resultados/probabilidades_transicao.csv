@@ -1,0 +1,25 @@
+modelo;hipotese;variavel;regime_origem_original;regime_origem;regime_destino_original;regime_destino;prob_transicao
+MS_H1_g_lndpj;H1;g_lndpj;1;Regime baixo;1;Regime baixo;0,496222488305832
+MS_H1_g_lndpj;H1;g_lndpj;1;Regime baixo;2;Regime alto;0,503777511694168
+MS_H1_g_lndpj;H1;g_lndpj;2;Regime alto;1;Regime baixo;0,781642737878769
+MS_H1_g_lndpj;H1;g_lndpj;2;Regime alto;2;Regime alto;0,218357262121232
+MS_H2_share_odck;H2;share_odck;1;Regime alto;1;Regime alto;0,874041209798553
+MS_H2_share_odck;H2;share_odck;1;Regime alto;2;Regime baixo;0,125958790201447
+MS_H2_share_odck;H2;share_odck;2;Regime baixo;1;Regime alto;0,170144438970279
+MS_H2_share_odck;H2;share_odck;2;Regime baixo;2;Regime baixo;0,829855561029721
+MS_H2_ln_odck_dpe;H2;ln_odck_dpe;1;Regime baixo;1;Regime baixo;0,831349931341780
+MS_H2_ln_odck_dpe;H2;ln_odck_dpe;1;Regime baixo;2;Regime alto;0,168650068658219
+MS_H2_ln_odck_dpe;H2;ln_odck_dpe;2;Regime alto;1;Regime baixo;0,126901928239154
+MS_H2_ln_odck_dpe;H2;ln_odck_dpe;2;Regime alto;2;Regime alto;0,873098071760846
+MS_H2_ln_odck_drh;H2;ln_odck_drh;1;Regime baixo;1;Regime baixo;0,829911036293658
+MS_H2_ln_odck_drh;H2;ln_odck_drh;1;Regime baixo;2;Regime alto;0,170088963706342
+MS_H2_ln_odck_drh;H2;ln_odck_drh;2;Regime alto;1;Regime baixo;0,127308431560051
+MS_H2_ln_odck_drh;H2;ln_odck_drh;2;Regime alto;2;Regime alto;0,872691568439949
+MS_H3_share_dk;H3;share_dk;1;Regime alto;1;Regime alto;0,664296860599443
+MS_H3_share_dk;H3;share_dk;1;Regime alto;2;Regime baixo;0,335703139400557
+MS_H3_share_dk;H3;share_dk;2;Regime baixo;1;Regime alto;0,248714720945913
+MS_H3_share_dk;H3;share_dk;2;Regime baixo;2;Regime baixo;0,751285279054087
+MS_H3_g_lndk;H3;g_lndk;1;Regime alto;1;Regime alto;0,384819633375484
+MS_H3_g_lndk;H3;g_lndk;1;Regime alto;2;Regime baixo;0,615180366624516
+MS_H3_g_lndk;H3;g_lndk;2;Regime baixo;1;Regime alto;0,234730632271576
+MS_H3_g_lndk;H3;g_lndk;2;Regime baixo;2;Regime baixo;0,765269367728424
