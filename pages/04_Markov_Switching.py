@@ -5,6 +5,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
 
+from glossario_variaveis import glossary_section, popover
 from markov_exports import (
     FIGURES_DIR,
     HYPOTHESIS_SUMMARY,
@@ -135,6 +136,19 @@ top[0].metric("Modelos estimados", len(models))
 top[1].metric("Periodo analisado", f"{int(summary['ano_inicial'].min())}-{int(summary['ano_final'].max())}")
 top[2].metric("Intervencao", "2017")
 top[3].metric("Novo arcabouco", "2023")
+
+st.markdown("**Variáveis e razões presentes nas séries de Markov Switching**")
+vcols = st.columns(5)
+with vcols[0]:
+    popover("DPJ")
+with vcols[1]:
+    popover("ln_odck_dpe", "ODCK/DPE")
+with vcols[2]:
+    popover("ln_odck_drh", "ODCK/DRH")
+with vcols[3]:
+    popover("share_odck", "ODCK/DPJ")
+with vcols[4]:
+    popover("share_dk", "DK/DPJ")
 
 st.subheader("Leitura por hipotese")
 hypotheses = sorted(summary["hipotese"].dropna().unique(), key=evidence_rank)
@@ -380,3 +394,8 @@ with tab_data:
         file_name="probabilidades_anuais_markov.csv",
         mime="text/csv",
     )
+
+glossary_section(
+    ["DPJ", "ODCK", "DRH", "DPE", "DK", "share_odck", "share_dk", "ln_odck_dpe", "ln_odck_drh"],
+    "Glossário das séries de Markov Switching",
+)

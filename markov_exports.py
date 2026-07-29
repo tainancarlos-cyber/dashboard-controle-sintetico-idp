@@ -30,10 +30,10 @@ PERIOD_ORDER = ["Pre-intervencao", "Pos-EC 95", "Novo arcabouco fiscal"]
 
 MODEL_TITLES = {
     "MS_H1_g_lndpj": "H1 - Crescimento da despesa total",
-    "MS_H2_share_odck": "H2 - Participacao das despesas discricionarias",
-    "MS_H2_ln_odck_dpe": "H2 - ODCK em relacao a DPE",
-    "MS_H2_ln_odck_drh": "H2 - ODCK em relacao a DRH",
-    "MS_H3_share_dk": "H3 - Participacao das despesas de capital",
+    "MS_H2_share_odck": "H2 - Participacao ODCK/DPJ",
+    "MS_H2_ln_odck_dpe": "H2 - Log da razao ODCK/DPE",
+    "MS_H2_ln_odck_drh": "H2 - Log da razao ODCK/DRH",
+    "MS_H3_share_dk": "H3 - Participacao DK/DPJ",
     "MS_H3_g_lndk": "H3 - Crescimento das despesas de capital",
 }
 

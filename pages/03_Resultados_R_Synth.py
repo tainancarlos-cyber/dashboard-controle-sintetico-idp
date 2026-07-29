@@ -4,6 +4,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
 
+from glossario_variaveis import glossary_section, help_text, popover
 from r_synth_exports import (
     EXPORT_DIR,
     OUTCOME_LABELS,
@@ -50,15 +51,28 @@ pre_means_long = data["pre_means_long"][data["pre_means_long"]["modelo"].eq(sele
 
 outcome = summary["outcome"]
 outcome_label = OUTCOME_LABELS.get(outcome, outcome)
+outcome_help = help_text(outcome)
 
 st.subheader(model_label(selected_model, data["model_dict"]))
 
 cards = st.columns(5)
 cards[0].metric("Doadores usados", int(summary["n_doadores"]))
-cards[1].metric("MSPE pre", format_number(summary["mspe_pre"], 4))
-cards[2].metric("MSPE pos", format_number(summary["mspe_pos"], 4))
-cards[3].metric("Razao pos/pre", format_number(summary["razao_mspe_pos_pre"], 2))
-cards[4].metric("Gap medio pos", format_number(summary["gap_medio_pos"], 4))
+cards[1].metric("MSPE pre", format_number(summary["mspe_pre"], 4), help="Erro quadrático médio no período pré-intervenção.")
+cards[2].metric("MSPE pos", format_number(summary["mspe_pos"], 4), help="Erro quadrático médio no período pós-intervenção.")
+cards[3].metric("Razao pos/pre", format_number(summary["razao_mspe_pos_pre"], 2), help="Razão entre MSPE pós e MSPE pré.")
+cards[4].metric("Gap medio pos", format_number(summary["gap_medio_pos"], 4), help=f"Gap médio do resultado selecionado. {outcome_help or ''}")
+
+formula_cols = st.columns(5)
+with formula_cols[0]:
+    popover("DPJ")
+with formula_cols[1]:
+    popover("share_odck", "ODCK/DPJ")
+with formula_cols[2]:
+    popover("ln_odck_dpe", "ODCK/DPE")
+with formula_cols[3]:
+    popover("ln_odck_drh", "ODCK/DRH")
+with formula_cols[4]:
+    popover("share_dk", "DK/DPJ")
 
 st.info(
     f"{summary['interpretacao_sinal']}. Classificacao pela razao MSPE: "
@@ -239,7 +253,17 @@ with tabs[4]:
     st.markdown("**Dicionario dos modelos**")
     st.dataframe(data["model_dict"], use_container_width=True, hide_index=True)
     st.markdown("**Dicionario das variaveis**")
-    st.dataframe(data["variable_dict"], use_container_width=True, hide_index=True)
+    st.dataframe(
+        data["variable_dict"],
+        use_container_width=True,
+        hide_index=True,
+        column_config={
+            "variavel": st.column_config.TextColumn(
+                "Variável",
+                help="Consulte o glossário abaixo para fórmula e decomposição dos componentes usados nos modelos.",
+            )
+        },
+    )
     st.markdown("**Doadores selecionados por porte**")
     st.dataframe(data["donors"], use_container_width=True, hide_index=True)
 
@@ -261,3 +285,8 @@ with tabs[5]:
                 st.warning(f"Arquivo nao encontrado: {path.name}")
     else:
         st.write("Ative a opcao na lateral para exibir os PNGs originais gerados pelo R.")
+
+glossary_section(
+    ["DPJ", "ODCK", "DRH", "DPE", "DK", "share_odck", "share_dk", "ln_odck_dpe", "ln_odck_drh"],
+    "Glossário das variáveis dos modelos de Controle Sintético",
+)

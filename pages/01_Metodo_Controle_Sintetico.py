@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import streamlit as st
 
+from glossario_variaveis import glossary_section, help_text, popover
 from r_synth_exports import COMPARABILITY_DIR, comparability_image, load_exports
 
 
@@ -39,6 +40,19 @@ cards[1].metric("TST", "Excluido")
 cards[2].metric("TJs candidatos", data["base_wide"][data["base_wide"]["sigla"].str.startswith("TJ")]["sigla"].nunique())
 cards[3].metric("Doadores efetivos", int(data["summary"]["n_doadores"].max()))
 
+st.markdown("**Variáveis orçamentárias usadas na especificação**")
+vcols = st.columns(5)
+with vcols[0]:
+    popover("DPJ")
+with vcols[1]:
+    popover("DPE")
+with vcols[2]:
+    popover("DRH")
+with vcols[3]:
+    popover("ODCK")
+with vcols[4]:
+    popover("DK")
+
 st.subheader("Grupo de doadores")
 all_tjs = (
     data["base_wide"][data["base_wide"]["sigla"].str.startswith("TJ")][["sigla"]]
@@ -64,7 +78,21 @@ st.markdown(
 )
 
 if "comparability_evidence" in data:
-    st.dataframe(data["comparability_evidence"], use_container_width=True, hide_index=True)
+    st.dataframe(
+        data["comparability_evidence"],
+        use_container_width=True,
+        hide_index=True,
+        column_config={
+            "variavel": st.column_config.TextColumn(
+                "Variável",
+                help="Consulte os botões acima ou o glossário ao final para fórmula e decomposição.",
+            ),
+            "pct_20_pre": st.column_config.NumberColumn(
+                "Dentro de 20% no pré",
+                help="Percentual de observações/tribunais próximos da média no período pré-intervenção.",
+            ),
+        },
+    )
 
 for file_name, title in [
     ("01_trajetorias_indexadas_trts_2016_100.png", "Trajetorias indexadas dos TRTs"),
@@ -93,4 +121,9 @@ st.markdown(
 
     A linha de 2023 nos graficos e mantida como marco complementar associado ao novo arcabouco fiscal.
     """
+)
+
+glossary_section(
+    ["DPJ", "DPE", "DRH", "ODCK", "DK", "share_odck", "share_dk", "ln_odck_dpe", "ln_odck_drh"],
+    "Glossário da especificação",
 )

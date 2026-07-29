@@ -6,6 +6,8 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 
+from glossario_variaveis import glossary_section, help_text, popover
+
 
 BASE_DIR = Path(__file__).resolve().parents[1]
 PRODUCTIVITY_DIR = BASE_DIR / "data" / "Analise_Produtividade_24_TRTs"
@@ -76,16 +78,31 @@ baixados = variation[variation["indicador"].str.contains("Processos baixados", c
 tcl_2016 = iad_tcl[(iad_tcl["ano"].eq(2016)) & (iad_tcl["indicador_raw"].eq("tcl_pct"))].iloc[0]
 tcl_2024 = iad_tcl[(iad_tcl["ano"].eq(2024)) & (iad_tcl["indicador_raw"].eq("tcl_pct"))].iloc[0]
 
-cards[0].metric("Despesa real 2016-2024", format_pct(dpj["variacao_media_pct"]))
-cards[1].metric("Força de trabalho", format_pct(ftt["variacao_media_pct"]))
-cards[2].metric("Processos baixados", format_pct(baixados["variacao_media_pct"]))
-cards[3].metric("TCL média", f"{format_pct(tcl_2016['media_pct'])} -> {format_pct(tcl_2024['media_pct'])}")
+cards[0].metric("Despesa real - DPJ", format_pct(dpj["variacao_media_pct"]), help=help_text("DPJ"))
+cards[1].metric("Força de trabalho - FTT", format_pct(ftt["variacao_media_pct"]), help=help_text("FTT"))
+cards[2].metric("Processos baixados - TBaix", format_pct(baixados["variacao_media_pct"]), help=help_text("TBaix"))
+cards[3].metric("TCL média", f"{format_pct(tcl_2016['media_pct'])} -> {format_pct(tcl_2024['media_pct'])}", help=help_text("TCL"))
 
 st.info(
     "A despesa real cresceu entre 2016 e 2024, mas isso não contradiz o Controle Sintético: "
     "o método compara a trajetória observada com a trajetória contrafactual estimada, não testa "
     "queda absoluta da despesa."
 )
+
+with st.container():
+    pcols = st.columns(6)
+    with pcols[0]:
+        popover("DPJ")
+    with pcols[1]:
+        popover("FTT")
+    with pcols[2]:
+        popover("TBaix")
+    with pcols[3]:
+        popover("IPM")
+    with pcols[4]:
+        popover("IPSJud")
+    with pcols[5]:
+        popover("TCL")
 
 tab_summary, tab_figures, tab_tables, tab_limits = st.tabs(
     ["Leitura sintética", "Gráficos", "Tabelas", "Limites"]
@@ -130,6 +147,19 @@ with tab_summary:
     )
 
 with tab_figures:
+    st.markdown("**Fórmulas dos indicadores exibidos nos gráficos**")
+    fcols = st.columns(5)
+    with fcols[0]:
+        popover("IAD")
+    with fcols[1]:
+        popover("TCL")
+    with fcols[2]:
+        popover("KS")
+    with fcols[3]:
+        popover("K")
+    with fcols[4]:
+        popover("IPM")
+
     show_image(
         "01_escala_despesa_atividade.png",
         "Escala, despesa e atividade jurisdicional",
@@ -171,6 +201,13 @@ with tab_tables:
         ],
         use_container_width=True,
         hide_index=True,
+        column_config={
+            "indicador": st.column_config.TextColumn(
+                "Indicador",
+                help="Passe o mouse sobre os botões de glossário acima ou consulte o glossário ao final para ver fórmulas e decomposição.",
+            ),
+            "n_trts": st.column_config.NumberColumn("TRTs", help="Número de tribunais regionais considerados."),
+        },
     )
 
     st.subheader("Trajetórias anuais indexadas")
@@ -231,3 +268,8 @@ with tab_limits:
         """
     )
     st.info(f"Arquivos carregados de: {PRODUCTIVITY_DIR}")
+
+glossary_section(
+    ["DPJ", "ODCK", "DRH", "DPE", "DK", "FTT", "TPEfet", "TBaix", "Cn", "Cp", "IAD", "TCL", "IPM", "IPSJud", "KS", "K"],
+    "Glossário e fórmulas dos indicadores de produtividade",
+)

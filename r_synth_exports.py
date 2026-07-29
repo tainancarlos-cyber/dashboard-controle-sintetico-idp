@@ -36,10 +36,10 @@ MODEL_TITLES = {
 
 OUTCOME_LABELS = {
     "ln_dpj": "Log da despesa total - DPJ",
-    "share_odck": "ODCK / DPJ",
-    "ln_odck_dpe": "Log(ODCK) - Log(DPE)",
-    "ln_odck_drh": "Log(ODCK) - Log(DRH)",
-    "share_dk": "DK / DPJ",
+    "share_odck": "Participação ODCK/DPJ",
+    "ln_odck_dpe": "Log da razão ODCK/DPE",
+    "ln_odck_drh": "Log da razão ODCK/DRH",
+    "share_dk": "Participação DK/DPJ",
     "ln_dk": "Log das despesas de capital - DK",
 }
 

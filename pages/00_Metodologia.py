@@ -5,6 +5,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
 
+from glossario_variaveis import glossary_section, help_text, popover
 from r_synth_exports import (
     COMPARABILITY_DIR,
     EXPORT_DIR,
@@ -110,10 +111,22 @@ st.markdown(
 )
 
 top = st.columns([1.1, 1, 1, 1])
-top[0].metric("Modelos estimados", len(models))
+top[0].metric("Modelos estimados", len(models), help="Modelos baseados em DPJ, ODCK, DPE, DRH e DK.")
 top[1].metric("Unidade tratada", "TRT_MEDIO")
 top[2].metric("Intervencao", "2017")
 top[3].metric("Doadores max.", int(summary["n_doadores"].max()))
+
+gcols = st.columns(5)
+with gcols[0]:
+    popover("DPJ")
+with gcols[1]:
+    popover("ODCK")
+with gcols[2]:
+    popover("DPE")
+with gcols[3]:
+    popover("DRH")
+with gcols[4]:
+    popover("DK")
 
 selected_model = st.selectbox(
     "Escolha um modelo para detalhar",
@@ -242,8 +255,19 @@ with tabs[1]:
             cols[idx].metric(
                 f"{var.upper()} dentro de 20% da media no pre",
                 f"{row['pct_20_pre']:.1f}%",
+                help=help_text(var),
             )
-        st.dataframe(evidence, use_container_width=True, hide_index=True)
+        st.dataframe(
+            evidence,
+            use_container_width=True,
+            hide_index=True,
+            column_config={
+                "variavel": st.column_config.TextColumn(
+                    "Variável",
+                    help="Passe o mouse nas métricas acima ou consulte o glossário ao final.",
+                )
+            },
+        )
 
     image_specs = [
         ("01_trajetorias_indexadas_trts_2016_100.png", "Trajetorias indexadas dos TRTs"),
@@ -537,4 +561,9 @@ with tabs[7]:
         file_name="resumo_dashboard_controle_sintetico.csv",
         mime="text/csv",
     )
+
+glossary_section(
+    ["DPJ", "ODCK", "DRH", "DPE", "DK", "share_odck", "share_dk", "ln_odck_dpe", "ln_odck_drh"],
+    "Glossário das variáveis orçamentárias",
+)
 
