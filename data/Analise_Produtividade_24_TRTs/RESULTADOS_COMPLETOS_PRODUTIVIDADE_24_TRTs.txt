@@ -1,0 +1,2895 @@
+ANÁLISE DE PRODUTIVIDADE E TRAJETÓRIA DA DESPESA DOS 24 TRTs
+Arquivo de entrada: C:/Users/tst/OneDrive/Área de Trabalho/Meus Phytons/Arigo IDP/23-jun-2026/JN_23-Jun-2026.csv
+Pasta de saída: C:/Users/tst/OneDrive/Área de Trabalho/Meus Phytons/Arigo IDP/Analise_Produtividade_24_TRTs
+Período: 2010 a 2024
+Ano-base dos índices: 2016 = 100
+Unidades esperadas: TRT1 a TRT24
+Número esperado de observações TRT-ano: 360
+Número de linhas TRT-ano encontradas antes de completar o painel: 360
+TRTs ausentes integralmente na base: nenhum
+DPJ tratada como: despesa real/deflacionada
+
+Este arquivo contém diagnósticos, tabelas anuais, variações de 2016 a 2024,
+resumos por período, correlações descritivas e interpretação automática preliminar.
+
+============================================================
+1. COLUNAS SELECIONADAS
+============================================================
+# A tibble: 17 × 2
+   variavel       coluna_encontrada
+   <chr>          <chr>            
+ 1 Ano            ano              
+ 2 Sigla          sigla            
+ 3 DPJ            dpj              
+ 4 FTT            ftt              
+ 5 CN1            cn1              
+ 6 CN2            cn2              
+ 7 TBaix agregado tbaix            
+ 8 TBaix1         tbaix1           
+ 9 TBaix2         tbaix2           
+10 CP1            cp1              
+11 CP2            cp2              
+12 IPSJud         ipsjud           
+13 IPM            ipm              
+14 KS             ks               
+15 K              k                
+16 IAD            iad              
+17 TCL            tcl              
+
+============================================================
+2. DIAGNÓSTICO GERAL DE COBERTURA
+============================================================
+# A tibble: 20 × 7
+   variavel                 observacoes_esperadas observacoes_validas
+   <chr>                                    <int>               <int>
+ 1 casos_novos                                360                 360
+ 2 casos_pendentes                            360                 360
+ 3 cn1                                        360                 360
+ 4 cn2                                        360                 360
+ 5 cp1                                        360                 360
+ 6 cp2                                        360                 360
+ 7 dpj                                        360                 360
+ 8 dpj_por_forca_trabalho                     360                 360
+ 9 dpj_por_processo_baixado                   360                 360
+10 ftt                                        360                 360
+11 iad_pct                                    360                 360
+12 ipm                                        360                 360
+13 ipsjud                                     360                 360
+14 k                                          360                 360
+15 ks                                         360                 360
+16 processos_baixados                         360                 360
+17 tbaix1                                     360                 360
+18 tbaix2                                     360                 360
+19 tbaix_agregado                             360                 360
+20 tcl_pct                                    360                 360
+   observacoes_ausentes cobertura_pct trts_com_algum_dado anos_com_algum_dado
+                  <int>         <dbl>               <int>               <int>
+ 1                    0           100                  24                  15
+ 2                    0           100                  24                  15
+ 3                    0           100                  24                  15
+ 4                    0           100                  24                  15
+ 5                    0           100                  24                  15
+ 6                    0           100                  24                  15
+ 7                    0           100                  24                  15
+ 8                    0           100                  24                  15
+ 9                    0           100                  24                  15
+10                    0           100                  24                  15
+11                    0           100                  24                  15
+12                    0           100                  24                  15
+13                    0           100                  24                  15
+14                    0           100                  24                  15
+15                    0           100                  24                  15
+16                    0           100                  24                  15
+17                    0           100                  24                  15
+18                    0           100                  24                  15
+19                    0           100                  24                  15
+20                    0           100                  24                  15
+
+============================================================
+3. COBERTURA POR ANO E VARIÁVEL
+============================================================
+# A tibble: 300 × 3
+      ano variavel                 n_trts_validos
+    <int> <chr>                             <int>
+  1  2010 casos_novos                          24
+  2  2011 casos_novos                          24
+  3  2012 casos_novos                          24
+  4  2013 casos_novos                          24
+  5  2014 casos_novos                          24
+  6  2015 casos_novos                          24
+  7  2016 casos_novos                          24
+  8  2017 casos_novos                          24
+  9  2018 casos_novos                          24
+ 10  2019 casos_novos                          24
+ 11  2020 casos_novos                          24
+ 12  2021 casos_novos                          24
+ 13  2022 casos_novos                          24
+ 14  2023 casos_novos                          24
+ 15  2024 casos_novos                          24
+ 16  2010 casos_pendentes                      24
+ 17  2011 casos_pendentes                      24
+ 18  2012 casos_pendentes                      24
+ 19  2013 casos_pendentes                      24
+ 20  2014 casos_pendentes                      24
+ 21  2015 casos_pendentes                      24
+ 22  2016 casos_pendentes                      24
+ 23  2017 casos_pendentes                      24
+ 24  2018 casos_pendentes                      24
+ 25  2019 casos_pendentes                      24
+ 26  2020 casos_pendentes                      24
+ 27  2021 casos_pendentes                      24
+ 28  2022 casos_pendentes                      24
+ 29  2023 casos_pendentes                      24
+ 30  2024 casos_pendentes                      24
+ 31  2010 cn1                                  24
+ 32  2011 cn1                                  24
+ 33  2012 cn1                                  24
+ 34  2013 cn1                                  24
+ 35  2014 cn1                                  24
+ 36  2015 cn1                                  24
+ 37  2016 cn1                                  24
+ 38  2017 cn1                                  24
+ 39  2018 cn1                                  24
+ 40  2019 cn1                                  24
+ 41  2020 cn1                                  24
+ 42  2021 cn1                                  24
+ 43  2022 cn1                                  24
+ 44  2023 cn1                                  24
+ 45  2024 cn1                                  24
+ 46  2010 cn2                                  24
+ 47  2011 cn2                                  24
+ 48  2012 cn2                                  24
+ 49  2013 cn2                                  24
+ 50  2014 cn2                                  24
+ 51  2015 cn2                                  24
+ 52  2016 cn2                                  24
+ 53  2017 cn2                                  24
+ 54  2018 cn2                                  24
+ 55  2019 cn2                                  24
+ 56  2020 cn2                                  24
+ 57  2021 cn2                                  24
+ 58  2022 cn2                                  24
+ 59  2023 cn2                                  24
+ 60  2024 cn2                                  24
+ 61  2010 cp1                                  24
+ 62  2011 cp1                                  24
+ 63  2012 cp1                                  24
+ 64  2013 cp1                                  24
+ 65  2014 cp1                                  24
+ 66  2015 cp1                                  24
+ 67  2016 cp1                                  24
+ 68  2017 cp1                                  24
+ 69  2018 cp1                                  24
+ 70  2019 cp1                                  24
+ 71  2020 cp1                                  24
+ 72  2021 cp1                                  24
+ 73  2022 cp1                                  24
+ 74  2023 cp1                                  24
+ 75  2024 cp1                                  24
+ 76  2010 cp2                                  24
+ 77  2011 cp2                                  24
+ 78  2012 cp2                                  24
+ 79  2013 cp2                                  24
+ 80  2014 cp2                                  24
+ 81  2015 cp2                                  24
+ 82  2016 cp2                                  24
+ 83  2017 cp2                                  24
+ 84  2018 cp2                                  24
+ 85  2019 cp2                                  24
+ 86  2020 cp2                                  24
+ 87  2021 cp2                                  24
+ 88  2022 cp2                                  24
+ 89  2023 cp2                                  24
+ 90  2024 cp2                                  24
+ 91  2010 dpj                                  24
+ 92  2011 dpj                                  24
+ 93  2012 dpj                                  24
+ 94  2013 dpj                                  24
+ 95  2014 dpj                                  24
+ 96  2015 dpj                                  24
+ 97  2016 dpj                                  24
+ 98  2017 dpj                                  24
+ 99  2018 dpj                                  24
+100  2019 dpj                                  24
+101  2020 dpj                                  24
+102  2021 dpj                                  24
+103  2022 dpj                                  24
+104  2023 dpj                                  24
+105  2024 dpj                                  24
+106  2010 dpj_por_forca_trabalho               24
+107  2011 dpj_por_forca_trabalho               24
+108  2012 dpj_por_forca_trabalho               24
+109  2013 dpj_por_forca_trabalho               24
+110  2014 dpj_por_forca_trabalho               24
+111  2015 dpj_por_forca_trabalho               24
+112  2016 dpj_por_forca_trabalho               24
+113  2017 dpj_por_forca_trabalho               24
+114  2018 dpj_por_forca_trabalho               24
+115  2019 dpj_por_forca_trabalho               24
+116  2020 dpj_por_forca_trabalho               24
+117  2021 dpj_por_forca_trabalho               24
+118  2022 dpj_por_forca_trabalho               24
+119  2023 dpj_por_forca_trabalho               24
+120  2024 dpj_por_forca_trabalho               24
+121  2010 dpj_por_processo_baixado             24
+122  2011 dpj_por_processo_baixado             24
+123  2012 dpj_por_processo_baixado             24
+124  2013 dpj_por_processo_baixado             24
+125  2014 dpj_por_processo_baixado             24
+126  2015 dpj_por_processo_baixado             24
+127  2016 dpj_por_processo_baixado             24
+128  2017 dpj_por_processo_baixado             24
+129  2018 dpj_por_processo_baixado             24
+130  2019 dpj_por_processo_baixado             24
+131  2020 dpj_por_processo_baixado             24
+132  2021 dpj_por_processo_baixado             24
+133  2022 dpj_por_processo_baixado             24
+134  2023 dpj_por_processo_baixado             24
+135  2024 dpj_por_processo_baixado             24
+136  2010 ftt                                  24
+137  2011 ftt                                  24
+138  2012 ftt                                  24
+139  2013 ftt                                  24
+140  2014 ftt                                  24
+141  2015 ftt                                  24
+142  2016 ftt                                  24
+143  2017 ftt                                  24
+144  2018 ftt                                  24
+145  2019 ftt                                  24
+146  2020 ftt                                  24
+147  2021 ftt                                  24
+148  2022 ftt                                  24
+149  2023 ftt                                  24
+150  2024 ftt                                  24
+151  2010 iad_pct                              24
+152  2011 iad_pct                              24
+153  2012 iad_pct                              24
+154  2013 iad_pct                              24
+155  2014 iad_pct                              24
+156  2015 iad_pct                              24
+157  2016 iad_pct                              24
+158  2017 iad_pct                              24
+159  2018 iad_pct                              24
+160  2019 iad_pct                              24
+161  2020 iad_pct                              24
+162  2021 iad_pct                              24
+163  2022 iad_pct                              24
+164  2023 iad_pct                              24
+165  2024 iad_pct                              24
+166  2010 ipm                                  24
+167  2011 ipm                                  24
+168  2012 ipm                                  24
+169  2013 ipm                                  24
+170  2014 ipm                                  24
+171  2015 ipm                                  24
+172  2016 ipm                                  24
+173  2017 ipm                                  24
+174  2018 ipm                                  24
+175  2019 ipm                                  24
+176  2020 ipm                                  24
+177  2021 ipm                                  24
+178  2022 ipm                                  24
+179  2023 ipm                                  24
+180  2024 ipm                                  24
+181  2010 ipsjud                               24
+182  2011 ipsjud                               24
+183  2012 ipsjud                               24
+184  2013 ipsjud                               24
+185  2014 ipsjud                               24
+186  2015 ipsjud                               24
+187  2016 ipsjud                               24
+188  2017 ipsjud                               24
+189  2018 ipsjud                               24
+190  2019 ipsjud                               24
+191  2020 ipsjud                               24
+192  2021 ipsjud                               24
+193  2022 ipsjud                               24
+194  2023 ipsjud                               24
+195  2024 ipsjud                               24
+196  2010 k                                    24
+197  2011 k                                    24
+198  2012 k                                    24
+199  2013 k                                    24
+200  2014 k                                    24
+201  2015 k                                    24
+202  2016 k                                    24
+203  2017 k                                    24
+204  2018 k                                    24
+205  2019 k                                    24
+206  2020 k                                    24
+207  2021 k                                    24
+208  2022 k                                    24
+209  2023 k                                    24
+210  2024 k                                    24
+211  2010 ks                                   24
+212  2011 ks                                   24
+213  2012 ks                                   24
+214  2013 ks                                   24
+215  2014 ks                                   24
+216  2015 ks                                   24
+217  2016 ks                                   24
+218  2017 ks                                   24
+219  2018 ks                                   24
+220  2019 ks                                   24
+221  2020 ks                                   24
+222  2021 ks                                   24
+223  2022 ks                                   24
+224  2023 ks                                   24
+225  2024 ks                                   24
+226  2010 processos_baixados                   24
+227  2011 processos_baixados                   24
+228  2012 processos_baixados                   24
+229  2013 processos_baixados                   24
+230  2014 processos_baixados                   24
+231  2015 processos_baixados                   24
+232  2016 processos_baixados                   24
+233  2017 processos_baixados                   24
+234  2018 processos_baixados                   24
+235  2019 processos_baixados                   24
+236  2020 processos_baixados                   24
+237  2021 processos_baixados                   24
+238  2022 processos_baixados                   24
+239  2023 processos_baixados                   24
+240  2024 processos_baixados                   24
+241  2010 tbaix1                               24
+242  2011 tbaix1                               24
+243  2012 tbaix1                               24
+244  2013 tbaix1                               24
+245  2014 tbaix1                               24
+246  2015 tbaix1                               24
+247  2016 tbaix1                               24
+248  2017 tbaix1                               24
+249  2018 tbaix1                               24
+250  2019 tbaix1                               24
+251  2020 tbaix1                               24
+252  2021 tbaix1                               24
+253  2022 tbaix1                               24
+254  2023 tbaix1                               24
+255  2024 tbaix1                               24
+256  2010 tbaix2                               24
+257  2011 tbaix2                               24
+258  2012 tbaix2                               24
+259  2013 tbaix2                               24
+260  2014 tbaix2                               24
+261  2015 tbaix2                               24
+262  2016 tbaix2                               24
+263  2017 tbaix2                               24
+264  2018 tbaix2                               24
+265  2019 tbaix2                               24
+266  2020 tbaix2                               24
+267  2021 tbaix2                               24
+268  2022 tbaix2                               24
+269  2023 tbaix2                               24
+270  2024 tbaix2                               24
+271  2010 tbaix_agregado                       24
+272  2011 tbaix_agregado                       24
+273  2012 tbaix_agregado                       24
+274  2013 tbaix_agregado                       24
+275  2014 tbaix_agregado                       24
+276  2015 tbaix_agregado                       24
+277  2016 tbaix_agregado                       24
+278  2017 tbaix_agregado                       24
+279  2018 tbaix_agregado                       24
+280  2019 tbaix_agregado                       24
+281  2020 tbaix_agregado                       24
+282  2021 tbaix_agregado                       24
+283  2022 tbaix_agregado                       24
+284  2023 tbaix_agregado                       24
+285  2024 tbaix_agregado                       24
+286  2010 tcl_pct                              24
+287  2011 tcl_pct                              24
+288  2012 tcl_pct                              24
+289  2013 tcl_pct                              24
+290  2014 tcl_pct                              24
+291  2015 tcl_pct                              24
+292  2016 tcl_pct                              24
+293  2017 tcl_pct                              24
+294  2018 tcl_pct                              24
+295  2019 tcl_pct                              24
+296  2020 tcl_pct                              24
+297  2021 tcl_pct                              24
+298  2022 tcl_pct                              24
+299  2023 tcl_pct                              24
+300  2024 tcl_pct                              24
+
+============================================================
+4. BASES DE 2016 AUSENTES OU IGUAIS A ZERO
+============================================================
+# A tibble: 0 × 4
+# ℹ 4 variables: sigla <chr>, indicador_raw <chr>, indicador <chr>, valor_base_2016 <dbl>
+
+============================================================
+5. COMPARAÇÃO ENTRE TBAIX AGREGADO E TBAIX1 + TBAIX2
+============================================================
+# A tibble: 360 × 6
+    sigla   ano tbaix_agregado processos_baixados_componentes diferenca_absoluta
+    <chr> <int>          <dbl>                          <dbl>              <dbl>
+  1 TRT1   2010         388575                         388575                  0
+  2 TRT1   2011         372086                         372086                  0
+  3 TRT1   2012         348319                         348319                  0
+  4 TRT1   2013         397762                         397762                  0
+  5 TRT1   2014         450497                         450497                  0
+  6 TRT1   2015         420465                         420465                  0
+  7 TRT1   2016         368286                         368286                  0
+  8 TRT1   2017         422614                         422614                  0
+  9 TRT1   2018         390389                         390389                  0
+ 10 TRT1   2019         391977                         391977                  0
+ 11 TRT1   2020         300308                         300308                  0
+ 12 TRT1   2021         275774                         275774                  0
+ 13 TRT1   2022         332657                         332657                  0
+ 14 TRT1   2023         406591                         406591                  0
+ 15 TRT1   2024         485965                         485965                  0
+ 16 TRT10  2010          83020                          83020                  0
+ 17 TRT10  2011          93135                          93135                  0
+ 18 TRT10  2012          90983                          90983                  0
+ 19 TRT10  2013          81353                          81353                  0
+ 20 TRT10  2014          81075                          81075                  0
+ 21 TRT10  2015          88500                          88500                  0
+ 22 TRT10  2016         101662                         101662                  0
+ 23 TRT10  2017          94634                          94634                  0
+ 24 TRT10  2018          89271                          89271                  0
+ 25 TRT10  2019          84938                          84938                  0
+ 26 TRT10  2020          67001                          67001                  0
+ 27 TRT10  2021          67129                          67129                  0
+ 28 TRT10  2022          76035                          76035                  0
+ 29 TRT10  2023          92506                          92506                  0
+ 30 TRT10  2024         105043                         105043                  0
+ 31 TRT11  2010          75633                          75633                  0
+ 32 TRT11  2011          81061                          81061                  0
+ 33 TRT11  2012          84535                          84535                  0
+ 34 TRT11  2013          78964                          78964                  0
+ 35 TRT11  2014          59001                          59001                  0
+ 36 TRT11  2015          87731                          87731                  0
+ 37 TRT11  2016          84367                          84367                  0
+ 38 TRT11  2017          86993                          86993                  0
+ 39 TRT11  2018          76277                          76277                  0
+ 40 TRT11  2019          79786                          79786                  0
+ 41 TRT11  2020          39186                          39186                  0
+ 42 TRT11  2021          38497                          38497                  0
+ 43 TRT11  2022          52193                          52193                  0
+ 44 TRT11  2023          64154                          64154                  0
+ 45 TRT11  2024          73975                          73975                  0
+ 46 TRT12  2010          85969                          85969                  0
+ 47 TRT12  2011         121601                         121601                  0
+ 48 TRT12  2012         128374                         128374                  0
+ 49 TRT12  2013         125784                         125784                  0
+ 50 TRT12  2014         129810                         129810                  0
+ 51 TRT12  2015         129055                         129055                  0
+ 52 TRT12  2016         160208                         160208                  0
+ 53 TRT12  2017         158717                         158717                  0
+ 54 TRT12  2018         152862                         152862                  0
+ 55 TRT12  2019         156731                         156731                  0
+ 56 TRT12  2020         121799                         121799                  0
+ 57 TRT12  2021         116303                         116303                  0
+ 58 TRT12  2022         117736                         117736                  0
+ 59 TRT12  2023         152877                         152877                  0
+ 60 TRT12  2024         178770                         178770                  0
+ 61 TRT13  2010          31348                          31348                  0
+ 62 TRT13  2011          51791                          51791                  0
+ 63 TRT13  2012          58761                          58761                  0
+ 64 TRT13  2013          57403                          57403                  0
+ 65 TRT13  2014          47624                          47624                  0
+ 66 TRT13  2015          37514                          37514                  0
+ 67 TRT13  2016          49517                          49517                  0
+ 68 TRT13  2017          59265                          59265                  0
+ 69 TRT13  2018          56668                          56668                  0
+ 70 TRT13  2019          47172                          47172                  0
+ 71 TRT13  2020          39105                          39105                  0
+ 72 TRT13  2021          47502                          47502                  0
+ 73 TRT13  2022          52222                          52222                  0
+ 74 TRT13  2023          62316                          62316                  0
+ 75 TRT13  2024          77201                          77201                  0
+ 76 TRT14  2010          41677                          41677                  0
+ 77 TRT14  2011          43283                          43283                  0
+ 78 TRT14  2012          47866                          47866                  0
+ 79 TRT14  2013          35832                          35832                  0
+ 80 TRT14  2014          46845                          46845                  0
+ 81 TRT14  2015          43831                          43831                  0
+ 82 TRT14  2016          42629                          42629                  0
+ 83 TRT14  2017          46153                          46153                  0
+ 84 TRT14  2018          39190                          39190                  0
+ 85 TRT14  2019          39075                          39075                  0
+ 86 TRT14  2020          37214                          37214                  0
+ 87 TRT14  2021          42182                          42182                  0
+ 88 TRT14  2022          38152                          38152                  0
+ 89 TRT14  2023          45476                          45476                  0
+ 90 TRT14  2024          45647                          45647                  0
+ 91 TRT15  2010         383425                         383425                  0
+ 92 TRT15  2011         482263                         482263                  0
+ 93 TRT15  2012         464639                         464639                  0
+ 94 TRT15  2013         531606                         531606                  0
+ 95 TRT15  2014         579906                         579906                  0
+ 96 TRT15  2015         607372                         607372                  0
+ 97 TRT15  2016         603602                         603602                  0
+ 98 TRT15  2017         578770                         578770                  0
+ 99 TRT15  2018         568299                         568299                  0
+100 TRT15  2019         528625                         528625                  0
+101 TRT15  2020         456869                         456869                  0
+102 TRT15  2021         411365                         411365                  0
+103 TRT15  2022         457663                         457663                  0
+104 TRT15  2023         549065                         549065                  0
+105 TRT15  2024         622899                         622899                  0
+106 TRT16  2010          41523                          41523                  0
+107 TRT16  2011          49441                          49441                  0
+108 TRT16  2012          52607                          52607                  0
+109 TRT16  2013          55108                          55108                  0
+110 TRT16  2014          62692                          62692                  0
+111 TRT16  2015          62839                          62839                  0
+112 TRT16  2016          50829                          50829                  0
+113 TRT16  2017          60156                          60156                  0
+114 TRT16  2018          78012                          78012                  0
+115 TRT16  2019          74568                          74568                  0
+116 TRT16  2020          48265                          48265                  0
+117 TRT16  2021          60625                          60625                  0
+118 TRT16  2022          65464                          65464                  0
+119 TRT16  2023          64390                          64390                  0
+120 TRT16  2024          75051                          75051                  0
+121 TRT17  2010          54038                          54038                  0
+122 TRT17  2011          57026                          57026                  0
+123 TRT17  2012          59407                          59407                  0
+124 TRT17  2013          62396                          62396                  0
+125 TRT17  2014          61750                          61750                  0
+126 TRT17  2015          56653                          56653                  0
+127 TRT17  2016          62253                          62253                  0
+128 TRT17  2017          64547                          64547                  0
+129 TRT17  2018          62163                          62163                  0
+130 TRT17  2019          65873                          65873                  0
+131 TRT17  2020          49582                          49582                  0
+132 TRT17  2021          51043                          51043                  0
+133 TRT17  2022          51486                          51486                  0
+134 TRT17  2023          71374                          71374                  0
+135 TRT17  2024          77496                          77496                  0
+136 TRT18  2010         122320                         122320                  0
+137 TRT18  2011         116574                         116574                  0
+138 TRT18  2012         100257                         100257                  0
+139 TRT18  2013         109273                         109273                  0
+140 TRT18  2014         123713                         123713                  0
+141 TRT18  2015         112830                         112830                  0
+142 TRT18  2016         125644                         125644                  0
+143 TRT18  2017         139647                         139647                  0
+144 TRT18  2018         138124                         138124                  0
+145 TRT18  2019         118958                         118958                  0
+146 TRT18  2020          86458                          86458                  0
+147 TRT18  2021          97146                          97146                  0
+148 TRT18  2022         105095                         105095                  0
+149 TRT18  2023         123898                         123898                  0
+150 TRT18  2024         157036                         157036                  0
+151 TRT19  2010          41187                          41187                  0
+152 TRT19  2011          46082                          46082                  0
+153 TRT19  2012          58185                          58185                  0
+154 TRT19  2013          64838                          64838                  0
+155 TRT19  2014          51367                          51367                  0
+156 TRT19  2015          52675                          52675                  0
+157 TRT19  2016          55866                          55866                  0
+158 TRT19  2017          55711                          55711                  0
+159 TRT19  2018          53606                          53606                  0
+160 TRT19  2019          43747                          43747                  0
+161 TRT19  2020          30719                          30719                  0
+162 TRT19  2021          30794                          30794                  0
+163 TRT19  2022          35198                          35198                  0
+164 TRT19  2023          57572                          57572                  0
+165 TRT19  2024          51875                          51875                  0
+166 TRT2   2010         606033                         606033                  0
+167 TRT2   2011         667150                         667150                  0
+168 TRT2   2012         725401                         725401                  0
+169 TRT2   2013         745413                         745413                  0
+170 TRT2   2014         712829                         712829                  0
+171 TRT2   2015         849399                         849399                  0
+172 TRT2   2016         698321                         698321                  0
+173 TRT2   2017         827593                         827593                  0
+174 TRT2   2018         801559                         801559                  0
+175 TRT2   2019         796741                         796741                  0
+176 TRT2   2020         631335                         631335                  0
+177 TRT2   2021         610917                         610917                  0
+178 TRT2   2022         713026                         713026                  0
+179 TRT2   2023        1002933                        1002933                  0
+180 TRT2   2024        1116925                        1116925                  0
+181 TRT20  2010          26865                          26865                  0
+182 TRT20  2011          31881                          31881                  0
+183 TRT20  2012          28267                          28267                  0
+184 TRT20  2013          34022                          34022                  0
+185 TRT20  2014          34320                          34320                  0
+186 TRT20  2015          37220                          37220                  0
+187 TRT20  2016          39187                          39187                  0
+188 TRT20  2017          42143                          42143                  0
+189 TRT20  2018          37555                          37555                  0
+190 TRT20  2019          41507                          41507                  0
+191 TRT20  2020          39188                          39188                  0
+192 TRT20  2021          26404                          26404                  0
+193 TRT20  2022          27686                          27686                  0
+194 TRT20  2023          34185                          34185                  0
+195 TRT20  2024          35608                          35608                  0
+196 TRT21  2010          51911                          51911                  0
+197 TRT21  2011          46927                          46927                  0
+198 TRT21  2012          44224                          44224                  0
+199 TRT21  2013          51756                          51756                  0
+200 TRT21  2014          56679                          56679                  0
+201 TRT21  2015          60834                          60834                  0
+202 TRT21  2016          61585                          61585                  0
+203 TRT21  2017          66962                          66962                  0
+204 TRT21  2018          59425                          59425                  0
+205 TRT21  2019          46265                          46265                  0
+206 TRT21  2020          30061                          30061                  0
+207 TRT21  2021          30864                          30864                  0
+208 TRT21  2022          38890                          38890                  0
+209 TRT21  2023          48459                          48459                  0
+210 TRT21  2024          48782                          48782                  0
+211 TRT22  2010          31344                          31344                  0
+212 TRT22  2011          36875                          36875                  0
+213 TRT22  2012          38065                          38065                  0
+214 TRT22  2013          37424                          37424                  0
+215 TRT22  2014          42416                          42416                  0
+216 TRT22  2015          43651                          43651                  0
+217 TRT22  2016          44978                          44978                  0
+218 TRT22  2017          46880                          46880                  0
+219 TRT22  2018          61465                          61465                  0
+220 TRT22  2019          53910                          53910                  0
+221 TRT22  2020          38242                          38242                  0
+222 TRT22  2021          41281                          41281                  0
+223 TRT22  2022          35139                          35139                  0
+224 TRT22  2023          43582                          43582                  0
+225 TRT22  2024          36540                          36540                  0
+226 TRT23  2010          41007                          41007                  0
+227 TRT23  2011          50227                          50227                  0
+228 TRT23  2012          52481                          52481                  0
+229 TRT23  2013          63031                          63031                  0
+230 TRT23  2014          60533                          60533                  0
+231 TRT23  2015          60125                          60125                  0
+232 TRT23  2016          58599                          58599                  0
+233 TRT23  2017          59622                          59622                  0
+234 TRT23  2018          57208                          57208                  0
+235 TRT23  2019          53914                          53914                  0
+236 TRT23  2020          42505                          42505                  0
+237 TRT23  2021          42261                          42261                  0
+238 TRT23  2022          45961                          45961                  0
+239 TRT23  2023          66326                          66326                  0
+240 TRT23  2024          72565                          72565                  0
+241 TRT24  2010          39296                          39296                  0
+242 TRT24  2011          41660                          41660                  0
+243 TRT24  2012          42463                          42463                  0
+244 TRT24  2013          43083                          43083                  0
+245 TRT24  2014          47932                          47932                  0
+246 TRT24  2015          46248                          46248                  0
+247 TRT24  2016          46174                          46174                  0
+248 TRT24  2017          53903                          53903                  0
+249 TRT24  2018          52497                          52497                  0
+250 TRT24  2019          53081                          53081                  0
+251 TRT24  2020          43303                          43303                  0
+252 TRT24  2021          42739                          42739                  0
+253 TRT24  2022          45390                          45390                  0
+254 TRT24  2023          53330                          53330                  0
+255 TRT24  2024          57571                          57571                  0
+256 TRT3   2010         374535                         374535                  0
+257 TRT3   2011         341053                         341053                  0
+258 TRT3   2012         354808                         354808                  0
+259 TRT3   2013         375615                         375615                  0
+260 TRT3   2014         401760                         401760                  0
+261 TRT3   2015         383816                         383816                  0
+262 TRT3   2016         401188                         401188                  0
+263 TRT3   2017         409062                         409062                  0
+264 TRT3   2018         389743                         389743                  0
+265 TRT3   2019         400541                         400541                  0
+266 TRT3   2020         294356                         294356                  0
+267 TRT3   2021         322213                         322213                  0
+268 TRT3   2022         333118                         333118                  0
+269 TRT3   2023         395608                         395608                  0
+270 TRT3   2024         451299                         451299                  0
+271 TRT4   2010         226241                         226241                  0
+272 TRT4   2011         248287                         248287                  0
+273 TRT4   2012         252351                         252351                  0
+274 TRT4   2013         272886                         272886                  0
+275 TRT4   2014         347411                         347411                  0
+276 TRT4   2015         297325                         297325                  0
+277 TRT4   2016         292195                         292195                  0
+278 TRT4   2017         311640                         311640                  0
+279 TRT4   2018         314689                         314689                  0
+280 TRT4   2019         307040                         307040                  0
+281 TRT4   2020         252025                         252025                  0
+282 TRT4   2021         223805                         223805                  0
+283 TRT4   2022         242438                         242438                  0
+284 TRT4   2023         305384                         305384                  0
+285 TRT4   2024         323488                         323488                  0
+286 TRT5   2010         193831                         193831                  0
+287 TRT5   2011         157180                         157180                  0
+288 TRT5   2012         182356                         182356                  0
+289 TRT5   2013         189918                         189918                  0
+290 TRT5   2014         200176                         200176                  0
+291 TRT5   2015         168398                         168398                  0
+292 TRT5   2016         214176                         214176                  0
+293 TRT5   2017         199810                         199810                  0
+294 TRT5   2018         199751                         199751                  0
+295 TRT5   2019         193393                         193393                  0
+296 TRT5   2020         151337                         151337                  0
+297 TRT5   2021         130547                         130547                  0
+298 TRT5   2022         164075                         164075                  0
+299 TRT5   2023         199344                         199344                  0
+300 TRT5   2024         225544                         225544                  0
+301 TRT6   2010         145697                         145697                  0
+302 TRT6   2011         166483                         166483                  0
+303 TRT6   2012         165442                         165442                  0
+304 TRT6   2013         183682                         183682                  0
+305 TRT6   2014         172512                         172512                  0
+306 TRT6   2015         167934                         167934                  0
+307 TRT6   2016         167379                         167379                  0
+308 TRT6   2017         184629                         184629                  0
+309 TRT6   2018         172261                         172261                  0
+310 TRT6   2019         163657                         163657                  0
+311 TRT6   2020         132413                         132413                  0
+312 TRT6   2021         124934                         124934                  0
+313 TRT6   2022         139125                         139125                  0
+314 TRT6   2023         171098                         171098                  0
+315 TRT6   2024         190200                         190200                  0
+316 TRT7   2010          48364                          48364                  0
+317 TRT7   2011          62511                          62511                  0
+318 TRT7   2012          72448                          72448                  0
+319 TRT7   2013          81428                          81428                  0
+320 TRT7   2014         101509                         101509                  0
+321 TRT7   2015          90002                          90002                  0
+322 TRT7   2016          96228                          96228                  0
+323 TRT7   2017          98376                          98376                  0
+324 TRT7   2018         101594                         101594                  0
+325 TRT7   2019          86180                          86180                  0
+326 TRT7   2020          69909                          69909                  0
+327 TRT7   2021          74429                          74429                  0
+328 TRT7   2022          92780                          92780                  0
+329 TRT7   2023         106899                         106899                  0
+330 TRT7   2024         118623                         118623                  0
+331 TRT8   2010         102400                         102400                  0
+332 TRT8   2011         110055                         110055                  0
+333 TRT8   2012         114815                         114815                  0
+334 TRT8   2013          92843                          92843                  0
+335 TRT8   2014         110559                         110559                  0
+336 TRT8   2015         113872                         113872                  0
+337 TRT8   2016         120772                         120772                  0
+338 TRT8   2017         128364                         128364                  0
+339 TRT8   2018         123990                         123990                  0
+340 TRT8   2019          99627                          99627                  0
+341 TRT8   2020          62986                          62986                  0
+342 TRT8   2021          69773                          69773                  0
+343 TRT8   2022          89954                          89954                  0
+344 TRT8   2023          96247                          96247                  0
+345 TRT8   2024         121011                         121011                  0
+346 TRT9   2010         204991                         204991                  0
+347 TRT9   2011         210498                         210498                  0
+348 TRT9   2012         218719                         218719                  0
+349 TRT9   2013         191799                         191799                  0
+350 TRT9   2014         228810                         228810                  0
+351 TRT9   2015         241436                         241436                  0
+352 TRT9   2016         259714                         259714                  0
+353 TRT9   2017         285817                         285817                  0
+354 TRT9   2018         277628                         277628                  0
+355 TRT9   2019         258185                         258185                  0
+356 TRT9   2020         192404                         192404                  0
+357 TRT9   2021         198050                         198050                  0
+358 TRT9   2022         210503                         210503                  0
+359 TRT9   2023         256049                         256049                  0
+360 TRT9   2024         280969                         280969                  0
+    diferenca_pct
+            <dbl>
+  1             0
+  2             0
+  3             0
+  4             0
+  5             0
+  6             0
+  7             0
+  8             0
+  9             0
+ 10             0
+ 11             0
+ 12             0
+ 13             0
+ 14             0
+ 15             0
+ 16             0
+ 17             0
+ 18             0
+ 19             0
+ 20             0
+ 21             0
+ 22             0
+ 23             0
+ 24             0
+ 25             0
+ 26             0
+ 27             0
+ 28             0
+ 29             0
+ 30             0
+ 31             0
+ 32             0
+ 33             0
+ 34             0
+ 35             0
+ 36             0
+ 37             0
+ 38             0
+ 39             0
+ 40             0
+ 41             0
+ 42             0
+ 43             0
+ 44             0
+ 45             0
+ 46             0
+ 47             0
+ 48             0
+ 49             0
+ 50             0
+ 51             0
+ 52             0
+ 53             0
+ 54             0
+ 55             0
+ 56             0
+ 57             0
+ 58             0
+ 59             0
+ 60             0
+ 61             0
+ 62             0
+ 63             0
+ 64             0
+ 65             0
+ 66             0
+ 67             0
+ 68             0
+ 69             0
+ 70             0
+ 71             0
+ 72             0
+ 73             0
+ 74             0
+ 75             0
+ 76             0
+ 77             0
+ 78             0
+ 79             0
+ 80             0
+ 81             0
+ 82             0
+ 83             0
+ 84             0
+ 85             0
+ 86             0
+ 87             0
+ 88             0
+ 89             0
+ 90             0
+ 91             0
+ 92             0
+ 93             0
+ 94             0
+ 95             0
+ 96             0
+ 97             0
+ 98             0
+ 99             0
+100             0
+101             0
+102             0
+103             0
+104             0
+105             0
+106             0
+107             0
+108             0
+109             0
+110             0
+111             0
+112             0
+113             0
+114             0
+115             0
+116             0
+117             0
+118             0
+119             0
+120             0
+121             0
+122             0
+123             0
+124             0
+125             0
+126             0
+127             0
+128             0
+129             0
+130             0
+131             0
+132             0
+133             0
+134             0
+135             0
+136             0
+137             0
+138             0
+139             0
+140             0
+141             0
+142             0
+143             0
+144             0
+145             0
+146             0
+147             0
+148             0
+149             0
+150             0
+151             0
+152             0
+153             0
+154             0
+155             0
+156             0
+157             0
+158             0
+159             0
+160             0
+161             0
+162             0
+163             0
+164             0
+165             0
+166             0
+167             0
+168             0
+169             0
+170             0
+171             0
+172             0
+173             0
+174             0
+175             0
+176             0
+177             0
+178             0
+179             0
+180             0
+181             0
+182             0
+183             0
+184             0
+185             0
+186             0
+187             0
+188             0
+189             0
+190             0
+191             0
+192             0
+193             0
+194             0
+195             0
+196             0
+197             0
+198             0
+199             0
+200             0
+201             0
+202             0
+203             0
+204             0
+205             0
+206             0
+207             0
+208             0
+209             0
+210             0
+211             0
+212             0
+213             0
+214             0
+215             0
+216             0
+217             0
+218             0
+219             0
+220             0
+221             0
+222             0
+223             0
+224             0
+225             0
+226             0
+227             0
+228             0
+229             0
+230             0
+231             0
+232             0
+233             0
+234             0
+235             0
+236             0
+237             0
+238             0
+239             0
+240             0
+241             0
+242             0
+243             0
+244             0
+245             0
+246             0
+247             0
+248             0
+249             0
+250             0
+251             0
+252             0
+253             0
+254             0
+255             0
+256             0
+257             0
+258             0
+259             0
+260             0
+261             0
+262             0
+263             0
+264             0
+265             0
+266             0
+267             0
+268             0
+269             0
+270             0
+271             0
+272             0
+273             0
+274             0
+275             0
+276             0
+277             0
+278             0
+279             0
+280             0
+281             0
+282             0
+283             0
+284             0
+285             0
+286             0
+287             0
+288             0
+289             0
+290             0
+291             0
+292             0
+293             0
+294             0
+295             0
+296             0
+297             0
+298             0
+299             0
+300             0
+301             0
+302             0
+303             0
+304             0
+305             0
+306             0
+307             0
+308             0
+309             0
+310             0
+311             0
+312             0
+313             0
+314             0
+315             0
+316             0
+317             0
+318             0
+319             0
+320             0
+321             0
+322             0
+323             0
+324             0
+325             0
+326             0
+327             0
+328             0
+329             0
+330             0
+331             0
+332             0
+333             0
+334             0
+335             0
+336             0
+337             0
+338             0
+339             0
+340             0
+341             0
+342             0
+343             0
+344             0
+345             0
+346             0
+347             0
+348             0
+349             0
+350             0
+351             0
+352             0
+353             0
+354             0
+355             0
+356             0
+357             0
+358             0
+359             0
+360             0
+
+============================================================
+6. RESUMO ANUAL DOS ÍNDICES 2016 = 100
+============================================================
+# A tibble: 165 × 12
+      ano periodo                    dimensao              indicador_raw           
+    <int> <chr>                      <chr>                 <chr>                   
+  1  2010 Pré-EC 95 (2010-2016)      Escala e despesa      casos_novos             
+  2  2011 Pré-EC 95 (2010-2016)      Escala e despesa      casos_novos             
+  3  2012 Pré-EC 95 (2010-2016)      Escala e despesa      casos_novos             
+  4  2013 Pré-EC 95 (2010-2016)      Escala e despesa      casos_novos             
+  5  2014 Pré-EC 95 (2010-2016)      Escala e despesa      casos_novos             
+  6  2015 Pré-EC 95 (2010-2016)      Escala e despesa      casos_novos             
+  7  2016 Pré-EC 95 (2010-2016)      Escala e despesa      casos_novos             
+  8  2017 Pós-EC 95 (2017-2022)      Escala e despesa      casos_novos             
+  9  2018 Pós-EC 95 (2017-2022)      Escala e despesa      casos_novos             
+ 10  2019 Pós-EC 95 (2017-2022)      Escala e despesa      casos_novos             
+ 11  2020 Pós-EC 95 (2017-2022)      Escala e despesa      casos_novos             
+ 12  2021 Pós-EC 95 (2017-2022)      Escala e despesa      casos_novos             
+ 13  2022 Pós-EC 95 (2017-2022)      Escala e despesa      casos_novos             
+ 14  2023 Novo arcabouço (2023-2024) Escala e despesa      casos_novos             
+ 15  2024 Novo arcabouço (2023-2024) Escala e despesa      casos_novos             
+ 16  2010 Pré-EC 95 (2010-2016)      Escala e despesa      casos_pendentes         
+ 17  2011 Pré-EC 95 (2010-2016)      Escala e despesa      casos_pendentes         
+ 18  2012 Pré-EC 95 (2010-2016)      Escala e despesa      casos_pendentes         
+ 19  2013 Pré-EC 95 (2010-2016)      Escala e despesa      casos_pendentes         
+ 20  2014 Pré-EC 95 (2010-2016)      Escala e despesa      casos_pendentes         
+ 21  2015 Pré-EC 95 (2010-2016)      Escala e despesa      casos_pendentes         
+ 22  2016 Pré-EC 95 (2010-2016)      Escala e despesa      casos_pendentes         
+ 23  2017 Pós-EC 95 (2017-2022)      Escala e despesa      casos_pendentes         
+ 24  2018 Pós-EC 95 (2017-2022)      Escala e despesa      casos_pendentes         
+ 25  2019 Pós-EC 95 (2017-2022)      Escala e despesa      casos_pendentes         
+ 26  2020 Pós-EC 95 (2017-2022)      Escala e despesa      casos_pendentes         
+ 27  2021 Pós-EC 95 (2017-2022)      Escala e despesa      casos_pendentes         
+ 28  2022 Pós-EC 95 (2017-2022)      Escala e despesa      casos_pendentes         
+ 29  2023 Novo arcabouço (2023-2024) Escala e despesa      casos_pendentes         
+ 30  2024 Novo arcabouço (2023-2024) Escala e despesa      casos_pendentes         
+ 31  2010 Pré-EC 95 (2010-2016)      Escala e despesa      dpj                     
+ 32  2011 Pré-EC 95 (2010-2016)      Escala e despesa      dpj                     
+ 33  2012 Pré-EC 95 (2010-2016)      Escala e despesa      dpj                     
+ 34  2013 Pré-EC 95 (2010-2016)      Escala e despesa      dpj                     
+ 35  2014 Pré-EC 95 (2010-2016)      Escala e despesa      dpj                     
+ 36  2015 Pré-EC 95 (2010-2016)      Escala e despesa      dpj                     
+ 37  2016 Pré-EC 95 (2010-2016)      Escala e despesa      dpj                     
+ 38  2017 Pós-EC 95 (2017-2022)      Escala e despesa      dpj                     
+ 39  2018 Pós-EC 95 (2017-2022)      Escala e despesa      dpj                     
+ 40  2019 Pós-EC 95 (2017-2022)      Escala e despesa      dpj                     
+ 41  2020 Pós-EC 95 (2017-2022)      Escala e despesa      dpj                     
+ 42  2021 Pós-EC 95 (2017-2022)      Escala e despesa      dpj                     
+ 43  2022 Pós-EC 95 (2017-2022)      Escala e despesa      dpj                     
+ 44  2023 Novo arcabouço (2023-2024) Escala e despesa      dpj                     
+ 45  2024 Novo arcabouço (2023-2024) Escala e despesa      dpj                     
+ 46  2010 Pré-EC 95 (2010-2016)      Escala e despesa      ftt                     
+ 47  2011 Pré-EC 95 (2010-2016)      Escala e despesa      ftt                     
+ 48  2012 Pré-EC 95 (2010-2016)      Escala e despesa      ftt                     
+ 49  2013 Pré-EC 95 (2010-2016)      Escala e despesa      ftt                     
+ 50  2014 Pré-EC 95 (2010-2016)      Escala e despesa      ftt                     
+ 51  2015 Pré-EC 95 (2010-2016)      Escala e despesa      ftt                     
+ 52  2016 Pré-EC 95 (2010-2016)      Escala e despesa      ftt                     
+ 53  2017 Pós-EC 95 (2017-2022)      Escala e despesa      ftt                     
+ 54  2018 Pós-EC 95 (2017-2022)      Escala e despesa      ftt                     
+ 55  2019 Pós-EC 95 (2017-2022)      Escala e despesa      ftt                     
+ 56  2020 Pós-EC 95 (2017-2022)      Escala e despesa      ftt                     
+ 57  2021 Pós-EC 95 (2017-2022)      Escala e despesa      ftt                     
+ 58  2022 Pós-EC 95 (2017-2022)      Escala e despesa      ftt                     
+ 59  2023 Novo arcabouço (2023-2024) Escala e despesa      ftt                     
+ 60  2024 Novo arcabouço (2023-2024) Escala e despesa      ftt                     
+ 61  2010 Pré-EC 95 (2010-2016)      Escala e despesa      processos_baixados      
+ 62  2011 Pré-EC 95 (2010-2016)      Escala e despesa      processos_baixados      
+ 63  2012 Pré-EC 95 (2010-2016)      Escala e despesa      processos_baixados      
+ 64  2013 Pré-EC 95 (2010-2016)      Escala e despesa      processos_baixados      
+ 65  2014 Pré-EC 95 (2010-2016)      Escala e despesa      processos_baixados      
+ 66  2015 Pré-EC 95 (2010-2016)      Escala e despesa      processos_baixados      
+ 67  2016 Pré-EC 95 (2010-2016)      Escala e despesa      processos_baixados      
+ 68  2017 Pós-EC 95 (2017-2022)      Escala e despesa      processos_baixados      
+ 69  2018 Pós-EC 95 (2017-2022)      Escala e despesa      processos_baixados      
+ 70  2019 Pós-EC 95 (2017-2022)      Escala e despesa      processos_baixados      
+ 71  2020 Pós-EC 95 (2017-2022)      Escala e despesa      processos_baixados      
+ 72  2021 Pós-EC 95 (2017-2022)      Escala e despesa      processos_baixados      
+ 73  2022 Pós-EC 95 (2017-2022)      Escala e despesa      processos_baixados      
+ 74  2023 Novo arcabouço (2023-2024) Escala e despesa      processos_baixados      
+ 75  2024 Novo arcabouço (2023-2024) Escala e despesa      processos_baixados      
+ 76  2010 Pré-EC 95 (2010-2016)      Intensidade de gasto  dpj_por_forca_trabalho  
+ 77  2011 Pré-EC 95 (2010-2016)      Intensidade de gasto  dpj_por_forca_trabalho  
+ 78  2012 Pré-EC 95 (2010-2016)      Intensidade de gasto  dpj_por_forca_trabalho  
+ 79  2013 Pré-EC 95 (2010-2016)      Intensidade de gasto  dpj_por_forca_trabalho  
+ 80  2014 Pré-EC 95 (2010-2016)      Intensidade de gasto  dpj_por_forca_trabalho  
+ 81  2015 Pré-EC 95 (2010-2016)      Intensidade de gasto  dpj_por_forca_trabalho  
+ 82  2016 Pré-EC 95 (2010-2016)      Intensidade de gasto  dpj_por_forca_trabalho  
+ 83  2017 Pós-EC 95 (2017-2022)      Intensidade de gasto  dpj_por_forca_trabalho  
+ 84  2018 Pós-EC 95 (2017-2022)      Intensidade de gasto  dpj_por_forca_trabalho  
+ 85  2019 Pós-EC 95 (2017-2022)      Intensidade de gasto  dpj_por_forca_trabalho  
+ 86  2020 Pós-EC 95 (2017-2022)      Intensidade de gasto  dpj_por_forca_trabalho  
+ 87  2021 Pós-EC 95 (2017-2022)      Intensidade de gasto  dpj_por_forca_trabalho  
+ 88  2022 Pós-EC 95 (2017-2022)      Intensidade de gasto  dpj_por_forca_trabalho  
+ 89  2023 Novo arcabouço (2023-2024) Intensidade de gasto  dpj_por_forca_trabalho  
+ 90  2024 Novo arcabouço (2023-2024) Intensidade de gasto  dpj_por_forca_trabalho  
+ 91  2010 Pré-EC 95 (2010-2016)      Intensidade de gasto  dpj_por_processo_baixado
+ 92  2011 Pré-EC 95 (2010-2016)      Intensidade de gasto  dpj_por_processo_baixado
+ 93  2012 Pré-EC 95 (2010-2016)      Intensidade de gasto  dpj_por_processo_baixado
+ 94  2013 Pré-EC 95 (2010-2016)      Intensidade de gasto  dpj_por_processo_baixado
+ 95  2014 Pré-EC 95 (2010-2016)      Intensidade de gasto  dpj_por_processo_baixado
+ 96  2015 Pré-EC 95 (2010-2016)      Intensidade de gasto  dpj_por_processo_baixado
+ 97  2016 Pré-EC 95 (2010-2016)      Intensidade de gasto  dpj_por_processo_baixado
+ 98  2017 Pós-EC 95 (2017-2022)      Intensidade de gasto  dpj_por_processo_baixado
+ 99  2018 Pós-EC 95 (2017-2022)      Intensidade de gasto  dpj_por_processo_baixado
+100  2019 Pós-EC 95 (2017-2022)      Intensidade de gasto  dpj_por_processo_baixado
+101  2020 Pós-EC 95 (2017-2022)      Intensidade de gasto  dpj_por_processo_baixado
+102  2021 Pós-EC 95 (2017-2022)      Intensidade de gasto  dpj_por_processo_baixado
+103  2022 Pós-EC 95 (2017-2022)      Intensidade de gasto  dpj_por_processo_baixado
+104  2023 Novo arcabouço (2023-2024) Intensidade de gasto  dpj_por_processo_baixado
+105  2024 Novo arcabouço (2023-2024) Intensidade de gasto  dpj_por_processo_baixado
+106  2010 Pré-EC 95 (2010-2016)      Produtividade e carga k                       
+107  2011 Pré-EC 95 (2010-2016)      Produtividade e carga k                       
+108  2012 Pré-EC 95 (2010-2016)      Produtividade e carga k                       
+109  2013 Pré-EC 95 (2010-2016)      Produtividade e carga k                       
+110  2014 Pré-EC 95 (2010-2016)      Produtividade e carga k                       
+111  2015 Pré-EC 95 (2010-2016)      Produtividade e carga k                       
+112  2016 Pré-EC 95 (2010-2016)      Produtividade e carga k                       
+113  2017 Pós-EC 95 (2017-2022)      Produtividade e carga k                       
+114  2018 Pós-EC 95 (2017-2022)      Produtividade e carga k                       
+115  2019 Pós-EC 95 (2017-2022)      Produtividade e carga k                       
+116  2020 Pós-EC 95 (2017-2022)      Produtividade e carga k                       
+117  2021 Pós-EC 95 (2017-2022)      Produtividade e carga k                       
+118  2022 Pós-EC 95 (2017-2022)      Produtividade e carga k                       
+119  2023 Novo arcabouço (2023-2024) Produtividade e carga k                       
+120  2024 Novo arcabouço (2023-2024) Produtividade e carga k                       
+121  2010 Pré-EC 95 (2010-2016)      Produtividade e carga ks                      
+122  2011 Pré-EC 95 (2010-2016)      Produtividade e carga ks                      
+123  2012 Pré-EC 95 (2010-2016)      Produtividade e carga ks                      
+124  2013 Pré-EC 95 (2010-2016)      Produtividade e carga ks                      
+125  2014 Pré-EC 95 (2010-2016)      Produtividade e carga ks                      
+126  2015 Pré-EC 95 (2010-2016)      Produtividade e carga ks                      
+127  2016 Pré-EC 95 (2010-2016)      Produtividade e carga ks                      
+128  2017 Pós-EC 95 (2017-2022)      Produtividade e carga ks                      
+129  2018 Pós-EC 95 (2017-2022)      Produtividade e carga ks                      
+130  2019 Pós-EC 95 (2017-2022)      Produtividade e carga ks                      
+131  2020 Pós-EC 95 (2017-2022)      Produtividade e carga ks                      
+132  2021 Pós-EC 95 (2017-2022)      Produtividade e carga ks                      
+133  2022 Pós-EC 95 (2017-2022)      Produtividade e carga ks                      
+134  2023 Novo arcabouço (2023-2024) Produtividade e carga ks                      
+135  2024 Novo arcabouço (2023-2024) Produtividade e carga ks                      
+136  2010 Pré-EC 95 (2010-2016)      Produtividade e carga ipm                     
+137  2011 Pré-EC 95 (2010-2016)      Produtividade e carga ipm                     
+138  2012 Pré-EC 95 (2010-2016)      Produtividade e carga ipm                     
+139  2013 Pré-EC 95 (2010-2016)      Produtividade e carga ipm                     
+140  2014 Pré-EC 95 (2010-2016)      Produtividade e carga ipm                     
+141  2015 Pré-EC 95 (2010-2016)      Produtividade e carga ipm                     
+142  2016 Pré-EC 95 (2010-2016)      Produtividade e carga ipm                     
+143  2017 Pós-EC 95 (2017-2022)      Produtividade e carga ipm                     
+144  2018 Pós-EC 95 (2017-2022)      Produtividade e carga ipm                     
+145  2019 Pós-EC 95 (2017-2022)      Produtividade e carga ipm                     
+146  2020 Pós-EC 95 (2017-2022)      Produtividade e carga ipm                     
+147  2021 Pós-EC 95 (2017-2022)      Produtividade e carga ipm                     
+148  2022 Pós-EC 95 (2017-2022)      Produtividade e carga ipm                     
+149  2023 Novo arcabouço (2023-2024) Produtividade e carga ipm                     
+150  2024 Novo arcabouço (2023-2024) Produtividade e carga ipm                     
+151  2010 Pré-EC 95 (2010-2016)      Produtividade e carga ipsjud                  
+152  2011 Pré-EC 95 (2010-2016)      Produtividade e carga ipsjud                  
+153  2012 Pré-EC 95 (2010-2016)      Produtividade e carga ipsjud                  
+154  2013 Pré-EC 95 (2010-2016)      Produtividade e carga ipsjud                  
+155  2014 Pré-EC 95 (2010-2016)      Produtividade e carga ipsjud                  
+156  2015 Pré-EC 95 (2010-2016)      Produtividade e carga ipsjud                  
+157  2016 Pré-EC 95 (2010-2016)      Produtividade e carga ipsjud                  
+158  2017 Pós-EC 95 (2017-2022)      Produtividade e carga ipsjud                  
+159  2018 Pós-EC 95 (2017-2022)      Produtividade e carga ipsjud                  
+160  2019 Pós-EC 95 (2017-2022)      Produtividade e carga ipsjud                  
+161  2020 Pós-EC 95 (2017-2022)      Produtividade e carga ipsjud                  
+162  2021 Pós-EC 95 (2017-2022)      Produtividade e carga ipsjud                  
+163  2022 Pós-EC 95 (2017-2022)      Produtividade e carga ipsjud                  
+164  2023 Novo arcabouço (2023-2024) Produtividade e carga ipsjud                  
+165  2024 Novo arcabouço (2023-2024) Produtividade e carga ipsjud                  
+    indicador                                     n_trts media_indice mediana_indice
+    <chr>                                          <int>        <dbl>          <dbl>
+  1 Casos novos - primeiro e segundo graus            24         77.7           74.3
+  2 Casos novos - primeiro e segundo graus            24         83.4           81.3
+  3 Casos novos - primeiro e segundo graus            24         86.6           85.0
+  4 Casos novos - primeiro e segundo graus            24         91.1           87.4
+  5 Casos novos - primeiro e segundo graus            24         90.0           89.1
+  6 Casos novos - primeiro e segundo graus            24         93.9           93.5
+  7 Casos novos - primeiro e segundo graus            24        100            100  
+  8 Casos novos - primeiro e segundo graus            24        101.           100. 
+  9 Casos novos - primeiro e segundo graus            24         79.8           79.2
+ 10 Casos novos - primeiro e segundo graus            24         79.2           80.3
+ 11 Casos novos - primeiro e segundo graus            24         67.5           68.8
+ 12 Casos novos - primeiro e segundo graus            24         65.8           66.0
+ 13 Casos novos - primeiro e segundo graus            24         72.1           71.6
+ 14 Casos novos - primeiro e segundo graus            24         93.2           93.5
+ 15 Casos novos - primeiro e segundo graus            24        106.           108. 
+ 16 Casos pendentes - primeiro e segundo graus        24         62.4           56.4
+ 17 Casos pendentes - primeiro e segundo graus        24         64.0           57.9
+ 18 Casos pendentes - primeiro e segundo graus        24         74.5           65.4
+ 19 Casos pendentes - primeiro e segundo graus        24         84.9           77.1
+ 20 Casos pendentes - primeiro e segundo graus        24         88.6           85.9
+ 21 Casos pendentes - primeiro e segundo graus        24         98.1           98.8
+ 22 Casos pendentes - primeiro e segundo graus        24        100            100  
+ 23 Casos pendentes - primeiro e segundo graus        24        102.           103. 
+ 24 Casos pendentes - primeiro e segundo graus        24         88.6           90.6
+ 25 Casos pendentes - primeiro e segundo graus        24         80.1           80.6
+ 26 Casos pendentes - primeiro e segundo graus        24         99.2          102. 
+ 27 Casos pendentes - primeiro e segundo graus        24         94.6           98.1
+ 28 Casos pendentes - primeiro e segundo graus        24         89.4           88.8
+ 29 Casos pendentes - primeiro e segundo graus        24         85.5           84.1
+ 30 Casos pendentes - primeiro e segundo graus        24         84.4           83.4
+ 31 Despesa total real - DPJ                          24         62.6           62.7
+ 32 Despesa total real - DPJ                          24         65.8           65.7
+ 33 Despesa total real - DPJ                          24         71.5           69.8
+ 34 Despesa total real - DPJ                          24         78.5           78.5
+ 35 Despesa total real - DPJ                          24         83.7           85.2
+ 36 Despesa total real - DPJ                          24         96.8           96.8
+ 37 Despesa total real - DPJ                          24        100            100  
+ 38 Despesa total real - DPJ                          24        107.           108. 
+ 39 Despesa total real - DPJ                          24        113.           113. 
+ 40 Despesa total real - DPJ                          24        121.           120. 
+ 41 Despesa total real - DPJ                          24        117.           119. 
+ 42 Despesa total real - DPJ                          24        118.           119. 
+ 43 Despesa total real - DPJ                          24        128.           129. 
+ 44 Despesa total real - DPJ                          24        137.           139. 
+ 45 Despesa total real - DPJ                          24        152.           153. 
+ 46 Força de trabalho total - FTT                     24         91.1           90.7
+ 47 Força de trabalho total - FTT                     24         94.7           93.5
+ 48 Força de trabalho total - FTT                     24         98.5           97.7
+ 49 Força de trabalho total - FTT                     24        103.           103. 
+ 50 Força de trabalho total - FTT                     24        107.           106. 
+ 51 Força de trabalho total - FTT                     24        108.           108. 
+ 52 Força de trabalho total - FTT                     24        100            100  
+ 53 Força de trabalho total - FTT                     24        103.           100. 
+ 54 Força de trabalho total - FTT                     24        101.           101. 
+ 55 Força de trabalho total - FTT                     24         98.1           96.6
+ 56 Força de trabalho total - FTT                     24         94.3           92.5
+ 57 Força de trabalho total - FTT                     24         92.3           92.6
+ 58 Força de trabalho total - FTT                     24         94.8           93.4
+ 59 Força de trabalho total - FTT                     24         99.3           96.8
+ 60 Força de trabalho total - FTT                     24         99.2           97.3
+ 61 Processos baixados - primeiro e segundo graus     24         80.1           83.0
+ 62 Processos baixados - primeiro e segundo graus     24         87.7           88.0
+ 63 Processos baixados - primeiro e segundo graus     24         90.9           89.5
+ 64 Processos baixados - primeiro e segundo graus     24         93.4           91.0
+ 65 Processos baixados - primeiro e segundo graus     24         98.0           97.3
+ 66 Processos baixados - primeiro e segundo graus     24         97.3           96.4
+ 67 Processos baixados - primeiro e segundo graus     24        100            100  
+ 68 Processos baixados - primeiro e segundo graus     24        106.           106. 
+ 69 Processos baixados - primeiro e segundo graus     24        105.           101. 
+ 70 Processos baixados - primeiro e segundo graus     24         98.7           96.5
+ 71 Processos baixados - primeiro e segundo graus     24         75.4           75.9
+ 72 Processos baixados - primeiro e segundo graus     24         75.9           75.6
+ 73 Processos baixados - primeiro e segundo graus     24         83.2           81.9
+ 74 Processos baixados - primeiro e segundo graus     24        103.           100. 
+ 75 Processos baixados - primeiro e segundo graus     24        114.           111. 
+ 76 Despesa por integrante da força de trabalho       24         69.1           69.5
+ 77 Despesa por integrante da força de trabalho       24         69.9           69.4
+ 78 Despesa por integrante da força de trabalho       24         73.3           71.8
+ 79 Despesa por integrante da força de trabalho       24         76.4           77.0
+ 80 Despesa por integrante da força de trabalho       24         78.8           79.1
+ 81 Despesa por integrante da força de trabalho       24         89.7           91.1
+ 82 Despesa por integrante da força de trabalho       24        100            100  
+ 83 Despesa por integrante da força de trabalho       24        105.           108. 
+ 84 Despesa por integrante da força de trabalho       24        112.           113. 
+ 85 Despesa por integrante da força de trabalho       24        123.           125. 
+ 86 Despesa por integrante da força de trabalho       24        125.           124. 
+ 87 Despesa por integrante da força de trabalho       24        129.           128. 
+ 88 Despesa por integrante da força de trabalho       24        137.           138. 
+ 89 Despesa por integrante da força de trabalho       24        139.           140. 
+ 90 Despesa por integrante da força de trabalho       24        154.           154. 
+ 91 Despesa por processo baixado                      24         81.1           77.3
+ 92 Despesa por processo baixado                      24         76.2           75.7
+ 93 Despesa por processo baixado                      24         79.6           76.9
+ 94 Despesa por processo baixado                      24         85.5           87.0
+ 95 Despesa por processo baixado                      24         86.9           86.4
+ 96 Despesa por processo baixado                      24        101.            99.0
+ 97 Despesa por processo baixado                      24        100            100  
+ 98 Despesa por processo baixado                      24        101.           100. 
+ 99 Despesa por processo baixado                      24        109.           114. 
+100 Despesa por processo baixado                      24        125.           125. 
+101 Despesa por processo baixado                      24        162.           155. 
+102 Despesa por processo baixado                      24        163.           164. 
+103 Despesa por processo baixado                      24        159.           161. 
+104 Despesa por processo baixado                      24        137.           134. 
+105 Despesa por processo baixado                      24        138.           134. 
+106 Carga de trabalho dos magistrados - K             24         74.6           70.4
+107 Carga de trabalho dos magistrados - K             24         76.2           72.2
+108 Carga de trabalho dos magistrados - K             24         81.1           77.3
+109 Carga de trabalho dos magistrados - K             24         83.4           83.2
+110 Carga de trabalho dos magistrados - K             24         85.9           85.9
+111 Carga de trabalho dos magistrados - K             24        101.            99.2
+112 Carga de trabalho dos magistrados - K             24        100            100  
+113 Carga de trabalho dos magistrados - K             24        106.           106. 
+114 Carga de trabalho dos magistrados - K             24        101.            99.8
+115 Carga de trabalho dos magistrados - K             24         93.8           93.3
+116 Carga de trabalho dos magistrados - K             24         84.5           85.6
+117 Carga de trabalho dos magistrados - K             24         82.7           83.8
+118 Carga de trabalho dos magistrados - K             24         83.9           82.5
+119 Carga de trabalho dos magistrados - K             24         93.9           94.2
+120 Carga de trabalho dos magistrados - K             24         95.6           96.6
+121 Carga de trabalho por servidor - KS               24         72.9           70.6
+122 Carga de trabalho por servidor - KS               24         74.8           72.3
+123 Carga de trabalho por servidor - KS               24         81.5           80.3
+124 Carga de trabalho por servidor - KS               24         83.9           83.2
+125 Carga de trabalho por servidor - KS               24         87.0           84.2
+126 Carga de trabalho por servidor - KS               24         97.5           97.2
+127 Carga de trabalho por servidor - KS               24        100            100  
+128 Carga de trabalho por servidor - KS               24        107.           106. 
+129 Carga de trabalho por servidor - KS               24        102.           102. 
+130 Carga de trabalho por servidor - KS               24         98.4           99.3
+131 Carga de trabalho por servidor - KS               24         89.5           89.5
+132 Carga de trabalho por servidor - KS               24         88.2           88.6
+133 Carga de trabalho por servidor - KS               24         90.6           88.8
+134 Carga de trabalho por servidor - KS               24         95.7           95.1
+135 Carga de trabalho por servidor - KS               24        102.           101. 
+136 Produtividade dos magistrados - IPM               24         86.6           86.1
+137 Produtividade dos magistrados - IPM               24         91.8           91.7
+138 Produtividade dos magistrados - IPM               24         92.6           91.0
+139 Produtividade dos magistrados - IPM               24         91.2           86.4
+140 Produtividade dos magistrados - IPM               24         94.8           91.9
+141 Produtividade dos magistrados - IPM               24        101.           102. 
+142 Produtividade dos magistrados - IPM               24        100            100  
+143 Produtividade dos magistrados - IPM               24        108.           108. 
+144 Produtividade dos magistrados - IPM               24        107.           106. 
+145 Produtividade dos magistrados - IPM               24        101.            97.8
+146 Produtividade dos magistrados - IPM               24         75.8           78.2
+147 Produtividade dos magistrados - IPM               24         76.5           77.5
+148 Produtividade dos magistrados - IPM               24         84.3           81.9
+149 Produtividade dos magistrados - IPM               24        108.           107. 
+150 Produtividade dos magistrados - IPM               24        116.           115. 
+151 Produtividade dos servidores - IPSJud             24         85.6           83.4
+152 Produtividade dos servidores - IPSJud             24         91.1           87.6
+153 Produtividade dos servidores - IPSJud             24         94.2           92.9
+154 Produtividade dos servidores - IPSJud             24         91.9           92.1
+155 Produtividade dos servidores - IPSJud             24         96.0           94.5
+156 Produtividade dos servidores - IPSJud             24         97.5           96.8
+157 Produtividade dos servidores - IPSJud             24        100            100  
+158 Produtividade dos servidores - IPSJud             24        110.           108. 
+159 Produtividade dos servidores - IPSJud             24        108.           104. 
+160 Produtividade dos servidores - IPSJud             24        106.           108. 
+161 Produtividade dos servidores - IPSJud             24         80.3           82.4
+162 Produtividade dos servidores - IPSJud             24         81.6           81.4
+163 Produtividade dos servidores - IPSJud             24         91.0           90.0
+164 Produtividade dos servidores - IPSJud             24        110.           109. 
+165 Produtividade dos servidores - IPSJud             24        123.           123. 
+    p25_indice p75_indice minimo_indice maximo_indice
+         <dbl>      <dbl>         <dbl>         <dbl>
+  1       71.4       84.8          67.1          97.2
+  2       77.7       90.0          60.3         103. 
+  3       80.0       92.5          69.6         117. 
+  4       85.6       96.1          76.7         114. 
+  5       84.8       93.2          80.5         114. 
+  6       89.4       95.7          84.7         114. 
+  7      100        100           100           100  
+  8       97.9      104.           93.0         112. 
+  9       75.8       82.7          69.4          94.2
+ 10       74.5       84.7          56.5          91.1
+ 11       64.3       73.0          43.1          87.8
+ 12       62.2       70.4          38.6          86.0
+ 13       68.5       77.1          56.9          96.3
+ 14       85.0       98.1          72.5         128. 
+ 15       94.1      116.           76.3         144. 
+ 16       52.8       71.6          35.3         119. 
+ 17       50.5       69.3          37.8         132. 
+ 18       55.1       93.6          38.8         127. 
+ 19       70.4      101.           49.4         135. 
+ 20       77.0       97.2          54.7         135. 
+ 21       92.7      101.           75.8         126. 
+ 22      100        100           100           100  
+ 23       98.0      106.           90.0         113. 
+ 24       81.4       94.8          71.8         113. 
+ 25       74.5       84.1          62.9         106. 
+ 26       85.1      106.           71.7         134. 
+ 27       80.7      102.           69.8         128. 
+ 28       78.1       98.4          61.2         131. 
+ 29       75.7       96.4          55.1         125. 
+ 30       73.0       94.4          51.4         121. 
+ 31       60.4       66.6          52.2          69.8
+ 32       63.2       69.0          55.8          74.1
+ 33       67.3       73.6          58.7         111. 
+ 34       75.9       80.6          66.7         101. 
+ 35       83.1       86.7          70.6          91.8
+ 36       92.1       98.7          81.7         111. 
+ 37      100        100           100           100  
+ 38      104.       110.           92.5         119. 
+ 39      111.       115.           95.4         126. 
+ 40      115.       126.          102.          144. 
+ 41      115.       121.          101.          131. 
+ 42      115.       122.          102.          129. 
+ 43      126.       133.          110.          140. 
+ 44      136.       142.          112.          151. 
+ 45      146.       158.          126.          168. 
+ 46       87.0       95.6          76.3         113. 
+ 47       88.7       98.2          81.0         118. 
+ 48       93.5      102.           81.7         119. 
+ 49       98.0      108.           90.1         118. 
+ 50      101.       111.           90.7         132. 
+ 51      104.       111.           96.2         128. 
+ 52      100        100           100           100  
+ 53       98.3      104.           89.8         135. 
+ 54       98.0      103.           88.5         115. 
+ 55       94.1      101.           91.6         115. 
+ 56       90.1       97.7          84.3         107. 
+ 57       88.9       95.5          66.7         105. 
+ 58       90.9       97.1          68.3         124. 
+ 59       95.2      100.           87.3         122. 
+ 60       95.2      101.           85.7         117. 
+ 61       69.9       87.7          50.3         106. 
+ 62       81.3       95.7          65.0         105. 
+ 63       83.2       99.2          71.8         119. 
+ 64       84.1      107.           73.9         116. 
+ 65       91.8      103.           69.9         123. 
+ 66       92.5      102.           75.8         124. 
+ 67      100        100           100           100  
+ 68      102.       111.           93.1         120. 
+ 69       95.7      108.           87.8         153. 
+ 70       90.1      106.           75.1         147. 
+ 71       70.2       85.3          46.4         100. 
+ 72       67.0       83.4          45.6         119. 
+ 73       74.7       89.7          61.9         129. 
+ 74       92.6      112.           76.0         144. 
+ 75      102.       125.           79.2         160. 
+ 76       63.8       74.1          58.5          81.0
+ 77       64.6       74.4          55.2          81.7
+ 78       66.2       75.9          53.3         134. 
+ 79       71.3       80.9          59.7          98.1
+ 80       75.3       83.7          59.4          89.2
+ 81       86.7       95.1          72.0         102. 
+ 82      100        100           100           100  
+ 83      100.       110.           82.3         119. 
+ 84      108.       118.           93.4         122. 
+ 85      115.       130.          103.          149. 
+ 86      120.       130.          105.          140. 
+ 87      123.       133.          106.          179. 
+ 88      129.       143.          110.          187. 
+ 89      130.       146.          121.          159. 
+ 90      147.       162.          136.          172. 
+ 91       68.0       86.8          57.0         133. 
+ 92       67.9       80.8          60.6         109. 
+ 93       71.0       87.7          55.8         109. 
+ 94       74.1       91.1          65.6         121. 
+ 95       79.8       93.4          63.2         122. 
+ 96       91.2      106.           79.4         132. 
+ 97      100        100           100           100  
+ 98       93.4      109.           84.0         123. 
+ 99      100.       118.           78.0         131. 
+100      112.       137.           86.0         161. 
+101      137.       176.          115.          247. 
+102      137.       177.          105.          249. 
+103      135.       172.          106.          213. 
+104      119.       150.           99.3         185. 
+105      121.       149.           92.9         203. 
+106       64.2       80.7          54.7         132. 
+107       67.0       78.3          57.1         122. 
+108       70.8       89.0          57.7         112. 
+109       73.2       93.2          62.9         107. 
+110       77.3       95.6          59.1         108. 
+111       95.3      109.           84.7         118. 
+112      100        100           100           100  
+113      102.       110.           92.7         115. 
+114       92.3      105.           77.9         125. 
+115       87.7       99.1          71.1         121. 
+116       78.5       93.4          54.0         114. 
+117       78.7       88.5          50.8         112. 
+118       77.9       90.4          57.6         122. 
+119       80.9      101.           65.8         136. 
+120       85.8      106.           59.3         144. 
+121       60.6       81.5          51.9         117. 
+122       65.2       81.0          55.6         113. 
+123       73.5       85.0          60.8         147. 
+124       76.0       92.4          62.7         118. 
+125       76.7       95.4          66.4         120. 
+126       95.4      101.           84.6         114. 
+127      100        100           100           100  
+128      101.       111.           95.0         129. 
+129       96.9      107.           84.7         122. 
+130       92.6      106.           70.4         117. 
+131       85.1       97.5          58.2         109. 
+132       84.3       99.4          58.0         108. 
+133       83.5       99.3          59.5         114. 
+134       90.1      106.           61.5         122. 
+135       93.0      115.           62.8         131. 
+136       78.3       90.7          50.6         126. 
+137       85.1       98.4          68.1         118. 
+138       83.7       99.6          75.5         121. 
+139       81.8      100.           69.9         123. 
+140       88.2      100.           62.6         137. 
+141       92.7      106.           73.0         140. 
+142      100        100           100           100  
+143      101.       114.           90.0         124. 
+144       95.3      111.           82.9         157. 
+145       90.5      108.           76.6         144. 
+146       70.6       82.9          41.0         107. 
+147       66.8       84.4          39.1         122. 
+148       74.0       90.4          53.8         131. 
+149       97.1      119.           68.1         144. 
+150      102.       128.           73.5         168. 
+151       73.2       94.3          50.0         123. 
+152       82.0      102.           63.6         128. 
+153       82.7      101.           60.7         180. 
+154       78.0      103.           70.5         128. 
+155       85.0      101.           75.4         143. 
+156       91.0      102.           72.1         122. 
+157      100        100           100           100  
+158      104.       116.           91.1         147. 
+159       98.0      113.           88.5         150. 
+160       95.8      112.           76.0         151. 
+161       73.3       90.1          48.6         108. 
+162       67.9       89.0          49.8         121. 
+163       82.7       96.9          62.3         128. 
+164       98.7      125.           75.2         145. 
+165      112.       138.           78.3         189. 
+
+============================================================
+7. VARIAÇÃO INDIVIDUAL DE 2016 A 2024
+============================================================
+# A tibble: 264 × 8
+    sigla dimensao              indicador_raw           
+    <chr> <chr>                 <chr>                   
+  1 TRT1  Escala e despesa      casos_novos             
+  2 TRT10 Escala e despesa      casos_novos             
+  3 TRT11 Escala e despesa      casos_novos             
+  4 TRT12 Escala e despesa      casos_novos             
+  5 TRT13 Escala e despesa      casos_novos             
+  6 TRT14 Escala e despesa      casos_novos             
+  7 TRT15 Escala e despesa      casos_novos             
+  8 TRT16 Escala e despesa      casos_novos             
+  9 TRT17 Escala e despesa      casos_novos             
+ 10 TRT18 Escala e despesa      casos_novos             
+ 11 TRT19 Escala e despesa      casos_novos             
+ 12 TRT2  Escala e despesa      casos_novos             
+ 13 TRT20 Escala e despesa      casos_novos             
+ 14 TRT21 Escala e despesa      casos_novos             
+ 15 TRT22 Escala e despesa      casos_novos             
+ 16 TRT23 Escala e despesa      casos_novos             
+ 17 TRT24 Escala e despesa      casos_novos             
+ 18 TRT3  Escala e despesa      casos_novos             
+ 19 TRT4  Escala e despesa      casos_novos             
+ 20 TRT5  Escala e despesa      casos_novos             
+ 21 TRT6  Escala e despesa      casos_novos             
+ 22 TRT7  Escala e despesa      casos_novos             
+ 23 TRT8  Escala e despesa      casos_novos             
+ 24 TRT9  Escala e despesa      casos_novos             
+ 25 TRT1  Escala e despesa      casos_pendentes         
+ 26 TRT10 Escala e despesa      casos_pendentes         
+ 27 TRT11 Escala e despesa      casos_pendentes         
+ 28 TRT12 Escala e despesa      casos_pendentes         
+ 29 TRT13 Escala e despesa      casos_pendentes         
+ 30 TRT14 Escala e despesa      casos_pendentes         
+ 31 TRT15 Escala e despesa      casos_pendentes         
+ 32 TRT16 Escala e despesa      casos_pendentes         
+ 33 TRT17 Escala e despesa      casos_pendentes         
+ 34 TRT18 Escala e despesa      casos_pendentes         
+ 35 TRT19 Escala e despesa      casos_pendentes         
+ 36 TRT2  Escala e despesa      casos_pendentes         
+ 37 TRT20 Escala e despesa      casos_pendentes         
+ 38 TRT21 Escala e despesa      casos_pendentes         
+ 39 TRT22 Escala e despesa      casos_pendentes         
+ 40 TRT23 Escala e despesa      casos_pendentes         
+ 41 TRT24 Escala e despesa      casos_pendentes         
+ 42 TRT3  Escala e despesa      casos_pendentes         
+ 43 TRT4  Escala e despesa      casos_pendentes         
+ 44 TRT5  Escala e despesa      casos_pendentes         
+ 45 TRT6  Escala e despesa      casos_pendentes         
+ 46 TRT7  Escala e despesa      casos_pendentes         
+ 47 TRT8  Escala e despesa      casos_pendentes         
+ 48 TRT9  Escala e despesa      casos_pendentes         
+ 49 TRT1  Escala e despesa      dpj                     
+ 50 TRT10 Escala e despesa      dpj                     
+ 51 TRT11 Escala e despesa      dpj                     
+ 52 TRT12 Escala e despesa      dpj                     
+ 53 TRT13 Escala e despesa      dpj                     
+ 54 TRT14 Escala e despesa      dpj                     
+ 55 TRT15 Escala e despesa      dpj                     
+ 56 TRT16 Escala e despesa      dpj                     
+ 57 TRT17 Escala e despesa      dpj                     
+ 58 TRT18 Escala e despesa      dpj                     
+ 59 TRT19 Escala e despesa      dpj                     
+ 60 TRT2  Escala e despesa      dpj                     
+ 61 TRT20 Escala e despesa      dpj                     
+ 62 TRT21 Escala e despesa      dpj                     
+ 63 TRT22 Escala e despesa      dpj                     
+ 64 TRT23 Escala e despesa      dpj                     
+ 65 TRT24 Escala e despesa      dpj                     
+ 66 TRT3  Escala e despesa      dpj                     
+ 67 TRT4  Escala e despesa      dpj                     
+ 68 TRT5  Escala e despesa      dpj                     
+ 69 TRT6  Escala e despesa      dpj                     
+ 70 TRT7  Escala e despesa      dpj                     
+ 71 TRT8  Escala e despesa      dpj                     
+ 72 TRT9  Escala e despesa      dpj                     
+ 73 TRT1  Escala e despesa      ftt                     
+ 74 TRT10 Escala e despesa      ftt                     
+ 75 TRT11 Escala e despesa      ftt                     
+ 76 TRT12 Escala e despesa      ftt                     
+ 77 TRT13 Escala e despesa      ftt                     
+ 78 TRT14 Escala e despesa      ftt                     
+ 79 TRT15 Escala e despesa      ftt                     
+ 80 TRT16 Escala e despesa      ftt                     
+ 81 TRT17 Escala e despesa      ftt                     
+ 82 TRT18 Escala e despesa      ftt                     
+ 83 TRT19 Escala e despesa      ftt                     
+ 84 TRT2  Escala e despesa      ftt                     
+ 85 TRT20 Escala e despesa      ftt                     
+ 86 TRT21 Escala e despesa      ftt                     
+ 87 TRT22 Escala e despesa      ftt                     
+ 88 TRT23 Escala e despesa      ftt                     
+ 89 TRT24 Escala e despesa      ftt                     
+ 90 TRT3  Escala e despesa      ftt                     
+ 91 TRT4  Escala e despesa      ftt                     
+ 92 TRT5  Escala e despesa      ftt                     
+ 93 TRT6  Escala e despesa      ftt                     
+ 94 TRT7  Escala e despesa      ftt                     
+ 95 TRT8  Escala e despesa      ftt                     
+ 96 TRT9  Escala e despesa      ftt                     
+ 97 TRT1  Escala e despesa      processos_baixados      
+ 98 TRT10 Escala e despesa      processos_baixados      
+ 99 TRT11 Escala e despesa      processos_baixados      
+100 TRT12 Escala e despesa      processos_baixados      
+101 TRT13 Escala e despesa      processos_baixados      
+102 TRT14 Escala e despesa      processos_baixados      
+103 TRT15 Escala e despesa      processos_baixados      
+104 TRT16 Escala e despesa      processos_baixados      
+105 TRT17 Escala e despesa      processos_baixados      
+106 TRT18 Escala e despesa      processos_baixados      
+107 TRT19 Escala e despesa      processos_baixados      
+108 TRT2  Escala e despesa      processos_baixados      
+109 TRT20 Escala e despesa      processos_baixados      
+110 TRT21 Escala e despesa      processos_baixados      
+111 TRT22 Escala e despesa      processos_baixados      
+112 TRT23 Escala e despesa      processos_baixados      
+113 TRT24 Escala e despesa      processos_baixados      
+114 TRT3  Escala e despesa      processos_baixados      
+115 TRT4  Escala e despesa      processos_baixados      
+116 TRT5  Escala e despesa      processos_baixados      
+117 TRT6  Escala e despesa      processos_baixados      
+118 TRT7  Escala e despesa      processos_baixados      
+119 TRT8  Escala e despesa      processos_baixados      
+120 TRT9  Escala e despesa      processos_baixados      
+121 TRT1  Intensidade de gasto  dpj_por_forca_trabalho  
+122 TRT10 Intensidade de gasto  dpj_por_forca_trabalho  
+123 TRT11 Intensidade de gasto  dpj_por_forca_trabalho  
+124 TRT12 Intensidade de gasto  dpj_por_forca_trabalho  
+125 TRT13 Intensidade de gasto  dpj_por_forca_trabalho  
+126 TRT14 Intensidade de gasto  dpj_por_forca_trabalho  
+127 TRT15 Intensidade de gasto  dpj_por_forca_trabalho  
+128 TRT16 Intensidade de gasto  dpj_por_forca_trabalho  
+129 TRT17 Intensidade de gasto  dpj_por_forca_trabalho  
+130 TRT18 Intensidade de gasto  dpj_por_forca_trabalho  
+131 TRT19 Intensidade de gasto  dpj_por_forca_trabalho  
+132 TRT2  Intensidade de gasto  dpj_por_forca_trabalho  
+133 TRT20 Intensidade de gasto  dpj_por_forca_trabalho  
+134 TRT21 Intensidade de gasto  dpj_por_forca_trabalho  
+135 TRT22 Intensidade de gasto  dpj_por_forca_trabalho  
+136 TRT23 Intensidade de gasto  dpj_por_forca_trabalho  
+137 TRT24 Intensidade de gasto  dpj_por_forca_trabalho  
+138 TRT3  Intensidade de gasto  dpj_por_forca_trabalho  
+139 TRT4  Intensidade de gasto  dpj_por_forca_trabalho  
+140 TRT5  Intensidade de gasto  dpj_por_forca_trabalho  
+141 TRT6  Intensidade de gasto  dpj_por_forca_trabalho  
+142 TRT7  Intensidade de gasto  dpj_por_forca_trabalho  
+143 TRT8  Intensidade de gasto  dpj_por_forca_trabalho  
+144 TRT9  Intensidade de gasto  dpj_por_forca_trabalho  
+145 TRT1  Intensidade de gasto  dpj_por_processo_baixado
+146 TRT10 Intensidade de gasto  dpj_por_processo_baixado
+147 TRT11 Intensidade de gasto  dpj_por_processo_baixado
+148 TRT12 Intensidade de gasto  dpj_por_processo_baixado
+149 TRT13 Intensidade de gasto  dpj_por_processo_baixado
+150 TRT14 Intensidade de gasto  dpj_por_processo_baixado
+151 TRT15 Intensidade de gasto  dpj_por_processo_baixado
+152 TRT16 Intensidade de gasto  dpj_por_processo_baixado
+153 TRT17 Intensidade de gasto  dpj_por_processo_baixado
+154 TRT18 Intensidade de gasto  dpj_por_processo_baixado
+155 TRT19 Intensidade de gasto  dpj_por_processo_baixado
+156 TRT2  Intensidade de gasto  dpj_por_processo_baixado
+157 TRT20 Intensidade de gasto  dpj_por_processo_baixado
+158 TRT21 Intensidade de gasto  dpj_por_processo_baixado
+159 TRT22 Intensidade de gasto  dpj_por_processo_baixado
+160 TRT23 Intensidade de gasto  dpj_por_processo_baixado
+161 TRT24 Intensidade de gasto  dpj_por_processo_baixado
+162 TRT3  Intensidade de gasto  dpj_por_processo_baixado
+163 TRT4  Intensidade de gasto  dpj_por_processo_baixado
+164 TRT5  Intensidade de gasto  dpj_por_processo_baixado
+165 TRT6  Intensidade de gasto  dpj_por_processo_baixado
+166 TRT7  Intensidade de gasto  dpj_por_processo_baixado
+167 TRT8  Intensidade de gasto  dpj_por_processo_baixado
+168 TRT9  Intensidade de gasto  dpj_por_processo_baixado
+169 TRT1  Produtividade e carga k                       
+170 TRT10 Produtividade e carga k                       
+171 TRT11 Produtividade e carga k                       
+172 TRT12 Produtividade e carga k                       
+173 TRT13 Produtividade e carga k                       
+174 TRT14 Produtividade e carga k                       
+175 TRT15 Produtividade e carga k                       
+176 TRT16 Produtividade e carga k                       
+177 TRT17 Produtividade e carga k                       
+178 TRT18 Produtividade e carga k                       
+179 TRT19 Produtividade e carga k                       
+180 TRT2  Produtividade e carga k                       
+181 TRT20 Produtividade e carga k                       
+182 TRT21 Produtividade e carga k                       
+183 TRT22 Produtividade e carga k                       
+184 TRT23 Produtividade e carga k                       
+185 TRT24 Produtividade e carga k                       
+186 TRT3  Produtividade e carga k                       
+187 TRT4  Produtividade e carga k                       
+188 TRT5  Produtividade e carga k                       
+189 TRT6  Produtividade e carga k                       
+190 TRT7  Produtividade e carga k                       
+191 TRT8  Produtividade e carga k                       
+192 TRT9  Produtividade e carga k                       
+193 TRT1  Produtividade e carga ks                      
+194 TRT10 Produtividade e carga ks                      
+195 TRT11 Produtividade e carga ks                      
+196 TRT12 Produtividade e carga ks                      
+197 TRT13 Produtividade e carga ks                      
+198 TRT14 Produtividade e carga ks                      
+199 TRT15 Produtividade e carga ks                      
+200 TRT16 Produtividade e carga ks                      
+201 TRT17 Produtividade e carga ks                      
+202 TRT18 Produtividade e carga ks                      
+203 TRT19 Produtividade e carga ks                      
+204 TRT2  Produtividade e carga ks                      
+205 TRT20 Produtividade e carga ks                      
+206 TRT21 Produtividade e carga ks                      
+207 TRT22 Produtividade e carga ks                      
+208 TRT23 Produtividade e carga ks                      
+209 TRT24 Produtividade e carga ks                      
+210 TRT3  Produtividade e carga ks                      
+211 TRT4  Produtividade e carga ks                      
+212 TRT5  Produtividade e carga ks                      
+213 TRT6  Produtividade e carga ks                      
+214 TRT7  Produtividade e carga ks                      
+215 TRT8  Produtividade e carga ks                      
+216 TRT9  Produtividade e carga ks                      
+217 TRT1  Produtividade e carga ipm                     
+218 TRT10 Produtividade e carga ipm                     
+219 TRT11 Produtividade e carga ipm                     
+220 TRT12 Produtividade e carga ipm                     
+221 TRT13 Produtividade e carga ipm                     
+222 TRT14 Produtividade e carga ipm                     
+223 TRT15 Produtividade e carga ipm                     
+224 TRT16 Produtividade e carga ipm                     
+225 TRT17 Produtividade e carga ipm                     
+226 TRT18 Produtividade e carga ipm                     
+227 TRT19 Produtividade e carga ipm                     
+228 TRT2  Produtividade e carga ipm                     
+229 TRT20 Produtividade e carga ipm                     
+230 TRT21 Produtividade e carga ipm                     
+231 TRT22 Produtividade e carga ipm                     
+232 TRT23 Produtividade e carga ipm                     
+233 TRT24 Produtividade e carga ipm                     
+234 TRT3  Produtividade e carga ipm                     
+235 TRT4  Produtividade e carga ipm                     
+236 TRT5  Produtividade e carga ipm                     
+237 TRT6  Produtividade e carga ipm                     
+238 TRT7  Produtividade e carga ipm                     
+239 TRT8  Produtividade e carga ipm                     
+240 TRT9  Produtividade e carga ipm                     
+241 TRT1  Produtividade e carga ipsjud                  
+242 TRT10 Produtividade e carga ipsjud                  
+243 TRT11 Produtividade e carga ipsjud                  
+244 TRT12 Produtividade e carga ipsjud                  
+245 TRT13 Produtividade e carga ipsjud                  
+246 TRT14 Produtividade e carga ipsjud                  
+247 TRT15 Produtividade e carga ipsjud                  
+248 TRT16 Produtividade e carga ipsjud                  
+249 TRT17 Produtividade e carga ipsjud                  
+250 TRT18 Produtividade e carga ipsjud                  
+251 TRT19 Produtividade e carga ipsjud                  
+252 TRT2  Produtividade e carga ipsjud                  
+253 TRT20 Produtividade e carga ipsjud                  
+254 TRT21 Produtividade e carga ipsjud                  
+255 TRT22 Produtividade e carga ipsjud                  
+256 TRT23 Produtividade e carga ipsjud                  
+257 TRT24 Produtividade e carga ipsjud                  
+258 TRT3  Produtividade e carga ipsjud                  
+259 TRT4  Produtividade e carga ipsjud                  
+260 TRT5  Produtividade e carga ipsjud                  
+261 TRT6  Produtividade e carga ipsjud                  
+262 TRT7  Produtividade e carga ipsjud                  
+263 TRT8  Produtividade e carga ipsjud                  
+264 TRT9  Produtividade e carga ipsjud                  
+    indicador                                     valor_base_2016  valor_2024
+    <chr>                                                   <dbl>       <dbl>
+  1 Casos novos - primeiro e segundo graus               418930       480931 
+  2 Casos novos - primeiro e segundo graus               101072       103594 
+  3 Casos novos - primeiro e segundo graus                88210        76770 
+  4 Casos novos - primeiro e segundo graus               149383       181366 
+  5 Casos novos - primeiro e segundo graus                59200        75980 
+  6 Casos novos - primeiro e segundo graus                45674        44089 
+  7 Casos novos - primeiro e segundo graus               531410       650177 
+  8 Casos novos - primeiro e segundo graus                65062        59317 
+  9 Casos novos - primeiro e segundo graus                69358        75644 
+ 10 Casos novos - primeiro e segundo graus               137770       162058 
+ 11 Casos novos - primeiro e segundo graus                50700        44004 
+ 12 Casos novos - primeiro e segundo graus               685552       989862 
+ 13 Casos novos - primeiro e segundo graus                41345        36979 
+ 14 Casos novos - primeiro e segundo graus                57111        47325 
+ 15 Casos novos - primeiro e segundo graus                45750        34911 
+ 16 Casos novos - primeiro e segundo graus                63460        74933 
+ 17 Casos novos - primeiro e segundo graus                54462        61242 
+ 18 Casos novos - primeiro e segundo graus               410103       450023 
+ 19 Casos novos - primeiro e segundo graus               320184       323482 
+ 20 Casos novos - primeiro e segundo graus               209811       209535 
+ 21 Casos novos - primeiro e segundo graus               167953       184128 
+ 22 Casos novos - primeiro e segundo graus               102700       116867 
+ 23 Casos novos - primeiro e segundo graus               129379       123093 
+ 24 Casos novos - primeiro e segundo graus               257487       274874 
+ 25 Casos pendentes - primeiro e segundo graus           562647       641137 
+ 26 Casos pendentes - primeiro e segundo graus           149034       141177 
+ 27 Casos pendentes - primeiro e segundo graus            65316        49929 
+ 28 Casos pendentes - primeiro e segundo graus           187743       156604 
+ 29 Casos pendentes - primeiro e segundo graus            57963        43289 
+ 30 Casos pendentes - primeiro e segundo graus            39158        35357 
+ 31 Casos pendentes - primeiro e segundo graus           743420       821062 
+ 32 Casos pendentes - primeiro e segundo graus           104613        65755 
+ 33 Casos pendentes - primeiro e segundo graus            62114        75440 
+ 34 Casos pendentes - primeiro e segundo graus           119633       112757 
+ 35 Casos pendentes - primeiro e segundo graus            80412        59278 
+ 36 Casos pendentes - primeiro e segundo graus           993071       966305 
+ 37 Casos pendentes - primeiro e segundo graus            59940        41638 
+ 38 Casos pendentes - primeiro e segundo graus            71377        38016 
+ 39 Casos pendentes - primeiro e segundo graus            52541        27001 
+ 40 Casos pendentes - primeiro e segundo graus            70628        61842 
+ 41 Casos pendentes - primeiro e segundo graus            72822        46962 
+ 42 Casos pendentes - primeiro e segundo graus           386165       298479 
+ 43 Casos pendentes - primeiro e segundo graus           412798       446589 
+ 44 Casos pendentes - primeiro e segundo graus           311418       285858 
+ 45 Casos pendentes - primeiro e segundo graus           191267       159092 
+ 46 Casos pendentes - primeiro e segundo graus           127415       115094 
+ 47 Casos pendentes - primeiro e segundo graus           107631        76374 
+ 48 Casos pendentes - primeiro e segundo graus           365295       304277 
+ 49 Despesa total real - DPJ                         1948743637   2452045497 
+ 50 Despesa total real - DPJ                          532729046.   815465877.
+ 51 Despesa total real - DPJ                          448329911.   631466071.
+ 52 Despesa total real - DPJ                          657398652.  1013807081 
+ 53 Despesa total real - DPJ                          428414877.   620723655.
+ 54 Despesa total real - DPJ                          324991042.   461936450.
+ 55 Despesa total real - DPJ                         1455916217   2274129287 
+ 56 Despesa total real - DPJ                          189932987.   313730245 
+ 57 Despesa total real - DPJ                          291947856.   429078868.
+ 58 Despesa total real - DPJ                          446146384    748747552.
+ 59 Despesa total real - DPJ                          202870878.   317566694.
+ 60 Despesa total real - DPJ                         2294600283   3696125634 
+ 61 Despesa total real - DPJ                          162522686.   252131189.
+ 62 Despesa total real - DPJ                          249807402.   401383337.
+ 63 Despesa total real - DPJ                          135894627.   211282051.
+ 64 Despesa total real - DPJ                          271790679.   447397532.
+ 65 Despesa total real - DPJ                          253220603.   380493639 
+ 66 Despesa total real - DPJ                         1657233243   2528006189 
+ 67 Despesa total real - DPJ                         1455668200   2082739206 
+ 68 Despesa total real - DPJ                          971850704.  1485179187 
+ 69 Despesa total real - DPJ                          720210178.  1100695441 
+ 70 Despesa total real - DPJ                          356727224.   588877424.
+ 71 Despesa total real - DPJ                          556113652.   824506550.
+ 72 Despesa total real - DPJ                         1090717087   1426351617 
+ 73 Força de trabalho total - FTT                          5449         4672 
+ 74 Força de trabalho total - FTT                          1916         1844 
+ 75 Força de trabalho total - FTT                          1362         1300 
+ 76 Força de trabalho total - FTT                          1997         1970 
+ 77 Força de trabalho total - FTT                          1249         1164 
+ 78 Força de trabalho total - FTT                          1106         1063 
+ 79 Força de trabalho total - FTT                          5209         4717 
+ 80 Força de trabalho total - FTT                           808          942 
+ 81 Força de trabalho total - FTT                          1094         1089 
+ 82 Força de trabalho total - FTT                          1883         1860 
+ 83 Força de trabalho total - FTT                           845          796 
+ 84 Força de trabalho total - FTT                          7457         7316 
+ 85 Força de trabalho total - FTT                           671          644 
+ 86 Força de trabalho total - FTT                          1023         1038 
+ 87 Força de trabalho total - FTT                           598          686 
+ 88 Força de trabalho total - FTT                           983         1131 
+ 89 Força de trabalho total - FTT                           777          850 
+ 90 Força de trabalho total - FTT                          4933         5093 
+ 91 Força de trabalho total - FTT                          4474         4218 
+ 92 Força de trabalho total - FTT                          3170         3114 
+ 93 Força de trabalho total - FTT                          2524         2330 
+ 94 Força de trabalho total - FTT                          1616         1560 
+ 95 Força de trabalho total - FTT                          1849         1861 
+ 96 Força de trabalho total - FTT                          3304         3160 
+ 97 Processos baixados - primeiro e segundo graus        368286       485965 
+ 98 Processos baixados - primeiro e segundo graus        101662       105043 
+ 99 Processos baixados - primeiro e segundo graus         84367        73975 
+100 Processos baixados - primeiro e segundo graus        160208       178770 
+101 Processos baixados - primeiro e segundo graus         49517        77201 
+102 Processos baixados - primeiro e segundo graus         42629        45647 
+103 Processos baixados - primeiro e segundo graus        603602       622899 
+104 Processos baixados - primeiro e segundo graus         50829        75051 
+105 Processos baixados - primeiro e segundo graus         62253        77496 
+106 Processos baixados - primeiro e segundo graus        125644       157036 
+107 Processos baixados - primeiro e segundo graus         55866        51875 
+108 Processos baixados - primeiro e segundo graus        698321      1116925 
+109 Processos baixados - primeiro e segundo graus         39187        35608 
+110 Processos baixados - primeiro e segundo graus         61585        48782 
+111 Processos baixados - primeiro e segundo graus         44978        36540 
+112 Processos baixados - primeiro e segundo graus         58599        72565 
+113 Processos baixados - primeiro e segundo graus         46174        57571 
+114 Processos baixados - primeiro e segundo graus        401188       451299 
+115 Processos baixados - primeiro e segundo graus        292195       323488 
+116 Processos baixados - primeiro e segundo graus        214176       225544 
+117 Processos baixados - primeiro e segundo graus        167379       190200 
+118 Processos baixados - primeiro e segundo graus         96228       118623 
+119 Processos baixados - primeiro e segundo graus        120772       121011 
+120 Processos baixados - primeiro e segundo graus        259714       280969 
+121 Despesa por integrante da força de trabalho          357633.      524839.
+122 Despesa por integrante da força de trabalho          278042.      442227.
+123 Despesa por integrante da força de trabalho          329170.      485743.
+124 Despesa por integrante da força de trabalho          329193.      514623.
+125 Despesa por integrante da força de trabalho          343006.      533268.
+126 Despesa por integrante da força de trabalho          293844.      434559.
+127 Despesa por integrante da força de trabalho          279500.      482113.
+128 Despesa por integrante da força de trabalho          235066.      333047.
+129 Despesa por integrante da força de trabalho          266863.      394012.
+130 Despesa por integrante da força de trabalho          236934.      402552.
+131 Despesa por integrante da força de trabalho          240084.      398953.
+132 Despesa por integrante da força de trabalho          307711.      505211.
+133 Despesa por integrante da força de trabalho          242210.      391508.
+134 Despesa por integrante da força de trabalho          244191.      386689.
+135 Despesa por integrante da força de trabalho          227249.      307991.
+136 Despesa por integrante da força de trabalho          276491.      395577.
+137 Despesa por integrante da força de trabalho          325895.      447640.
+138 Despesa por integrante da força de trabalho          335948.      496369.
+139 Despesa por integrante da força de trabalho          325362.      493774.
+140 Despesa por integrante da força de trabalho          306578.      476936.
+141 Despesa por integrante da força de trabalho          285345.      472401.
+142 Despesa por integrante da força de trabalho          220747.      377486.
+143 Despesa por integrante da força de trabalho          300765.      443045.
+144 Despesa por integrante da força de trabalho          330120.      451377.
+145 Despesa por processo baixado                           5291.        5046.
+146 Despesa por processo baixado                           5240.        7763.
+147 Despesa por processo baixado                           5314.        8536.
+148 Despesa por processo baixado                           4103.        5671.
+149 Despesa por processo baixado                           8652.        8040.
+150 Despesa por processo baixado                           7624.       10120.
+151 Despesa por processo baixado                           2412.        3651.
+152 Despesa por processo baixado                           3737.        4180.
+153 Despesa por processo baixado                           4690.        5537.
+154 Despesa por processo baixado                           3551.        4768.
+155 Despesa por processo baixado                           3631.        6122.
+156 Despesa por processo baixado                           3286.        3309.
+157 Despesa por processo baixado                           4147.        7081.
+158 Despesa por processo baixado                           4056.        8228.
+159 Despesa por processo baixado                           3021.        5782.
+160 Despesa por processo baixado                           4638.        6165.
+161 Despesa por processo baixado                           5484.        6609.
+162 Despesa por processo baixado                           4131.        5602.
+163 Despesa por processo baixado                           4982.        6438.
+164 Despesa por processo baixado                           4538.        6585.
+165 Despesa por processo baixado                           4303.        5787.
+166 Despesa por processo baixado                           3707.        4964.
+167 Despesa por processo baixado                           4605.        6813.
+168 Despesa por processo baixado                           4200.        5077.
+169 Carga de trabalho dos magistrados - K                  3334.        4803.
+170 Carga de trabalho dos magistrados - K                  2956.        2885.
+171 Carga de trabalho dos magistrados - K                  2680.        2027.
+172 Carga de trabalho dos magistrados - K                  3342.        2857.
+173 Carga de trabalho dos magistrados - K                  1916.        1970.
+174 Carga de trabalho dos magistrados - K                  1639.        1743.
+175 Carga de trabalho dos magistrados - K                  3848.        4545.
+176 Carga de trabalho dos magistrados - K                  3337.        3376.
+177 Carga de trabalho dos magistrados - K                  2404.        2673.
+178 Carga de trabalho dos magistrados - K                  2721.        2969.
+179 Carga de trabalho dos magistrados - K                  3030.        2416.
+180 Carga de trabalho dos magistrados - K                  3848.        4112.
+181 Carga de trabalho dos magistrados - K                  3414.        2369.
+182 Carga de trabalho dos magistrados - K                  2879.        1708.
+183 Carga de trabalho dos magistrados - K                  3158.        2071.
+184 Carga de trabalho dos magistrados - K                  1918.        1979.
+185 Carga de trabalho dos magistrados - K                  2288.        2073.
+186 Carga de trabalho dos magistrados - K                  3157.        2976.
+187 Carga de trabalho dos magistrados - K                  2876.        3098.
+188 Carga de trabalho dos magistrados - K                  3161.        3020.
+189 Carga de trabalho dos magistrados - K                  2809.        2626.
+190 Carga de trabalho dos magistrados - K                  3115.        3147.
+191 Carga de trabalho dos magistrados - K                  2304.        1980.
+192 Carga de trabalho dos magistrados - K                  3422.        3056.
+193 Carga de trabalho por servidor - KS                     358.         469.
+194 Carga de trabalho por servidor - KS                     350.         456.
+195 Carga de trabalho por servidor - KS                     250.         232.
+196 Carga de trabalho por servidor - KS                     339.         331.
+197 Carga de trabalho por servidor - KS                     173.         222.
+198 Carga de trabalho por servidor - KS                     193.         191.
+199 Carga de trabalho por servidor - KS                     485.         581.
+200 Carga de trabalho por servidor - KS                     474.         393.
+201 Carga de trabalho por servidor - KS                     270.         337.
+202 Carga de trabalho por servidor - KS                     254.         282.
+203 Carga de trabalho por servidor - KS                     349.         329.
+204 Carga de trabalho por servidor - KS                     432.         522.
+205 Carga de trabalho por servidor - KS                     412.         314.
+206 Carga de trabalho por servidor - KS                     325.         206.
+207 Carga de trabalho por servidor - KS                     366.         230.
+208 Carga de trabalho por servidor - KS                     241.         245.
+209 Carga de trabalho por servidor - KS                     282.         276.
+210 Carga de trabalho por servidor - KS                     291.         298.
+211 Carga de trabalho por servidor - KS                     290.         329.
+212 Carga de trabalho por servidor - KS                     360.         375.
+213 Carga de trabalho por servidor - KS                     316.         318.
+214 Carga de trabalho por servidor - KS                     353.         372.
+215 Carga de trabalho por servidor - KS                     255.         229.
+216 Carga de trabalho por servidor - KS                     380.         353.
+217 Produtividade dos magistrados - IPM                    1137.        1898.
+218 Produtividade dos magistrados - IPM                    1059.        1142.
+219 Produtividade dos magistrados - IPM                    1406.        1138.
+220 Produtividade dos magistrados - IPM                    1405.        1442.
+221 Produtividade dos magistrados - IPM                     786.        1188.
+222 Produtividade dos magistrados - IPM                     775.         932.
+223 Produtividade dos magistrados - IPM                    1584.        1837.
+224 Produtividade dos magistrados - IPM                    1017.        1706.
+225 Produtividade dos magistrados - IPM                     988.        1211.
+226 Produtividade dos magistrados - IPM                    1269.        1636.
+227 Produtividade dos magistrados - IPM                    1164.        1081.
+228 Produtividade dos magistrados - IPM                    1467.        2053.
+229 Produtividade dos magistrados - IPM                    1120.         989.
+230 Produtividade dos magistrados - IPM                    1208.         887.
+231 Produtividade dos magistrados - IPM                    1323.        1107.
+232 Produtividade dos magistrados - IPM                     792.        1008.
+233 Produtividade dos magistrados - IPM                     810.        1066.
+234 Produtividade dos magistrados - IPM                    1428.        1641.
+235 Produtividade dos magistrados - IPM                    1066.        1221.
+236 Produtividade dos magistrados - IPM                    1110.        1200.
+237 Produtividade dos magistrados - IPM                    1154.        1339.
+238 Produtividade dos magistrados - IPM                    1250.        1502.
+239 Produtividade dos magistrados - IPM                    1129.        1142.
+240 Produtividade dos magistrados - IPM                    1261.        1377.
+241 Produtividade dos servidores - IPSJud                   122.         185.
+242 Produtividade dos servidores - IPSJud                   125.         180.
+243 Produtividade dos servidores - IPSJud                   131.         130.
+244 Produtividade dos servidores - IPSJud                   143.         167.
+245 Produtividade dos servidores - IPSJud                    70.8        134.
+246 Produtividade dos servidores - IPSJud                    91.1        102.
+247 Produtividade dos servidores - IPSJud                   200.         235.
+248 Produtividade dos servidores - IPSJud                   144.         199.
+249 Produtividade dos servidores - IPSJud                   111.         153.
+250 Produtividade dos servidores - IPSJud                   118.         155.
+251 Produtividade dos servidores - IPSJud                   134.         147.
+252 Produtividade dos servidores - IPSJud                   165.         261.
+253 Produtividade dos servidores - IPSJud                   135.         131.
+254 Produtividade dos servidores - IPSJud                   136.         107.
+255 Produtividade dos servidores - IPSJud                   154.         123.
+256 Produtividade dos servidores - IPSJud                    99.3        125.
+257 Produtividade dos servidores - IPSJud                    99.7        142.
+258 Produtividade dos servidores - IPSJud                   132.         164.
+259 Produtividade dos servidores - IPSJud                   107.         130.
+260 Produtividade dos servidores - IPSJud                   126.         149.
+261 Produtividade dos servidores - IPSJud                   130.         162.
+262 Produtividade dos servidores - IPSJud                   142.         178.
+263 Produtividade dos servidores - IPSJud                   125.         132.
+264 Produtividade dos servidores - IPSJud                   140.         159.
+    indice_2024 variacao_pct_2016_2024
+          <dbl>                  <dbl>
+  1       115.                  14.8  
+  2       102.                   2.50 
+  3        87.0                -13.0  
+  4       121.                  21.4  
+  5       128.                  28.3  
+  6        96.5                 -3.47 
+  7       122.                  22.3  
+  8        91.2                 -8.83 
+  9       109.                   9.06 
+ 10       118.                  17.6  
+ 11        86.8                -13.2  
+ 12       144.                  44.4  
+ 13        89.4                -10.6  
+ 14        82.9                -17.1  
+ 15        76.3                -23.7  
+ 16       118.                  18.1  
+ 17       112.                  12.4  
+ 18       110.                   9.73 
+ 19       101.                   1.03 
+ 20        99.9                 -0.132
+ 21       110.                   9.63 
+ 22       114.                  13.8  
+ 23        95.1                 -4.86 
+ 24       107.                   6.75 
+ 25       114.                  14.0  
+ 26        94.7                 -5.27 
+ 27        76.4                -23.6  
+ 28        83.4                -16.6  
+ 29        74.7                -25.3  
+ 30        90.3                 -9.71 
+ 31       110.                  10.4  
+ 32        62.9                -37.1  
+ 33       121.                  21.5  
+ 34        94.3                 -5.75 
+ 35        73.7                -26.3  
+ 36        97.3                 -2.70 
+ 37        69.5                -30.5  
+ 38        53.3                -46.7  
+ 39        51.4                -48.6  
+ 40        87.6                -12.4  
+ 41        64.5                -35.5  
+ 42        77.3                -22.7  
+ 43       108.                   8.19 
+ 44        91.8                 -8.21 
+ 45        83.2                -16.8  
+ 46        90.3                 -9.67 
+ 47        71.0                -29.0  
+ 48        83.3                -16.7  
+ 49       126.                  25.8  
+ 50       153.                  53.1  
+ 51       141.                  40.8  
+ 52       154.                  54.2  
+ 53       145.                  44.9  
+ 54       142.                  42.1  
+ 55       156.                  56.2  
+ 56       165.                  65.2  
+ 57       147.                  47.0  
+ 58       168.                  67.8  
+ 59       157.                  56.5  
+ 60       161.                  61.1  
+ 61       155.                  55.1  
+ 62       161.                  60.7  
+ 63       155.                  55.5  
+ 64       165.                  64.6  
+ 65       150.                  50.3  
+ 66       153.                  52.5  
+ 67       143.                  43.1  
+ 68       153.                  52.8  
+ 69       153.                  52.8  
+ 70       165.                  65.1  
+ 71       148.                  48.3  
+ 72       131.                  30.8  
+ 73        85.7                -14.3  
+ 74        96.2                 -3.76 
+ 75        95.4                 -4.55 
+ 76        98.6                 -1.35 
+ 77        93.2                 -6.81 
+ 78        96.1                 -3.89 
+ 79        90.6                 -9.45 
+ 80       117.                  16.6  
+ 81        99.5                 -0.457
+ 82        98.8                 -1.22 
+ 83        94.2                 -5.80 
+ 84        98.1                 -1.89 
+ 85        96.0                 -4.02 
+ 86       101.                   1.47 
+ 87       115.                  14.7  
+ 88       115.                  15.1  
+ 89       109.                   9.40 
+ 90       103.                   3.24 
+ 91        94.3                 -5.72 
+ 92        98.2                 -1.77 
+ 93        92.3                 -7.69 
+ 94        96.5                 -3.47 
+ 95       101.                   0.649
+ 96        95.6                 -4.36 
+ 97       132.                  32.0  
+ 98       103.                   3.33 
+ 99        87.7                -12.3  
+100       112.                  11.6  
+101       156.                  55.9  
+102       107.                   7.08 
+103       103.                   3.20 
+104       148.                  47.7  
+105       124.                  24.5  
+106       125.                  25.0  
+107        92.9                 -7.14 
+108       160.                  59.9  
+109        90.9                 -9.13 
+110        79.2                -20.8  
+111        81.2                -18.8  
+112       124.                  23.8  
+113       125.                  24.7  
+114       112.                  12.5  
+115       111.                  10.7  
+116       105.                   5.31 
+117       114.                  13.6  
+118       123.                  23.3  
+119       100.                   0.198
+120       108.                   8.18 
+121       147.                  46.8  
+122       159.                  59.1  
+123       148.                  47.6  
+124       156.                  56.3  
+125       155.                  55.5  
+126       148.                  47.9  
+127       172.                  72.5  
+128       142.                  41.7  
+129       148.                  47.6  
+130       170.                  69.9  
+131       166.                  66.2  
+132       164.                  64.2  
+133       162.                  61.6  
+134       158.                  58.4  
+135       136.                  35.5  
+136       143.                  43.1  
+137       137.                  37.4  
+138       148.                  47.8  
+139       152.                  51.8  
+140       156.                  55.6  
+141       166.                  65.6  
+142       171.                  71.0  
+143       147.                  47.3  
+144       137.                  36.7  
+145        95.4                 -4.64 
+146       148.                  48.1  
+147       161.                  60.6  
+148       138.                  38.2  
+149        92.9                 -7.07 
+150       133.                  32.7  
+151       151.                  51.4  
+152       112.                  11.9  
+153       118.                  18.1  
+154       134.                  34.3  
+155       169.                  68.6  
+156       101.                   0.710
+157       171.                  70.7  
+158       203.                 103.   
+159       191.                  91.4  
+160       133.                  32.9  
+161       121.                  20.5  
+162       136.                  35.6  
+163       129.                  29.2  
+164       145.                  45.1  
+165       134.                  34.5  
+166       134.                  33.9  
+167       148.                  48.0  
+168       121.                  20.9  
+169       144.                  44.1  
+170        97.6                 -2.39 
+171        75.6                -24.4  
+172        85.5                -14.5  
+173       103.                   2.81 
+174       106.                   6.34 
+175       118.                  18.1  
+176       101.                   1.19 
+177       111.                  11.2  
+178       109.                   9.11 
+179        79.7                -20.3  
+180       107.                   6.84 
+181        69.4                -30.6  
+182        59.3                -40.7  
+183        65.6                -34.4  
+184       103.                   3.17 
+185        90.6                 -9.42 
+186        94.2                 -5.75 
+187       108.                   7.72 
+188        95.5                 -4.47 
+189        93.5                 -6.53 
+190       101.                   1.02 
+191        85.9                -14.1  
+192        89.3                -10.7  
+193       131.                  31.0  
+194       130.                  30.4  
+195        93.1                 -6.92 
+196        97.6                 -2.41 
+197       129.                  28.7  
+198        99.2                 -0.813
+199       120.                  19.8  
+200        82.9                -17.1  
+201       125.                  25.2  
+202       111.                  11.0  
+203        94.2                 -5.81 
+204       121.                  21.0  
+205        76.1                -23.9  
+206        63.3                -36.7  
+207        62.8                -37.2  
+208       102.                   1.93 
+209        98.1                 -1.89 
+210       102.                   2.20 
+211       114.                  13.5  
+212       104.                   4.17 
+213       100.                   0.422
+214       105.                   5.35 
+215        89.8                -10.2  
+216        92.7                 -7.26 
+217       167.                  67.0  
+218       108.                   7.82 
+219        80.9                -19.1  
+220       103.                   2.59 
+221       151.                  51.1  
+222       120.                  20.2  
+223       116.                  16.0  
+224       168.                  67.8  
+225       123.                  22.5  
+226       129.                  28.9  
+227        92.9                 -7.14 
+228       140.                  40.0  
+229        88.3                -11.7  
+230        73.5                -26.5  
+231        83.7                -16.3  
+232       127.                  27.3  
+233       132.                  31.6  
+234       115.                  14.9  
+235       114.                  14.5  
+236       108.                   8.11 
+237       116.                  16.0  
+238       120.                  20.2  
+239       101.                   1.14 
+240       109.                   9.24 
+241       152.                  51.9  
+242       144.                  44.0  
+243        99.6                 -0.410
+244       117.                  17.1  
+245       189.                  89.2  
+246       112.                  12.1  
+247       118.                  17.7  
+248       137.                  37.5  
+249       138.                  38.0  
+250       131.                  31.2  
+251       110.                   9.69 
+252       158.                  58.5  
+253        96.9                 -3.12 
+254        78.3                -21.7  
+255        80.1                -19.9  
+256       126.                  25.8  
+257       143.                  42.5  
+258       125.                  24.6  
+259       121.                  20.6  
+260       118.                  17.9  
+261       125.                  24.7  
+262       125.                  25.3  
+263       106.                   5.66 
+264       113.                  13.4  
+
+============================================================
+8. RESUMO DA VARIAÇÃO DE 2016 A 2024
+============================================================
+# A tibble: 11 × 9
+   dimensao              indicador                                     n_trts
+   <chr>                 <chr>                                          <int>
+ 1 Escala e despesa      Casos novos - primeiro e segundo graus            24
+ 2 Escala e despesa      Casos pendentes - primeiro e segundo graus        24
+ 3 Escala e despesa      Despesa total real - DPJ                          24
+ 4 Escala e despesa      Força de trabalho total - FTT                     24
+ 5 Escala e despesa      Processos baixados - primeiro e segundo graus     24
+ 6 Intensidade de gasto  Despesa por integrante da força de trabalho       24
+ 7 Intensidade de gasto  Despesa por processo baixado                      24
+ 8 Produtividade e carga Carga de trabalho dos magistrados - K             24
+ 9 Produtividade e carga Carga de trabalho por servidor - KS               24
+10 Produtividade e carga Produtividade dos magistrados - IPM               24
+11 Produtividade e carga Produtividade dos servidores - IPSJud             24
+   variacao_media_pct variacao_mediana_pct p25_variacao_pct p75_variacao_pct
+                <dbl>                <dbl>            <dbl>            <dbl>
+ 1               5.71                 7.91            -5.85            15.5 
+ 2             -15.6                -16.6            -27.0             -5.63
+ 3              51.9                 53.0             46.4             57.6 
+ 4              -0.81                -2.68            -4.84             0.85
+ 5              13.5                 11.2              2.45            24.5 
+ 6              53.6                 53.6             47.2             62.3 
+ 7              38.3                 34.4             20.8             49.0 
+ 8              -4.44                -3.43           -14.2              6.46
+ 9               1.86                 1.18            -7               15.1 
+10              16.1                 15.5              2.23            27.7 
+11              23.4                 22.6             11.5             37.6 
+   minimo_variacao_pct maximo_variacao_pct
+                 <dbl>               <dbl>
+ 1              -23.7                 44.4
+ 2              -48.6                 21.4
+ 3               25.8                 67.8
+ 4              -14.3                 16.6
+ 5              -20.8                 59.9
+ 6               35.5                 72.5
+ 7               -7.07               103. 
+ 8              -40.7                 44.1
+ 9              -37.2                 31.0
+10              -26.6                 67.8
+11              -21.7                 89.2
+
+============================================================
+9. RESUMO DOS ÍNDICES POR PERÍODO
+============================================================
+# A tibble: 33 × 9
+   periodo                    dimensao              indicador_raw           
+   <chr>                      <chr>                 <chr>                   
+ 1 Novo arcabouço (2023-2024) Escala e despesa      casos_novos             
+ 2 Pré-EC 95 (2010-2016)      Escala e despesa      casos_novos             
+ 3 Pós-EC 95 (2017-2022)      Escala e despesa      casos_novos             
+ 4 Novo arcabouço (2023-2024) Escala e despesa      casos_pendentes         
+ 5 Pré-EC 95 (2010-2016)      Escala e despesa      casos_pendentes         
+ 6 Pós-EC 95 (2017-2022)      Escala e despesa      casos_pendentes         
+ 7 Novo arcabouço (2023-2024) Escala e despesa      dpj                     
+ 8 Pré-EC 95 (2010-2016)      Escala e despesa      dpj                     
+ 9 Pós-EC 95 (2017-2022)      Escala e despesa      dpj                     
+10 Novo arcabouço (2023-2024) Escala e despesa      ftt                     
+11 Pré-EC 95 (2010-2016)      Escala e despesa      ftt                     
+12 Pós-EC 95 (2017-2022)      Escala e despesa      ftt                     
+13 Novo arcabouço (2023-2024) Escala e despesa      processos_baixados      
+14 Pré-EC 95 (2010-2016)      Escala e despesa      processos_baixados      
+15 Pós-EC 95 (2017-2022)      Escala e despesa      processos_baixados      
+16 Novo arcabouço (2023-2024) Intensidade de gasto  dpj_por_forca_trabalho  
+17 Pré-EC 95 (2010-2016)      Intensidade de gasto  dpj_por_forca_trabalho  
+18 Pós-EC 95 (2017-2022)      Intensidade de gasto  dpj_por_forca_trabalho  
+19 Novo arcabouço (2023-2024) Intensidade de gasto  dpj_por_processo_baixado
+20 Pré-EC 95 (2010-2016)      Intensidade de gasto  dpj_por_processo_baixado
+21 Pós-EC 95 (2017-2022)      Intensidade de gasto  dpj_por_processo_baixado
+22 Novo arcabouço (2023-2024) Produtividade e carga k                       
+23 Pré-EC 95 (2010-2016)      Produtividade e carga k                       
+24 Pós-EC 95 (2017-2022)      Produtividade e carga k                       
+25 Novo arcabouço (2023-2024) Produtividade e carga ks                      
+26 Pré-EC 95 (2010-2016)      Produtividade e carga ks                      
+27 Pós-EC 95 (2017-2022)      Produtividade e carga ks                      
+28 Novo arcabouço (2023-2024) Produtividade e carga ipm                     
+29 Pré-EC 95 (2010-2016)      Produtividade e carga ipm                     
+30 Pós-EC 95 (2017-2022)      Produtividade e carga ipm                     
+31 Novo arcabouço (2023-2024) Produtividade e carga ipsjud                  
+32 Pré-EC 95 (2010-2016)      Produtividade e carga ipsjud                  
+33 Pós-EC 95 (2017-2022)      Produtividade e carga ipsjud                  
+   indicador                                     n_trts indice_medio indice_mediano
+   <chr>                                          <int>        <dbl>          <dbl>
+ 1 Casos novos - primeiro e segundo graus            24         99.5          101. 
+ 2 Casos novos - primeiro e segundo graus            24         89.0           88.2
+ 3 Casos novos - primeiro e segundo graus            24         77.6           77.9
+ 4 Casos pendentes - primeiro e segundo graus        24         84.9           84.2
+ 5 Casos pendentes - primeiro e segundo graus        24         81.8           77.3
+ 6 Casos pendentes - primeiro e segundo graus        24         92.3           92.5
+ 7 Despesa total real - DPJ                          24        145.           145. 
+ 8 Despesa total real - DPJ                          24         79.8           80.6
+ 9 Despesa total real - DPJ                          24        117.           119. 
+10 Força de trabalho total - FTT                     24         99.2           97.1
+11 Força de trabalho total - FTT                     24        100.           100. 
+12 Força de trabalho total - FTT                     24         97.2           95.3
+13 Processos baixados - primeiro e segundo graus     24        108.           106. 
+14 Processos baixados - primeiro e segundo graus     24         92.5           93.5
+15 Processos baixados - primeiro e segundo graus     24         90.7           91.1
+16 Despesa por integrante da força de trabalho       24        146.           147. 
+17 Despesa por integrante da força de trabalho       24         79.6           79.2
+18 Despesa por integrante da força de trabalho       24        122.           124. 
+19 Despesa por processo baixado                      24        138.           136. 
+20 Despesa por processo baixado                      24         87.1           86.0
+21 Despesa por processo baixado                      24        137.           137. 
+22 Carga de trabalho dos magistrados - K             24         94.7           94.6
+23 Carga de trabalho dos magistrados - K             24         86.0           84.1
+24 Carga de trabalho dos magistrados - K             24         91.9           91.8
+25 Carga de trabalho por servidor - KS               24         98.8           99.2
+26 Carga de trabalho por servidor - KS               24         85.4           85.7
+27 Carga de trabalho por servidor - KS               24         96.0           96.0
+28 Produtividade dos magistrados - IPM               24        112.           112. 
+29 Produtividade dos magistrados - IPM               24         94.0           93.1
+30 Produtividade dos magistrados - IPM               24         91.9           91.9
+31 Produtividade dos servidores - IPSJud             24        117.           117. 
+32 Produtividade dos servidores - IPSJud             24         93.8           94.5
+33 Produtividade dos servidores - IPSJud             24         96.1           95.0
+   p25_indice p75_indice
+        <dbl>      <dbl>
+ 1       89.9      105. 
+ 2       85.2       91.0
+ 3       75.1       81.7
+ 4       73.1       94.5
+ 5       70.9       85.0
+ 6       85.2       96.8
+ 7      141.       149. 
+ 8       78.0       82.4
+ 9      114.       121. 
+10       94.9      101. 
+11       97.7      102. 
+12       93.2       99.6
+13       97.1      119. 
+14       87.0       95.3
+15       82.4       94.9
+16      139.       152. 
+17       77.0       82.6
+18      116.       128. 
+19      120.       152. 
+20       82.2       93.3
+21      118.       148. 
+22       84.0      102. 
+23       79.7       89.8
+24       86.8       98.1
+25       91.2      112. 
+26       78.8       89.3
+27       90.8      102. 
+28       97.5      124. 
+29       88.4       97.4
+30       83.0       96.8
+31      108.       127. 
+32       86.1      102. 
+33       85.4      101. 
+
+============================================================
+10. RESUMO ANUAL DO IAD E DA TCL
+============================================================
+# A tibble: 30 × 11
+     ano periodo                    indicador_raw
+   <int> <chr>                      <chr>        
+ 1  2010 Pré-EC 95 (2010-2016)      tcl_pct      
+ 2  2011 Pré-EC 95 (2010-2016)      tcl_pct      
+ 3  2012 Pré-EC 95 (2010-2016)      tcl_pct      
+ 4  2013 Pré-EC 95 (2010-2016)      tcl_pct      
+ 5  2014 Pré-EC 95 (2010-2016)      tcl_pct      
+ 6  2015 Pré-EC 95 (2010-2016)      tcl_pct      
+ 7  2016 Pré-EC 95 (2010-2016)      tcl_pct      
+ 8  2017 Pós-EC 95 (2017-2022)      tcl_pct      
+ 9  2018 Pós-EC 95 (2017-2022)      tcl_pct      
+10  2019 Pós-EC 95 (2017-2022)      tcl_pct      
+11  2020 Pós-EC 95 (2017-2022)      tcl_pct      
+12  2021 Pós-EC 95 (2017-2022)      tcl_pct      
+13  2022 Pós-EC 95 (2017-2022)      tcl_pct      
+14  2023 Novo arcabouço (2023-2024) tcl_pct      
+15  2024 Novo arcabouço (2023-2024) tcl_pct      
+16  2010 Pré-EC 95 (2010-2016)      iad_pct      
+17  2011 Pré-EC 95 (2010-2016)      iad_pct      
+18  2012 Pré-EC 95 (2010-2016)      iad_pct      
+19  2013 Pré-EC 95 (2010-2016)      iad_pct      
+20  2014 Pré-EC 95 (2010-2016)      iad_pct      
+21  2015 Pré-EC 95 (2010-2016)      iad_pct      
+22  2016 Pré-EC 95 (2010-2016)      iad_pct      
+23  2017 Pós-EC 95 (2017-2022)      iad_pct      
+24  2018 Pós-EC 95 (2017-2022)      iad_pct      
+25  2019 Pós-EC 95 (2017-2022)      iad_pct      
+26  2020 Pós-EC 95 (2017-2022)      iad_pct      
+27  2021 Pós-EC 95 (2017-2022)      iad_pct      
+28  2022 Pós-EC 95 (2017-2022)      iad_pct      
+29  2023 Novo arcabouço (2023-2024) iad_pct      
+30  2024 Novo arcabouço (2023-2024) iad_pct      
+   indicador                                  n_trts media_pct mediana_pct p25_pct
+   <chr>                                       <int>     <dbl>       <dbl>   <dbl>
+ 1 Taxa de congestionamento líquida - TCL (%)     24      48.4        49.2    41.7
+ 2 Taxa de congestionamento líquida - TCL (%)     24      46.5        45.7    39.7
+ 3 Taxa de congestionamento líquida - TCL (%)     24      49.2        47.7    42.1
+ 4 Taxa de congestionamento líquida - TCL (%)     24      52.2        52.8    46.3
+ 5 Taxa de congestionamento líquida - TCL (%)     24      52.2        50.3    46.4
+ 6 Taxa de congestionamento líquida - TCL (%)     24      52.5        54.0    46.7
+ 7 Taxa de congestionamento líquida - TCL (%)     24      53.3        53.3    48.9
+ 8 Taxa de congestionamento líquida - TCL (%)     24      53.1        52.8    49.0
+ 9 Taxa de congestionamento líquida - TCL (%)     24      50.0        50.5    44.0
+10 Taxa de congestionamento líquida - TCL (%)     24      48.8        49.1    42.3
+11 Taxa de congestionamento líquida - TCL (%)     24      55.4        55.8    49.8
+12 Taxa de congestionamento líquida - TCL (%)     24      53.2        54.8    47.0
+13 Taxa de congestionamento líquida - TCL (%)     24      49.2        49.2    42.6
+14 Taxa de congestionamento líquida - TCL (%)     24      40.6        39.0    34.8
+15 Taxa de congestionamento líquida - TCL (%)     24      37.6        36.0    34.0
+16 Índice de atendimento à demanda - IAD (%)      24      99.0       102.     93.0
+17 Índice de atendimento à demanda - IAD (%)      24     102.        102.     94.2
+18 Índice de atendimento à demanda - IAD (%)      24     101.        100.     95.8
+19 Índice de atendimento à demanda - IAD (%)      24      98.6        97.5    91.6
+20 Índice de atendimento à demanda - IAD (%)      24     105.        103.     97.5
+21 Índice de atendimento à demanda - IAD (%)      24      99.6       101.     92.4
+22 Índice de atendimento à demanda - IAD (%)      24      96.2        95.2    91.2
+23 Índice de atendimento à demanda - IAD (%)      24     101.        101.     95.8
+24 Índice de atendimento à demanda - IAD (%)      24     125.        123.    120. 
+25 Índice de atendimento à demanda - IAD (%)      24     120.        116.    110. 
+26 Índice de atendimento à demanda - IAD (%)      24     107.        105.    101. 
+27 Índice de atendimento à demanda - IAD (%)      24     110.        109.    106. 
+28 Índice de atendimento à demanda - IAD (%)      24     110.        109.    105. 
+29 Índice de atendimento à demanda - IAD (%)      24     106.        103.     99.1
+30 Índice de atendimento à demanda - IAD (%)      24     103.        101.     98.0
+   p75_pct minimo_pct maximo_pct
+     <dbl>      <dbl>      <dbl>
+ 1    54.8       24.9       74.8
+ 2    51.4       27.0       71.9
+ 3    56.4       26.7       68.8
+ 4    56.5       32.3       66.1
+ 5    59.3       40.1       67.1
+ 6    57.4       37.4       62.3
+ 7    57.8       43.3       64.8
+ 8    57.2       42.0       65.8
+ 9    55.3       38.6       60.6
+10    53.5       33.7       60.4
+11    59.2       45.3       69.1
+12    59.6       39.4       68.5
+13    56.0       33.3       62.4
+14    45.6       28.5       55.8
+15    41.3       25.9       50.2
+16   105.        66.8      135. 
+17   107.        79.2      145. 
+18   104.        84.2      134. 
+19   105.        80.7      116. 
+20   116.        79.4      128. 
+21   105.        73.0      128. 
+22   101.        78.1      114. 
+23   105.        86.4      120. 
+24   130.       110.       143. 
+25   127.       106.       160. 
+26   111.        91.2      137. 
+27   113.        99.2      128. 
+28   114.        98.6      128. 
+29   108.        95.0      131. 
+30   103.        94.0      127. 
+
+============================================================
+11. VARIAÇÃO INDIVIDUAL DO IAD E DA TCL — 2016 A 2024
+============================================================
+# A tibble: 48 × 6
+   sigla indicador_raw indicador                                  ano_2016 ano_2024
+   <chr> <chr>         <chr>                                         <dbl>    <dbl>
+ 1 TRT1  tcl_pct       Taxa de congestionamento líquida - TCL (%)     57.8     50.2
+ 2 TRT10 tcl_pct       Taxa de congestionamento líquida - TCL (%)     57.8     46.6
+ 3 TRT11 tcl_pct       Taxa de congestionamento líquida - TCL (%)     43.3     30.0
+ 4 TRT12 tcl_pct       Taxa de congestionamento líquida - TCL (%)     53.3     35.8
+ 5 TRT13 tcl_pct       Taxa de congestionamento líquida - TCL (%)     49.2     26.1
+ 6 TRT14 tcl_pct       Taxa de congestionamento líquida - TCL (%)     47.1     27.6
+ 7 TRT15 tcl_pct       Taxa de congestionamento líquida - TCL (%)     53.0     48.2
+ 8 TRT16 tcl_pct       Taxa de congestionamento líquida - TCL (%)     64.8     38.0
+ 9 TRT17 tcl_pct       Taxa de congestionamento líquida - TCL (%)     48.4     40.3
+10 TRT18 tcl_pct       Taxa de congestionamento líquida - TCL (%)     45.0     31.3
+11 TRT19 tcl_pct       Taxa de congestionamento líquida - TCL (%)     52.7     37.0
+12 TRT2  tcl_pct       Taxa de congestionamento líquida - TCL (%)     58.4     36.1
+13 TRT20 tcl_pct       Taxa de congestionamento líquida - TCL (%)     59.2     44.2
+14 TRT21 tcl_pct       Taxa de congestionamento líquida - TCL (%)     53.4     35.7
+15 TRT22 tcl_pct       Taxa de congestionamento líquida - TCL (%)     53.7     35.8
+16 TRT23 tcl_pct       Taxa de congestionamento líquida - TCL (%)     49.0     35.8
+17 TRT24 tcl_pct       Taxa de congestionamento líquida - TCL (%)     60.6     34.6
+18 TRT3  tcl_pct       Taxa de congestionamento líquida - TCL (%)     47.7     32.4
+19 TRT4  tcl_pct       Taxa de congestionamento líquida - TCL (%)     58.1     47.9
+20 TRT5  tcl_pct       Taxa de congestionamento líquida - TCL (%)     56.0     46.9
+21 TRT6  tcl_pct       Taxa de congestionamento líquida - TCL (%)     53.1     36.0
+22 TRT7  tcl_pct       Taxa de congestionamento líquida - TCL (%)     56.3     40.3
+23 TRT8  tcl_pct       Taxa de congestionamento líquida - TCL (%)     46.7     25.9
+24 TRT9  tcl_pct       Taxa de congestionamento líquida - TCL (%)     55.5     39.0
+25 TRT1  iad_pct       Índice de atendimento à demanda - IAD (%)      87.9    101. 
+26 TRT10 iad_pct       Índice de atendimento à demanda - IAD (%)     101.     101. 
+27 TRT11 iad_pct       Índice de atendimento à demanda - IAD (%)      95.6     96.4
+28 TRT12 iad_pct       Índice de atendimento à demanda - IAD (%)     107.      98.6
+29 TRT13 iad_pct       Índice de atendimento à demanda - IAD (%)      83.6    102. 
+30 TRT14 iad_pct       Índice de atendimento à demanda - IAD (%)      93.3    104. 
+31 TRT15 iad_pct       Índice de atendimento à demanda - IAD (%)     114.      95.8
+32 TRT16 iad_pct       Índice de atendimento à demanda - IAD (%)      78.1    127. 
+33 TRT17 iad_pct       Índice de atendimento à demanda - IAD (%)      89.8    102. 
+34 TRT18 iad_pct       Índice de atendimento à demanda - IAD (%)      91.2     96.9
+35 TRT19 iad_pct       Índice de atendimento à demanda - IAD (%)     110.     118. 
+36 TRT2  iad_pct       Índice de atendimento à demanda - IAD (%)     102.     113. 
+37 TRT20 iad_pct       Índice de atendimento à demanda - IAD (%)      94.8     96.3
+38 TRT21 iad_pct       Índice de atendimento à demanda - IAD (%)     108.     103. 
+39 TRT22 iad_pct       Índice de atendimento à demanda - IAD (%)      98.3    105. 
+40 TRT23 iad_pct       Índice de atendimento à demanda - IAD (%)      92.3     96.8
+41 TRT24 iad_pct       Índice de atendimento à demanda - IAD (%)      84.8     94.0
+42 TRT3  iad_pct       Índice de atendimento à demanda - IAD (%)      97.8    100. 
+43 TRT4  iad_pct       Índice de atendimento à demanda - IAD (%)      91.3    100. 
+44 TRT5  iad_pct       Índice de atendimento à demanda - IAD (%)     102.     108. 
+45 TRT6  iad_pct       Índice de atendimento à demanda - IAD (%)      99.7    103. 
+46 TRT7  iad_pct       Índice de atendimento à demanda - IAD (%)      93.7    102. 
+47 TRT8  iad_pct       Índice de atendimento à demanda - IAD (%)      93.3     98.3
+48 TRT9  iad_pct       Índice de atendimento à demanda - IAD (%)     101.     102. 
+   variacao_pontos_percentuais
+                         <dbl>
+ 1                      -7.55 
+ 2                     -11.2  
+ 3                     -13.4  
+ 4                     -17.5  
+ 5                     -23.1  
+ 6                     -19.6  
+ 7                      -4.82 
+ 8                     -26.8  
+ 9                      -8.17 
+10                     -13.7  
+11                     -15.7  
+12                     -22.4  
+13                     -15.0  
+14                     -17.7  
+15                     -17.9  
+16                     -13.2  
+17                     -26.0  
+18                     -15.3  
+19                     -10.2  
+20                      -9.07 
+21                     -17.1  
+22                     -15.9  
+23                     -20.9  
+24                     -16.4  
+25                      13.1  
+26                       0.815
+27                       0.716
+28                      -8.68 
+29                      18.0  
+30                      10.2  
+31                     -17.8  
+32                      48.4  
+33                      12.7  
+34                       5.70 
+35                       7.70 
+36                      11.0  
+37                       1.51 
+38                      -4.76 
+39                       6.35 
+40                       4.50 
+41                       9.22 
+42                       2.46 
+43                       8.74 
+44                       5.56 
+45                       3.64 
+46                       7.80 
+47                       4.96 
+48                       1.35 
+
+============================================================
+12. RESUMO DA VARIAÇÃO DO IAD E DA TCL — PONTOS PERCENTUAIS
+============================================================
+# A tibble: 2 × 9
+  indicador_raw indicador                                  n_trts variacao_media_pp
+  <chr>         <chr>                                       <int>             <dbl>
+1 tcl_pct       Taxa de congestionamento líquida - TCL (%)     24            -15.8 
+2 iad_pct       Índice de atendimento à demanda - IAD (%)      24              6.38
+  variacao_mediana_pp p25_variacao_pp p75_variacao_pp minimo_variacao_pp
+                <dbl>           <dbl>           <dbl>              <dbl>
+1              -15.8           -18.4           -12.7               -26.8
+2                5.63            1.47            9.47              -17.8
+  maximo_variacao_pp
+               <dbl>
+1              -4.82
+2              48.4 
+
+============================================================
+13. RESUMO DO IAD E DA TCL POR PERÍODO
+============================================================
+# A tibble: 6 × 8
+  periodo                    indicador_raw indicador                                 
+  <chr>                      <chr>         <chr>                                     
+1 Novo arcabouço (2023-2024) tcl_pct       Taxa de congestionamento líquida - TCL (%)
+2 Pré-EC 95 (2010-2016)      tcl_pct       Taxa de congestionamento líquida - TCL (%)
+3 Pós-EC 95 (2017-2022)      tcl_pct       Taxa de congestionamento líquida - TCL (%)
+4 Novo arcabouço (2023-2024) iad_pct       Índice de atendimento à demanda - IAD (%) 
+5 Pré-EC 95 (2010-2016)      iad_pct       Índice de atendimento à demanda - IAD (%) 
+6 Pós-EC 95 (2017-2022)      iad_pct       Índice de atendimento à demanda - IAD (%) 
+  n_trts media_pct mediana_pct p25_pct p75_pct
+   <int>     <dbl>       <dbl>   <dbl>   <dbl>
+1     24      39.1        37.7    34.6    43.4
+2     24      50.6        49.9    45.8    57.1
+3     24      51.6        52.4    45.8    56.8
+4     24     104.        102.     98.6   106. 
+5     24     100.         97.9    97.3   101. 
+6     24     112.        111.    107.    118. 
+
+============================================================
+14. CORRELAÇÕES DESCRITIVAS ENTRE VARIAÇÕES ANUAIS
+============================================================
+# A tibble: 9 × 3
+  variavel                                                n_pares correlacao_spearman
+  <chr>                                                     <int>               <dbl>
+1 Variação anual da carga dos magistrados - K                 336               0.292
+2 Variação anual da carga por servidor - KS                   336               0.273
+3 Variação anual dos casos novos                              336               0.272
+4 Variação anual da força de trabalho - FTT                   336               0.27 
+5 Variação anual da produtividade dos magistrados - IPM       336               0.254
+6 Variação anual dos processos baixados                       336               0.229
+7 Variação anual da produtividade dos servidores - IPSJud     336               0.201
+8 Variação anual da TCL em pontos percentuais                 336              -0.105
+9 Variação anual do IAD em pontos percentuais                 336               0.017
+
+============================================================
+15. INTERPRETAÇÃO AUTOMÁTICA PRELIMINAR
+============================================================
+INTERPRETAÇÃO AUTOMÁTICA PRELIMINAR
+
+Entre 2016 e 2024, a despesa total aumentou em média 51,93% entre os 24 TRTs.
+A força de trabalho total permaneceu aproximadamente estável em média -0,81%.
+Os casos novos aumentou em média 5,71%.
+Os processos baixados aumentou em média 13,51%.
+Os casos pendentes diminuiu em média -15,64%.
+
+A produtividade dos servidores, medida pelo IPSJud, aumentou em média 23,43%.
+A produtividade dos magistrados, medida pelo IPM, aumentou em média 16,09%.
+A carga de trabalho por servidor, medida pelo KS, permaneceu aproximadamente estável em média 1,86%.
+A carga de trabalho dos magistrados, medida por K, permaneceu aproximadamente estável em média -4,44%.
+
+O IAD variou, em média, 6,38 pontos percentuais entre 2016 e 2024.
+A TCL variou, em média, -15,78 pontos percentuais entre 2016 e 2024.
+
+A despesa por processo baixado variou, em média, 38,27%.
+A despesa por integrante da força de trabalho variou, em média, 53,62%.
+
+A evidência descritiva preliminar não é compatível com a explicação de que a trajetória da despesa decorreu simplesmente de queda generalizada da atividade ou da produtividade. Processos baixados e índices de produtividade permaneceram estáveis ou aumentaram dentro da tolerância adotada.
+
+A força de trabalho não apresentou expansão superior a 5%? SIM.
+
+RESSALVAS METODOLÓGICAS
+1. A análise é descritiva e não estabelece causalidade.
+2. Correlação entre variações anuais não demonstra influência causal.
+3. A interpretação depende da cobertura dos indicadores em todos os TRTs e anos.
+4. O índice 2016 = 100 mede evolução relativa e elimina diferenças de porte, mas não elimina outros fatores institucionais.
+5. IAD e TCL são mantidos em percentual e não são normalizados em 2016.
+6. A DPJ foi tratada como despesa real.
+7. Se DPJ estiver nominal, os resultados de crescimento da despesa não devem ser interpretados como crescimento real.
+
+============================================================
+16. ARQUIVOS GRÁFICOS GERADOS
+============================================================
+01_escala_despesa_atividade.png
+02_produtividade_carga.png
+03_iad_tcl_percentuais.png
+04_intensidade_gasto.png
+05_trajetorias_individuais.png

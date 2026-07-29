@@ -12,8 +12,9 @@ st.set_page_config(
 pages = [
     st.Page("pages/00_Metodologia.py", title="Metodologia"),
     st.Page("pages/01_Metodo_Controle_Sintetico.py", title="Metodo de Controle Sintetico"),
-    st.Page("pages/02_Resultados_R_Synth.py", title="Resultados Controle Sintetico"),
-    st.Page("pages/03_Markov_Switching.py", title="Markov Switching"),
+    st.Page("pages/02_Analise_Produtividade_Escala.py", title="Produtividade e escala operacional"),
+    st.Page("pages/03_Resultados_R_Synth.py", title="Resultados Controle Sintetico"),
+    st.Page("pages/04_Markov_Switching.py", title="Markov Switching"),
 ]
 
 navigation = st.navigation(pages)

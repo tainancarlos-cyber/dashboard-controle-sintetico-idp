@@ -131,7 +131,6 @@ tabs = st.tabs(
     [
         "Metodo",
         "Comparabilidade",
-        "Produtividade",
         "Visao geral",
         "Modelo selecionado",
         "Todos os graficos",
@@ -266,114 +265,6 @@ with tabs[1]:
     st.info(f"Arquivos de comparabilidade carregados de: {COMPARABILITY_DIR}")
 
 with tabs[2]:
-    st.subheader("Limitacoes e analise simples de produtividade")
-    st.write(
-        "Esta aba compara a trajetoria da despesa do TRT medio com dois fatores quantitativos: "
-        "`TPEfet`, total de pessoal do quadro efetivo, e `TBaix`, total de processos baixados. "
-        "A finalidade e verificar visualmente se a reducao relativa das despesas poderia estar associada "
-        "a queda de servidores efetivos ou a queda de processos baixados."
-    )
-
-    productivity = data["productivity"].copy()
-
-    prod_cards = st.columns(4)
-    first = productivity[productivity["ano"].eq(2016)].iloc[0]
-    last = productivity[productivity["ano"].eq(2024)].iloc[0]
-    prod_cards[0].metric("DPJ medio 2024/2016", f"{last['dpj_medio_indice_2016']:.1f}")
-    prod_cards[1].metric("TPEfet medio 2024/2016", f"{last['tpefet_medio_indice_2016']:.1f}")
-    prod_cards[2].metric("TBaix medio 2024/2016", f"{last['tbaix_medio_indice_2016']:.1f}")
-    prod_cards[3].metric("Proc./servidor 2024/2016", f"{last['processos_por_servidor_indice_2016']:.1f}")
-
-    index_long = productivity.melt(
-        id_vars=["ano", "periodo"],
-        value_vars=[
-            "dpj_medio_indice_2016",
-            "tpefet_medio_indice_2016",
-            "tbaix_medio_indice_2016",
-            "processos_por_servidor_indice_2016",
-        ],
-        var_name="indicador",
-        value_name="indice_2016",
-    )
-    label_map = {
-        "dpj_medio_indice_2016": "Despesa media - DPJ",
-        "tpefet_medio_indice_2016": "Pessoal efetivo - TPEfet",
-        "tbaix_medio_indice_2016": "Processos baixados - TBaix",
-        "processos_por_servidor_indice_2016": "Processos por servidor",
-    }
-    index_long["indicador"] = index_long["indicador"].map(label_map)
-
-    fig_index = px.line(
-        index_long,
-        x="ano",
-        y="indice_2016",
-        color="indicador",
-        markers=True,
-        title="Despesa, pessoal efetivo e processos baixados - indice 2016 = 100",
-        labels={"indice_2016": "Indice 2016 = 100", "ano": "Ano", "indicador": "Indicador"},
-    )
-    fig_index.add_hline(y=100, line_dash="dot", line_color="#64748b")
-    fig_index.add_vline(x=2017, line_dash="dash", line_color="#334155")
-    fig_index.add_vline(x=2023, line_dash="dot", line_color="#64748b")
-    fig_index.update_layout(height=560, legend_title=None)
-    st.plotly_chart(fig_index, use_container_width=True)
-
-    c1, c2 = st.columns(2)
-    with c1:
-        fig_proc = px.line(
-            productivity,
-            x="ano",
-            y="processos_por_servidor",
-            markers=True,
-            title="Processos baixados por servidor efetivo",
-            labels={"processos_por_servidor": "TBaix / TPEfet", "ano": "Ano"},
-        )
-        fig_proc.add_vline(x=2017, line_dash="dash", line_color="#334155")
-        fig_proc.add_vline(x=2023, line_dash="dot", line_color="#64748b")
-        st.plotly_chart(fig_proc, use_container_width=True)
-    with c2:
-        cost_long = productivity.melt(
-            id_vars=["ano", "periodo"],
-            value_vars=["despesa_por_processo_indice_2016", "despesa_por_servidor_indice_2016"],
-            var_name="indicador",
-            value_name="indice_2016",
-        )
-        cost_long["indicador"] = cost_long["indicador"].map(
-            {
-                "despesa_por_processo_indice_2016": "Despesa por processo baixado",
-                "despesa_por_servidor_indice_2016": "Despesa por servidor efetivo",
-            }
-        )
-        fig_cost = px.line(
-            cost_long,
-            x="ano",
-            y="indice_2016",
-            color="indicador",
-            markers=True,
-            title="Indicadores simples de custo - indice 2016 = 100",
-            labels={"indice_2016": "Indice 2016 = 100", "ano": "Ano", "indicador": "Indicador"},
-        )
-        fig_cost.add_hline(y=100, line_dash="dot", line_color="#64748b")
-        fig_cost.add_vline(x=2017, line_dash="dash", line_color="#334155")
-        fig_cost.add_vline(x=2023, line_dash="dot", line_color="#64748b")
-        st.plotly_chart(fig_cost, use_container_width=True)
-
-    st.markdown(
-        """
-        **Leitura para a discussao**
-
-        Estes graficos nao estimam causalidade. Eles funcionam como diagnostico descritivo para a secao de
-        limitacoes. Se a despesa observada fica abaixo do contrafactual, mas `TBaix` e `TPEfet` nao apresentam
-        queda proporcional, a interpretacao de que a reducao de despesa decorreu apenas de menor demanda
-        processual ou menor quadro efetivo perde forca. Por outro lado, se processos baixados ou servidores
-        efetivos tambem caem de forma expressiva, esses fatores devem ser considerados como explicacao
-        complementar ou limitacao da inferencia.
-        """
-    )
-
-    st.dataframe(productivity, use_container_width=True, hide_index=True)
-
-with tabs[3]:
     st.subheader("Resumo grafico dos resultados")
     st.write(
         "A tela abaixo mostra, para todos os modelos, o sinal do gap medio pos-intervencao "
@@ -443,7 +334,7 @@ with tabs[3]:
         hide_index=True,
     )
 
-with tabs[4]:
+with tabs[3]:
     st.subheader(model_label(selected_model, data["model_dict"]))
     cards = st.columns(5)
     cards[0].metric("MSPE pre", format_number(current_summary["mspe_pre"], 4))
@@ -495,7 +386,7 @@ with tabs[4]:
         "2017, inicio do pos-EC 95, e a linha pontilhada marca 2023, novo arcabouco fiscal."
     )
 
-with tabs[5]:
+with tabs[4]:
     st.subheader("Trajetorias observado versus sintetico para todos os modelos")
     for model in models:
         model_series = selected_series(series, model)
@@ -521,7 +412,7 @@ with tabs[5]:
     fig_all_gap.update_yaxes(matches=None)
     st.plotly_chart(fig_all_gap, use_container_width=True)
 
-with tabs[6]:
+with tabs[5]:
     st.subheader("Pesos das unidades doadoras")
     fig_weight_heat = px.imshow(
         unit_weights.pivot_table(index="unit_names", columns="modelo", values="w_weights", aggfunc="first").fillna(0),
@@ -574,7 +465,7 @@ with tabs[6]:
 
     st.dataframe(unit_weights, use_container_width=True, hide_index=True)
 
-with tabs[7]:
+with tabs[6]:
     st.subheader("Ajuste pre-intervencao")
     st.write(
         "Comparacao entre a unidade tratada, a unidade sintetica e a media simples dos doadores no periodo pre-intervencao."
@@ -621,7 +512,7 @@ with tabs[7]:
     fig_pre_error.update_yaxes(matches=None)
     st.plotly_chart(fig_pre_error, use_container_width=True)
 
-with tabs[8]:
+with tabs[7]:
     st.subheader("Dados carregados")
     st.info(f"Exports carregados de: {EXPORT_DIR}")
     table_choice = st.selectbox(
@@ -646,3 +537,4 @@ with tabs[8]:
         file_name="resumo_dashboard_controle_sintetico.csv",
         mime="text/csv",
     )
+
