@@ -1,0 +1,25 @@
+modelo;regime_origem;regime_destino;prob_transicao
+MS_H1_g_lndpj;Regime alto;Regime alto;0,74239176771965898
+MS_H1_g_lndpj;Regime alto;Regime baixo;0,25760823228034202
+MS_H1_g_lndpj;Regime baixo;Regime alto;0,73422940953077998
+MS_H1_g_lndpj;Regime baixo;Regime baixo;0,26577059046922002
+MS_H2_share_odck;Regime alto;Regime alto;0,87404120979855304
+MS_H2_share_odck;Regime alto;Regime baixo;0,12595879020144701
+MS_H2_share_odck;Regime baixo;Regime alto;0,170144438970279
+MS_H2_share_odck;Regime baixo;Regime baixo;0,82985556102972102
+MS_H2_ln_odck_dpe;Regime baixo;Regime baixo;0,83134993134178004
+MS_H2_ln_odck_dpe;Regime baixo;Regime alto;0,16865006865821899
+MS_H2_ln_odck_dpe;Regime alto;Regime baixo;0,126901928239154
+MS_H2_ln_odck_dpe;Regime alto;Regime alto;0,87309807176084597
+MS_H2_ln_odck_drh;Regime baixo;Regime baixo;0,82991103629365803
+MS_H2_ln_odck_drh;Regime baixo;Regime alto;0,17008896370634199
+MS_H2_ln_odck_drh;Regime alto;Regime baixo;0,12730843156005101
+MS_H2_ln_odck_drh;Regime alto;Regime alto;0,87269156843994899
+MS_H3_share_dk;Regime alto;Regime alto;0,66429686059944304
+MS_H3_share_dk;Regime alto;Regime baixo;0,33570313940055702
+MS_H3_share_dk;Regime baixo;Regime alto;0,24871472094591299
+MS_H3_share_dk;Regime baixo;Regime baixo;0,75128527905408704
+MS_H3_g_lndk;Regime alto;Regime alto;0,40584068286713798
+MS_H3_g_lndk;Regime alto;Regime baixo;0,59415931713286196
+MS_H3_g_lndk;Regime baixo;Regime alto;0,24238859780292801
+MS_H3_g_lndk;Regime baixo;Regime baixo;0,75761140219707201

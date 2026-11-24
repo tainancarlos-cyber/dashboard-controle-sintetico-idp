@@ -1,43 +1,35 @@
-# Pesquisa IDP - Controle Sintetico
+# Dissertação IDP — Orçamento dos TRTs
 
-Dashboard para apresentar os resultados do Controle Sintetico gerados no R com `Synth` e `SCtools`.
+Dashboard da aplicação estatística utilizada no artigo, com os resultados revistos em valores reais pelo IPCA a preços de dezembro de 2024.
 
-## Especificacao atual
+## Conteúdo
 
-- Unidade tratada: `TRT_MEDIO`, formada pela media anual dos 24 TRTs, excluindo-se o TST.
-- TST: excluido da analise principal.
-- Rodadas anteriores: TST isolado e TRTs agregados por soma ficam como testes de especificacao.
-- Base candidata de doadores: todos os TJs estaduais disponiveis.
-- Doadores efetivos: TJs selecionados por porte orcamentario no script R.
-- Periodo pre-intervencao: 2010 a 2016.
-- Intervencao: 2017, primeiro ano de vigencia orcamentaria da EC 95/2016.
-- Periodo pos-intervencao: 2017 a 2024.
-- Marco visual complementar: 2023, novo arcabouco fiscal.
+- Média anual dos 24 TRTs; TST excluído; 12 TJs doadores efetivos.
+- Seis especificações de controle sintético e seis modelos de Markov Switching.
+- Produtividade e escala: 24 TRTs, 360 observações tribunal-ano, 2010–2024.
+- Gráficos 1 a 8 conforme a ordem do artigo; exportação PNG (600 dpi), SVG e PDF.
+- Figuras de apoio de Markov e produtividade, sem atribuição de novos números aos gráficos do artigo.
 
-## Exports usados
+A aplicação carrega exclusivamente `data/artigo_ipca_2024`. Não há fallback para dados antigos nem dependência das pastas locais da pesquisa. `manifesto.json` registra fontes, hashes e recortes. As séries estimadas são as exportadas pelo R; o site não reestima os modelos.
 
-```text
-../Controle_Sintetico_TRT_Medio_sem_TST/04_exports_dashboard
+## Execução
+
+```sh
+python -m pip install -r requirements.txt
+python -m streamlit run app.py
 ```
 
-Arquivos adicionais de comparabilidade:
+## Validação
 
-```text
-../Controle_Sintetico_TRT_Medio_sem_TST/06_comparabilidade_trts
+```sh
+python -m pip install pytest
+python -m pytest tests/test_article_dashboard.py
 ```
 
-## Como abrir o dashboard
+Os testes conferem MSPE, gaps, deflação, amostras, crescimento real, média dos índices por TRT, unidades das figuras, arquivos exportados e navegação pelos modelos.
 
-```powershell
-python -m streamlit run app.py --server.address 127.0.0.1 --server.port 8501
-```
+## Interpretação
 
-Ou execute:
+Participações são mostradas em % e seus gaps em pontos percentuais. Os níveis reais usam ln(1 + despesa real). Crescimento real usa 100 vezes a diferença anual desse logaritmo. A corroboração por Markov concentra-se nos indicadores de composição; os modelos de crescimento real não mostram aumento da probabilidade média do regime baixo em 2017–2024.
 
-```text
-iniciar_dashboard.bat
-```
-
-## Observacao metodologica
-
-A especificacao com TRT medio reduz o problema de escala observado na agregacao por soma e permite comparacao mais plausivel com TJs estaduais de porte semelhante. Os resultados devem ser lidos como efeito sobre a trajetoria tipica de um TRT, nao como soma total do orcamento dos TRTs.
+A validação por placebos permanece pendente: suas saídas disponíveis estavam em branco. A aplicação não publica p-valores nem classificações automáticas de significância. A qualidade do ajuste pré-intervenção e as diferenças institucionais entre os tribunais devem ser consideradas.
