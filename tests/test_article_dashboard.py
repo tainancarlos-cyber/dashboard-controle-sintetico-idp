@@ -74,6 +74,7 @@ def test_numbered_figures_preserve_data_units_and_export(definition, data):
     scale = SCM_MODELS[definition["model"]]["scale"]
     plot = interactive(spec)
     assert np.allclose(plot.data[0].y, source[column] * scale)
+    assert plot.data[0].type == ("bar" if definition["kind"] == "gap" else "scatter")
     exports = export_figure(serialized(spec))
     image = Image.open(io.BytesIO(exports["png"]))
     assert image.size == (4560,2910)
@@ -110,6 +111,9 @@ def test_navigation_and_all_model_filters():
             for hypothesis in ["H1", "H2", "H3"]:
                 app.radio(key="results_hypothesis").set_value(hypothesis).run()
                 assert_no_errors(app)
+                assert not app.button
+                assert len(app.get("imgs")) == sum(SCM_MODELS[d["model"]]["hypothesis"] == hypothesis for d in FIGURES)
+                assert all(e.proto.label == "Baixar séries anuais" for e in app.get("download_button"))
         elif "04_" in page:
             for model in MARKOV_MODELS:
                 app.selectbox(key="markov_model").set_value(model).run()
@@ -138,3 +142,16 @@ def test_dataset_integrity_across_windows_and_linux_newlines(tmp_path, monkeypat
     path.write_bytes(path.read_bytes().replace(b"H1_lndpj", b"H9_lndpj", 1))
     with pytest.raises(ValueError, match="scm_resumo.csv"):
         article_data.load_data()
+
+
+def test_published_figure_assets_match_verified_specs(data):
+    import hashlib,json
+    folder = DATA_DIR / "figuras"
+    manifest = json.loads((folder / "manifesto_figuras.json").read_text(encoding="utf-8"))
+    for definition in FIGURES:
+        spec = scm_spec(data, definition)
+        info = manifest[spec["filename"]]
+        assert info["spec_sha256"] == hashlib.sha256(serialized(spec).encode("utf-8")).hexdigest()
+        content = (folder / (spec["filename"] + ".png")).read_bytes()
+        assert info["png_sha256"] == hashlib.sha256(content).hexdigest()
+        assert Image.open(io.BytesIO(content)).size == (4560,2910)

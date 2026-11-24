@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-import hashlib
+import base64
 
 import pandas as pd
 import plotly.express as px
@@ -8,7 +8,7 @@ import streamlit as st
 
 from article_data import (ARTICLE_INDICATORS, DATA_DIR, FIGURES, INDICATORS, MARKOV_MODELS, SCM_MODELS,
                           csv_bytes, data_archive, load_data, number, period_means, table3)
-from article_charts import (BLUE, OCHRE, SOURCE, article_archive, export_figure, interactive, line, scm_spec, serialized)
+from article_charts import (BLUE, OCHRE, SOURCE, interactive, line, scm_spec, serialized)
 
 
 def setup():
@@ -36,14 +36,14 @@ def dataset():
 
 def chart(spec, key):
     st.subheader(spec["title"])
-    st.plotly_chart(interactive(spec), use_container_width=True, key=f"plot_{key}",
-                    config={"displaylogo": False, "modeBarButtonsToRemove": ["toImage"]})
-    st.caption(spec["note"] + " Linhas verticais: 2017, início da intervenção; 2023, mudança de regime fiscal.")
-    exports = export_figure(serialized(spec))
-    cols = st.columns(3)
-    for col, extension, mime, label in zip(cols, ["png", "svg", "pdf"], ["image/png", "image/svg+xml", "application/pdf"],
-                                           ["Baixar PNG · 600 dpi", "Baixar SVG · vetorial", "Baixar PDF · vetorial"]):
-        col.download_button(label, exports[extension], f"{spec['filename']}.{extension}", mime=mime, key=f"{key}_{extension}", use_container_width=True)
+    if spec.get("article_figure"):
+        # The article embeds these exact PNG files, without regenerating or rescaling them.
+        content = (DATA_DIR / "figuras" / f"{spec['filename']}.png").read_bytes()
+        st.image("data:image/png;base64," + base64.b64encode(content).decode("ascii"), use_container_width=True)
+    else:
+        st.plotly_chart(interactive(spec), use_container_width=True, key=f"plot_{key}",
+                        config={"displaylogo": False, "modeBarButtonsToRemove": ["toImage"]})
+    st.caption("Nota: " + spec["note"] + " Linhas verticais: 2017, início da intervenção; 2023, mudança de regime fiscal.")
     st.caption(SOURCE)
 
 
@@ -88,7 +88,7 @@ def overview():
         st.download_button("Baixar dados do artigo e manifesto de fontes", data_archive(), "dados_artigo_ipca_2024.zip", mime="application/zip")
         st.dataframe(data["ipca_fatores"].rename(columns={"ano": "Ano", "fator_ipca_dez2024": "Fator para dez./2024"}), hide_index=True, use_container_width=True)
         st.markdown("Fontes: Conselho Nacional de Justiça, Justiça em Números; [IBGE, série histórica do IPCA](https://ftp.ibge.gov.br/Precos_Indices_de_Precos_ao_Consumidor/IPCA/Serie_Historica/ipca_SerieHist.zip).")
-    st.page_link("pages/03_Resultados_R_Synth.py", label="Ver os Gráficos 1 a 8 e baixar as figuras para o artigo", icon="↗")
+    st.page_link("pages/03_Resultados_R_Synth.py", label="Ver os Gráficos 1 a 8", icon="↗")
 
 
 def synthetic_method():
@@ -137,14 +137,6 @@ def synthetic_method():
 def synthetic_results():
     data = dataset()
     st.title("Controle sintético · resultados e gráficos do artigo")
-    st.caption("Gráficos 1 a 8 na mesma ordem da dissertação. PNG em 600 dpi; SVG e PDF vetoriais. Os arquivos incluem título, nota e fonte.")
-    revision = hashlib.sha256((DATA_DIR / "manifesto.json").read_bytes()).hexdigest()[:12]
-    zip_key = "figures_" + revision
-    if st.button("Preparar pacote com os 8 gráficos", key="prepare_figures"):
-        with st.spinner("Gerando as figuras e suas legendas…"):
-            st.session_state[zip_key] = article_archive(data)
-    if zip_key in st.session_state:
-        st.download_button("Baixar os 8 gráficos, dados e legendas", st.session_state[zip_key], "graficos_artigo_1_a_8.zip", mime="application/zip", key="download_all_figures")
     hypothesis = st.radio("Hipótese", ["H1", "H2", "H3"], horizontal=True, key="results_hypothesis")
     models = [m for m, item in SCM_MODELS.items() if item["hypothesis"] == hypothesis]
     summary = data["scm_resumo"].set_index("modelo")

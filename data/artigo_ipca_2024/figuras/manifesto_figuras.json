@@ -1,0 +1,50 @@
+{
+  "grafico_01": {
+    "spec_sha256": "c524f434db1e22d1a05d9062923e96866d1af55ca72406301bf50abf023f07ff",
+    "png_sha256": "f823e0623bfdefc88854e3deca98abbc02f1315389c9145c3294377a2fcb088d",
+    "title": "Gráfico 1 — Despesa total real do TRT médio e de seu controle sintético",
+    "note": "Despesas corrigidas pelo IPCA a preços de dezembro de 2024; transformação ln(1 + despesa real). Linhas verticais: 2017, início da intervenção; 2023, mudança de regime fiscal."
+  },
+  "grafico_02": {
+    "spec_sha256": "10ba8d17157a0bbd7b493771af59074aa07c2d104c64eabfc958add2b2fe6ace",
+    "png_sha256": "54e03f72ba07b313da1692a332ad10cb1b4b61cd57ebd768f4bdecf0b72f2908",
+    "title": "Gráfico 2 — Gap anual da despesa total real",
+    "note": "Despesas corrigidas pelo IPCA a preços de dezembro de 2024; transformação ln(1 + despesa real). Linhas verticais: 2017, início da intervenção; 2023, mudança de regime fiscal."
+  },
+  "grafico_03": {
+    "spec_sha256": "5f25a4695b27e13aec6069727840be70247137a27e83d053d49aaae852ea33a9",
+    "png_sha256": "b09ec7a55dff82ebb7d7c5ce51a9620d216791071dcab5bc0adf6248b680a0bd",
+    "title": "Gráfico 3 — Participação das despesas discricionárias na despesa total",
+    "note": "Participações em %; diferenças entre participações expressas em pontos percentuais. Linhas verticais: 2017, início da intervenção; 2023, mudança de regime fiscal."
+  },
+  "grafico_04": {
+    "spec_sha256": "0ab1c0484d72839f84fe0bbcdb747f079abde2969a04eb7939f4f98b03dd9c97",
+    "png_sha256": "8da0c55b27a778976a56071970bc90d294d87cb5415a3e6282e1e2176c56edfd",
+    "title": "Gráfico 4 — Despesas discricionárias em relação às despesas com pessoal",
+    "note": "Diferença entre logaritmos de despesas acrescidas de uma unidade. Linhas verticais: 2017, início da intervenção; 2023, mudança de regime fiscal."
+  },
+  "grafico_05": {
+    "spec_sha256": "9832ce3dbeb4bd27b54e274082dd16f7f99fd411e500fbf1a56a7d1cbe234348",
+    "png_sha256": "5375c4f006eae18983e9e21d1e099d547fd8a6dc4c2e4feec929148843bbd695",
+    "title": "Gráfico 5 — Gap anual da participação das despesas discricionárias",
+    "note": "Participações em %; diferenças entre participações expressas em pontos percentuais. Linhas verticais: 2017, início da intervenção; 2023, mudança de regime fiscal."
+  },
+  "grafico_06": {
+    "spec_sha256": "d254a07afd0c8219df0b5cb0a45fac8fa160643d25a362ad252893581f367155",
+    "png_sha256": "98156f5a3653cd737d1615dc9923c3c7215b86eccc5ba8092c1a0527ee882a40",
+    "title": "Gráfico 6 — Despesas de capital reais do TRT médio e de seu controle sintético",
+    "note": "Despesas corrigidas pelo IPCA a preços de dezembro de 2024; transformação ln(1 + despesa real). Linhas verticais: 2017, início da intervenção; 2023, mudança de regime fiscal."
+  },
+  "grafico_07": {
+    "spec_sha256": "351675260f8c47fb6a100544094a9c6007ac5b0eeefdec40a3731207c26f2a1e",
+    "png_sha256": "41159061b32cb8af382ec06dfa322fabf85689f713da4fd286b489b8ec2ac338",
+    "title": "Gráfico 7 — Gap anual das despesas de capital reais",
+    "note": "Despesas corrigidas pelo IPCA a preços de dezembro de 2024; transformação ln(1 + despesa real). Linhas verticais: 2017, início da intervenção; 2023, mudança de regime fiscal."
+  },
+  "grafico_08": {
+    "spec_sha256": "97f94eb09fb3557177bf4112b987c0e787c6c618afd3162aa5f235ba14d3270f",
+    "png_sha256": "c43671ca21964fc4c6dc3b77648e5da9d63f4a2d56ea1436cae3507443faa96d",
+    "title": "Gráfico 8 — Gap anual da participação das despesas de capital",
+    "note": "Participações em %; diferenças entre participações expressas em pontos percentuais. Linhas verticais: 2017, início da intervenção; 2023, mudança de regime fiscal."
+  }
+}

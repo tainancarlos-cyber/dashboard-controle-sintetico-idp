@@ -7,7 +7,7 @@ Dashboard da aplicação estatística utilizada no artigo, com os resultados rev
 - Média anual dos 24 TRTs; TST excluído; 12 TJs doadores efetivos.
 - Seis especificações de controle sintético e seis modelos de Markov Switching.
 - Produtividade e escala: 24 TRTs, 360 observações tribunal-ano, 2010–2024.
-- Gráficos 1 a 8 conforme a ordem do artigo; exportação PNG (600 dpi), SVG e PDF.
+- Gráficos 1 a 8 conforme a ordem do artigo, com as mesmas imagens de alta resolução inseridas no documento. Os gráficos de GAP são de barras, sem controles de download na interface.
 - Figuras de apoio de Markov e produtividade, sem atribuição de novos números aos gráficos do artigo.
 
 A aplicação carrega exclusivamente `data/artigo_ipca_2024`. Não há fallback para dados antigos nem dependência das pastas locais da pesquisa. `manifesto.json` registra fontes, hashes e recortes. As séries estimadas são as exportadas pelo R; o site não reestima os modelos.
