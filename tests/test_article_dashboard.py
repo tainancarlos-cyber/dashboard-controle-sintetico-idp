@@ -120,3 +120,21 @@ def test_navigation_and_all_model_filters():
                 assert_no_errors(app)
             app.radio(key="productivity_statistic").set_value("Mediana").run()
             assert_no_errors(app)
+
+
+def test_dataset_integrity_across_windows_and_linux_newlines(tmp_path, monkeypatch):
+    import article_data
+    for source in DATA_DIR.iterdir():
+        if source.is_file():
+            (tmp_path / source.name).write_bytes(source.read_bytes().replace(b"\r\n", b"\n"))
+    monkeypatch.setattr(article_data, "DATA_DIR", tmp_path)
+    linux = article_data.load_data()
+    for path in tmp_path.glob("*.csv"):
+        path.write_bytes(path.read_bytes().replace(b"\n", b"\r\n"))
+    windows = article_data.load_data()
+    for name in linux:
+        pd.testing.assert_frame_equal(linux[name], windows[name])
+    path = tmp_path / "scm_resumo.csv"
+    path.write_bytes(path.read_bytes().replace(b"H1_lndpj", b"H9_lndpj", 1))
+    with pytest.raises(ValueError, match="scm_resumo.csv"):
+        article_data.load_data()

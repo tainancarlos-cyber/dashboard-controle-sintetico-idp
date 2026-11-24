@@ -11,7 +11,7 @@
     "scm_resumo.csv": {
       "origem": "Controle_Sintetico_TRT_Medio_sem_TST_IPCA_2024/04_exports_dashboard/resumo_efeitos.csv",
       "sha256_origem": "9f18fbb3e4885de61debbd90cb637b1be89fce2cf7fa2316eb05519309ef5ee2",
-      "sha256": "c0ce4878d802cf076a671fb204f3d3926ea085cdd2ca8742eb8bd545a4dda1f0",
+      "sha256": "6a7da1b088ebe89238057f8d74e6dcb8bbcac0f0ec5165b2ee82a28b6f3ddad2",
       "linhas": 6,
       "colunas": [
         "modelo",
@@ -29,7 +29,7 @@
     "scm_series.csv": {
       "origem": "Controle_Sintetico_TRT_Medio_sem_TST_IPCA_2024/04_exports_dashboard/serie_observado_sintetico.csv",
       "sha256_origem": "7264496173ca1225d6ed36c442f2f6ea53280b263bd1bb39d9367f43f59e76f8",
-      "sha256": "8b33439c9e2a41db89d21fd3ba47814587e8dd0b894ab7d8f987e0556d4bec60",
+      "sha256": "b60d2552ad822780718e83774a6f0420c0acb8fe4c9a10c9270790c79118364c",
       "linhas": 90,
       "colunas": [
         "modelo",
@@ -43,7 +43,7 @@
     "scm_pesos.csv": {
       "origem": "Controle_Sintetico_TRT_Medio_sem_TST_IPCA_2024/04_exports_dashboard/tabela_2_pesos_unidades.csv",
       "sha256_origem": "b9d75fe2f9c65b66de2eb5443ed66a9ed870e3e31d3ba49993771561334c08bb",
-      "sha256": "616f61aa3dc37bcd04b0a10be6f939b5f0f278ffa947871d52fde50d4233b62e",
+      "sha256": "2f6bdfd8a1dc7f3d98beebd75bc5975ecfacdfc54991be6202e741458808bbcf",
       "linhas": 72,
       "colunas": [
         "modelo",
@@ -54,7 +54,7 @@
     "scm_preditores.csv": {
       "origem": "Controle_Sintetico_TRT_Medio_sem_TST_IPCA_2024/04_exports_dashboard/tabela_1_pesos_variaveis.csv",
       "sha256_origem": "2db82f02db4f53814b51af80380d5cd9ebee1f2d60d9f4dc6089d4cb71cdec9a",
-      "sha256": "b8e21471710c8fc12d4e7e5fca52a8ab481cd3b47c719503e9ab9181d6ce35b6",
+      "sha256": "55279560c63735ac458f806e1cbefc86ba0400c2bc892d6e1e5f5036d7cf678f",
       "linhas": 48,
       "colunas": [
         "modelo",
@@ -65,7 +65,7 @@
     "scm_ajuste_pre.csv": {
       "origem": "Controle_Sintetico_TRT_Medio_sem_TST_IPCA_2024/04_exports_dashboard/tabela_3_medias_pre.csv",
       "sha256_origem": "169079baebb97482d4be81a070fd03e7592717ec2023d19ba40c10bdec3fddf3",
-      "sha256": "e1a71cc9759bfdc9ad12e0964b7d4418dd2f738e829519f52b901482c27b6420",
+      "sha256": "8d3a860b18bbfc31b2d04b4addec02ae41671ae5aea8d319a9c35068e7c8b270",
       "linhas": 48,
       "colunas": [
         "modelo",
@@ -78,7 +78,7 @@
     "scm_doadores.csv": {
       "origem": "Controle_Sintetico_TRT_Medio_sem_TST_IPCA_2024/04_exports_dashboard/doadores_por_porte.csv",
       "sha256_origem": "be2ddf69ff5076c8e0de2339830ac733825f1cb9187b0815d2775a8a15619892",
-      "sha256": "df54ab17ae3417e39d6f8412ebc05bc54b68239a22f6dea7ef0b481172706cff",
+      "sha256": "78ea3674c3fab476769b098bd67c5dec931521ddb65da11d1b81456e578e7855",
       "linhas": 12,
       "colunas": [
         "sigla",
@@ -91,7 +91,7 @@
     "scm_base.csv": {
       "origem": "Controle_Sintetico_TRT_Medio_sem_TST_IPCA_2024/04_exports_dashboard/base_variaveis_wide.csv",
       "sha256_origem": "a0c9c6f2a456673b5a50e8aa33fd84bbe443b7ea176130050329c367c6b4cdbe",
-      "sha256": "fcc44cf3e192afd39d6838b422d421f48ec23a65a4bc6ab5e0558df1bec03d55",
+      "sha256": "6a692a1daa85fdcf957082a85eda8b94d2b131e9736653d3ba58241386045caa",
       "linhas": 195,
       "colunas": [
         "sigla",
@@ -120,7 +120,7 @@
     "comparabilidade.csv": {
       "origem": "Controle_Sintetico_TRT_Medio_sem_TST_IPCA_2024/06_comparabilidade_trts/evidencias_comparabilidade_trts.csv",
       "sha256_origem": "bf0513381567981c3b3a76191cb0d68843bf26fe9a14cc5a400f0b7b2bb6c4b5",
-      "sha256": "fe51fed8cd78cd2d91aa1ae78e7878f7007cc3c4ae2ed20b5802a10e1592e120",
+      "sha256": "5f924da51cc46f54f3a441da8fe479af2cd4afff31a36b7c589ea65fd4276119",
       "linhas": 5,
       "colunas": [
         "variavel",
@@ -133,7 +133,7 @@
     "comparabilidade_anual.csv": {
       "origem": "Controle_Sintetico_TRT_Medio_sem_TST_IPCA_2024/06_comparabilidade_trts/estatisticas_anuais_dispersao_trts.csv",
       "sha256_origem": "80dc371a81355bd8511c4043f6105fa12b9a6ace1654a3e027ccd91610c3d8d3",
-      "sha256": "7c1c5e69b344a977e491d6731eb18ce18df0baf1f9166136602f0d728f4bbcf7",
+      "sha256": "604490428c40268d641e161641d96c8dc7f847a989134de21152ddf9bcd7690f",
       "linhas": 75,
       "colunas": [
         "variavel",
@@ -153,7 +153,7 @@
     "markov_resumo.csv": {
       "origem": "Markov_Switching_TRT_Medio_sem_TST_IPCA_2024/02_resultados/resumo_modelo.csv",
       "sha256_origem": "45515cf94cdd8e1adddaa9e98e2c82ca79e5e7d77219d19ec5ab6c0a5f89a077",
-      "sha256": "29434c93742a806bc234f62fa45c28dfa439876256ceea9967b7680438c72b74",
+      "sha256": "0ecab76e0034aaa45a60a5fe67624c297fbc75062f1fa846c3bd429d3d905fb2",
       "linhas": 6,
       "colunas": [
         "modelo",
@@ -172,7 +172,7 @@
     "markov_series.csv": {
       "origem": "Markov_Switching_TRT_Medio_sem_TST_IPCA_2024/02_resultados/probabilidades_anuais.csv",
       "sha256_origem": "a073fae926785cc492c86a769660ab84d50bc9fd0e55b9cef65be1ca44736c1f",
-      "sha256": "78397cacc5d7bf7f050e4eabc2acae5081af5d4a15ac9ac070977471aa237b64",
+      "sha256": "9e846573bf91f05bddeda691f735031648d501e22cef5995d4c83a2ad1fdc20a",
       "linhas": 88,
       "colunas": [
         "modelo",
@@ -188,7 +188,7 @@
     "markov_regimes.csv": {
       "origem": "Markov_Switching_TRT_Medio_sem_TST_IPCA_2024/02_resultados/regimes_estimados.csv",
       "sha256_origem": "afc1371f53d3dd624bd07ae23c86de943ef90f196cf094be64aea3fa6b0e873b",
-      "sha256": "6114874af8f4633758312295a8deb18a650ba01b6a2773d3ccf2eb8117126c3c",
+      "sha256": "348648551afeffb013ee11cbca157fb9bb91f126caafd1915f3b4ef9a6fd929c",
       "linhas": 12,
       "colunas": [
         "modelo",
@@ -201,7 +201,7 @@
     "markov_periodos.csv": {
       "origem": "Markov_Switching_TRT_Medio_sem_TST_IPCA_2024/02_resultados/resumo_por_periodo.csv",
       "sha256_origem": "042cc06cbc2215cb98a89111f1b996d941c2d239b55074a690ff19810e427425",
-      "sha256": "b5a27314303e92c3c00592b6e9165f6f5b9d565d424d7d12983b7dd56e83988b",
+      "sha256": "950f9bc6c9ff2ac26e3badd28ebeaa6bc2681b39d01725886b03f17a64687cbc",
       "linhas": 18,
       "colunas": [
         "modelo",
@@ -215,7 +215,7 @@
     "markov_transicoes.csv": {
       "origem": "Markov_Switching_TRT_Medio_sem_TST_IPCA_2024/02_resultados/probabilidades_transicao.csv",
       "sha256_origem": "6ba8c4350ae614d2f16bea86afec23ca7d64405c3a9239d9ec02470ce9cfa83e",
-      "sha256": "9d93879da9705732a240bf36573cf1ad24a67fe8552e5776ac0100737040e0c3",
+      "sha256": "7b7b234da75367eb941d7173dbbad508ac5b6894d8129ac19a7809565147ba5e",
       "linhas": 24,
       "colunas": [
         "modelo",
@@ -227,7 +227,7 @@
     "prod_variacao.csv": {
       "origem": "Analise_Produtividade_24_TRTs_IPCA_2024/resumo_variacao_2016_2024.csv",
       "sha256_origem": "03ed53d84df360ceb06170e134a08167f0b0ae2caf08b63384e3d096a67d49e7",
-      "sha256": "7f345ccccf24ba2560829c79b62289a86fbdd88958b0ef35906380694fbb7e79",
+      "sha256": "fa34061943065229c8f071a9531a367ff86f2d82da4c4ffd0a6aeac4fa44c966",
       "linhas": 11,
       "colunas": [
         "dimensao",
@@ -244,7 +244,7 @@
     "prod_indices.csv": {
       "origem": "Analise_Produtividade_24_TRTs_IPCA_2024/resumo_anual_indices_2016_100.csv",
       "sha256_origem": "ad2ac19789558793876fb1ec0552bb8488453f42654263d76b24a67ae7f804cb",
-      "sha256": "f73d9d02da95f26202330a99f40f75bc117b2b0f2323a92c2cc12c5cfcbb319a",
+      "sha256": "b0a5feaa8322279d83d9b7e5a1e54ee8ddce1d9c37afde2b6ce0ce2313cdd1c0",
       "linhas": 165,
       "colunas": [
         "ano",
@@ -264,7 +264,7 @@
     "prod_percentuais.csv": {
       "origem": "Analise_Produtividade_24_TRTs_IPCA_2024/resumo_anual_iad_tcl.csv",
       "sha256_origem": "d634beafc5b01e0cfe7d9097f8861f158f8ad3b22a8dc703e1085ce6e9f6a5a9",
-      "sha256": "65c314b996d5c5a2a622119fff1554e1693667693e549c1e26d4c2ba79c2872a",
+      "sha256": "666109d4705f4bd7464dae61c3a827575acc21628fea2dda6eb086358bb2299f",
       "linhas": 30,
       "colunas": [
         "ano",
@@ -283,7 +283,7 @@
     "prod_base_24_trts.csv": {
       "origem": "Analise_Produtividade_24_TRTs_IPCA_2024/analise_produtividade_24_trts.xlsx",
       "sha256_origem": "40d5be33fd287fc53668736af7af29a6f8fa4beadda939270c91a8d7893ccaf6",
-      "sha256": "6ccafb5661579b15cdc2ac42e3fc52f87c4d9093e10db5ffa399d62f7ac423c8",
+      "sha256": "a9b293914bb1d113b363231136fc1d7a5f11336f451b536af2d4177f7f4523b3",
       "linhas": 360,
       "colunas": [
         "ano",
@@ -306,7 +306,7 @@
     },
     "ipca_fatores.csv": {
       "origem": "scm_base.csv: TRT_MEDIO",
-      "sha256": "9e3e84e8e52796d86a9c2ffd5c2fa041aa12455005f08a4e78110decec1cb843",
+      "sha256": "c4021db82a5d2fd1f6a87f7c11da73c5397b32beed900b357fedace672a2512b",
       "linhas": 15,
       "colunas": [
         "ano",
@@ -329,5 +329,6 @@
     "TJPI"
   ],
   "fonte_ipca": "https://ftp.ibge.gov.br/Precos_Indices_de_Precos_ao_Consumidor/IPCA/Serie_Historica/ipca_SerieHist.zip",
-  "validacao_placebos": "Não verificada: saídas gráficas do R em branco; não são apresentados p-valores."
+  "validacao_placebos": "Não verificada: saídas gráficas do R em branco; não são apresentados p-valores.",
+  "normalizacao_sha256": "Quebras de linha LF (CRLF convertido em LF antes da verificação)."
 }

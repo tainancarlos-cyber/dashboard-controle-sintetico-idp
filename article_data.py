@@ -63,7 +63,7 @@ def load_data() -> dict[str, pd.DataFrame]:
     result = {}
     for filename, metadata in manifest["arquivos"].items():
         path = DATA_DIR / filename
-        if hashlib.sha256(path.read_bytes()).hexdigest() != metadata["sha256"]:
+        if hashlib.sha256(path.read_bytes().replace(b"\r\n", b"\n")).hexdigest() != metadata["sha256"]:
             raise ValueError(f"O arquivo {filename} não corresponde ao conjunto de dados verificado.")
         result[path.stem] = pd.read_csv(path, sep=";", decimal=",", encoding="utf-8")
     validate_data(result)
