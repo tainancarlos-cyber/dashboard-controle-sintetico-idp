@@ -34,8 +34,24 @@ def dataset():
         st.stop()
 
 
-def chart(spec, key):
-    st.subheader(spec["title"])
+def model_label(model):
+    metadata = SCM_MODELS[model] if model in SCM_MODELS else MARKOV_MODELS[model]
+    technical = metadata["outcome"] if model in SCM_MODELS else model
+    return f"{metadata['label']} · {technical}"
+
+
+def model_help(model):
+    metadata = SCM_MODELS[model] if model in SCM_MODELS else MARKOV_MODELS[model]
+    technical = metadata["outcome"] if model in SCM_MODELS else model
+    return (f"{metadata['label']}\n\nModelo: {technical}\n\n"
+            f"Identificador da estimação no R: {model}\n\nUnidade: {metadata['unit']}")
+
+
+def chart(spec, key, model=None):
+    st.subheader(spec["title"], help=model_help(model) if model else None)
+    if model:
+        technical = SCM_MODELS[model]["outcome"] if model in SCM_MODELS else model
+        st.caption(f"Modelo: `{technical}`")
     if spec.get("article_figure"):
         # The article embeds these exact PNG files, without regenerating or rescaling them.
         content = (DATA_DIR / "figuras" / f"{spec['filename']}.png").read_bytes()
@@ -81,8 +97,8 @@ def overview():
     rows = []
     for model, item in SCM_MODELS.items():
         markov = "MS_H1_g_lndpj" if model == "H1_lndpj" else "MS_H3_g_lndk" if model == "H3_lndk" else "MS_" + model
-        rows.append([item["hypothesis"], item["label"].split(" · ")[1], model, markov])
-    st.dataframe(pd.DataFrame(rows, columns=["Hipótese", "Dimensão analisada", "Controle sintético", "Markov Switching"]), hide_index=True, use_container_width=True)
+        rows.append([item["hypothesis"], item["label"].split(" · ")[1], item["outcome"], model, markov])
+    st.dataframe(pd.DataFrame(rows, columns=["Hipótese", "Dimensão analisada", "Modelo / variável", "Controle sintético", "Markov Switching"]), hide_index=True, use_container_width=True)
     with st.expander("Dados utilizados e reprodução"):
         st.markdown("O conjunto publicado contém apenas as seis especificações do artigo, os 24 TRTs da análise descritiva, os 12 doadores efetivos e os indicadores de comparabilidade. Os resultados das estimações são os exportados pelo R.")
         st.download_button("Baixar dados do artigo e manifesto de fontes", data_archive(), "dados_artigo_ipca_2024.zip", mime="application/zip")
@@ -103,7 +119,8 @@ def synthetic_method():
     """)
     st.latex(r"\widehat{Y}_{1t}^{N}=\sum_j w_jY_{jt},\qquad w_j\geq0,\quad\sum_jw_j=1")
     st.markdown("O contrafactual é uma média ponderada dos doadores. Os pesos são estimados separadamente para cada variável de resultado.")
-    model = st.selectbox("Especificação para examinar os pesos e o ajuste", list(SCM_MODELS), format_func=lambda m: SCM_MODELS[m]["label"], key="method_model")
+    model = st.selectbox("Especificação para examinar os pesos e o ajuste", list(SCM_MODELS), format_func=model_label, help="O nome técnico aparece após a especificação. Ele identifica a variável de resultado; o identificador completo do R aparece abaixo.", key="method_model")
+    st.caption(f"Modelo: `{SCM_MODELS[model]['outcome']}` · Identificador no R: `{model}`")
     weights = data["scm_pesos"].query("modelo == @model").sort_values("w_weights", ascending=False)
     left, right = st.columns([1, 1.4])
     with left:
@@ -144,7 +161,7 @@ def synthetic_results():
     for model in models:
         item, source = SCM_MODELS[model], summary.loc[model]
         share = item["scale"] == 100
-        rows.append({"Especificação": item["label"], "MSPE pré": number(source.mspe_pre, 6), "MSPE pós": number(source.mspe_pos, 6),
+        rows.append({"Especificação": item["label"], "Modelo": item["outcome"], "MSPE pré": number(source.mspe_pre, 6), "MSPE pós": number(source.mspe_pos, 6),
                      "Razão MSPE pós/pré": number(source.razao_mspe_pos_pre), "Gap médio 2017–2024": number(source.gap_medio_pos * item["scale"], 2 if share else 4) + (" p.p." if share else " un. log.")})
     st.dataframe(pd.DataFrame(rows), hide_index=True, use_container_width=True)
     if hypothesis == "H1":
@@ -155,11 +172,18 @@ def synthetic_results():
         st.markdown("Os níveis reais das despesas de capital apresentam gaps positivos em 2017–2020 e negativos em 2021–2024. A participação na despesa total ficou, em média, abaixo da sintética no período pós-intervenção.")
     for definition in FIGURES:
         if SCM_MODELS[definition["model"]]["hypothesis"] == hypothesis:
-            chart(scm_spec(data, definition), f"article_{definition['number']}")
+            chart(scm_spec(data, definition), f"article_{definition['number']}", model=definition["model"])
+    numbered_gaps = {definition["model"] for definition in FIGURES if definition["kind"] == "gap"}
+    missing_gaps = [model for model in models if model not in numbered_gaps]
+    if missing_gaps:
+        st.subheader("GAPs complementares por modelo")
+        for model in missing_gaps:
+            definition = {"model": model, "kind": "gap", "title": "Figura de apoio — GAP anual do modelo " + SCM_MODELS[model]["outcome"]}
+            chart(scm_spec(data, definition), "support_gap_" + model, model=model)
     if hypothesis == "H2":
-        with st.expander("Modelo do artigo sem figura numerada: ODCK / DRH"):
+        with st.expander("Trajetória complementar · ln_odck_drh — ODCK / DRH"):
             definition = {"model": "H2_ln_odck_drh", "kind": "trajectory", "title": "Figura de apoio — Despesas discricionárias / recursos humanos"}
-            chart(scm_spec(data, definition), "support_odck_drh")
+            chart(scm_spec(data, definition), "support_odck_drh", model="H2_ln_odck_drh")
     with st.expander("Dados anuais dos modelos apresentados"):
         selected = data["scm_series"][data["scm_series"].modelo.isin(models)]
         st.dataframe(selected, hide_index=True, use_container_width=True)
@@ -174,7 +198,7 @@ def markov():
         st.latex(r"Y_t=\mu_{s_t}+\varepsilon_t,\quad\varepsilon_t\sim N(0,\sigma_{s_t}^2),\quad P(s_t=k\mid s_{t-1}=l)=p_{lk}")
         st.markdown("Cada regime possui média e dispersão próprias. O regime de menor média estimada é denominado **baixo**. As probabilidades suavizadas utilizam a série observada completa para estimar a probabilidade de cada regime em cada ano.")
         st.caption("Para crescimento real, regime baixo significa menor média das variações logarítmicas; para participações e razões, significa menor posição relativa da rubrica.")
-    model = st.selectbox("Modelo de Markov", list(MARKOV_MODELS), format_func=lambda m: MARKOV_MODELS[m]["label"], key="markov_model")
+    model = st.selectbox("Modelo de Markov", list(MARKOV_MODELS), format_func=model_label, help="O identificador técnico do modelo aparece após a especificação e também acompanha os gráficos.", key="markov_model")
     metadata = MARKOV_MODELS[model]
     st.latex(metadata["formula"])
     selected = data["markov_series"].query("modelo == @model").sort_values("ano")
@@ -195,13 +219,13 @@ def markov():
             "lines": [line("Regime baixo", selected.ano, selected.prob_regime_baixo * 100), line("Regime alto", selected.ano, selected.prob_regime_alto * 100, OCHRE, "dash")],
             "range": [0, 100], "reference": 50, "zero": False, "filename": "apoio_" + model + "_probabilidades",
             "note": "Regimes ordenados pela média estimada; linha horizontal de referência em 50%."}
-    chart(spec, "markov_prob")
+    chart(spec, "markov_prob", model=model)
     spec_y = {"title": "Figura de apoio — " + metadata["label"], "ylabel": metadata["unit"],
               "lines": [line("Série observada do TRT médio", selected.ano, selected.y * metadata["scale"])],
               "range": None, "zero": model in {"MS_H1_g_lndpj", "MS_H3_g_lndk"}, "filename": "apoio_" + model + "_serie",
               "note": "Crescimento real em diferenças logarítmicas × 100; participações em %; razões em unidades logarítmicas."}
     with st.expander("Série observada e parâmetros dos regimes"):
-        chart(spec_y, "markov_series")
+        chart(spec_y, "markov_series", model=model)
         regimes = data["markov_regimes"].query("modelo == @model").copy()
         regimes["media_regime"] *= metadata["scale"]
         regimes["desvio_padrao_regime"] *= metadata["scale"]

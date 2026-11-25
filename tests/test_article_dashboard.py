@@ -155,3 +155,28 @@ def test_published_figure_assets_match_verified_specs(data):
         content = (folder / (spec["filename"] + ".png")).read_bytes()
         assert info["png_sha256"] == hashlib.sha256(content).hexdigest()
         assert Image.open(io.BytesIO(content)).size == (4560,2910)
+
+
+def test_technical_names_and_complementary_gap_values(data):
+    import json
+    app = AppTest.from_file(str(DATA_DIR.parents[1] / "app.py"), default_timeout=90).run()
+    app.switch_page("pages/01_Metodo_Controle_Sintetico.py").run()
+    for option, metadata in zip(app.selectbox(key="method_model").options, SCM_MODELS.values()):
+        assert metadata["outcome"] in option
+    app.switch_page("pages/03_Resultados_R_Synth.py").run()
+    app.radio(key="results_hypothesis").set_value("H2").run()
+    assert_no_errors(app)
+    table = app.dataframe[0].value
+    assert set(table["Modelo"]) == {"share_odck", "ln_odck_dpe", "ln_odck_drh"}
+    titles = [s for s in app.subheader if "Figura de apoio — GAP anual" in s.value]
+    assert len(titles) == 2
+    for heading, model in zip(titles, ["H2_ln_odck_dpe", "H2_ln_odck_drh"]):
+        assert SCM_MODELS[model]["outcome"] in heading.value
+        assert model in heading.proto.help
+    bars = [json.loads(c.proto.spec) for c in app.get("plotly_chart") if json.loads(c.proto.spec)["data"][0]["type"] == "bar"]
+    assert len(bars) == 2
+    for plot, model in zip(bars, ["H2_ln_odck_dpe", "H2_ln_odck_drh"]):
+        rows = data["scm_series"].query("modelo == @model").sort_values("ano")
+        assert list(plot["data"][0]["x"]) == list(rows.ano)
+        assert np.allclose(plot["data"][0]["y"], rows.gap)
+        assert plot["layout"]["yaxis"]["title"]["text"] == "Gap (unidades logarítmicas)"
