@@ -180,3 +180,79 @@ def test_technical_names_and_complementary_gap_values(data):
         assert list(plot["data"][0]["x"]) == list(rows.ano)
         assert np.allclose(plot["data"][0]["y"], rows.gap)
         assert plot["layout"]["yaxis"]["title"]["text"] == "Gap (unidades logarítmicas)"
+
+
+
+def test_placebo_mspe_and_empirical_probabilities(data):
+    summary = data["scm_placebo_resumo"].set_index("modelo")
+    expected = {
+        "H1_lndpj": (8/13, 8/13, 12), "H2_share_odck": (7/13, 7/13, 12),
+        "H2_ln_odck_dpe": (6/13, 6/12, 11), "H2_ln_odck_drh": (5/13, 5/12, 11),
+        "H3_lndk": (3/13, 3/12, 11), "H3_share_dk": (2/13, 2/8, 7),
+    }
+    for model in SCM_MODELS:
+        units = data["scm_placebo_mspe"].query("modelo == @model")
+        series = data["scm_placebo_series"].query("modelo == @model")
+        treated = units[units.tratado].iloc[0]
+        assert len(units) == 13
+        assert set(units[~units.tratado].unidade) == set(data["scm_doadores"].sigla)
+        assert treated.unidade == "TRT_MEDIO"
+        for unit, rows in series.groupby("unidade"):
+            report = units[units.unidade.eq(unit)].iloc[0]
+            pre = (rows[rows.ano.le(2016)].gap ** 2).mean()
+            post = (rows[rows.ano.ge(2017)].gap ** 2).mean()
+            assert report.mspe_pre == pytest.approx(pre)
+            assert report.mspe_pos == pytest.approx(post)
+            assert report.razao_mspe_pos_pre == pytest.approx(post/pre)
+        for filtered, field in [(False, "p_valor_todos"), (True, "p_valor_filtrado")]:
+            pool = units[units.incluido_filtro_20] if filtered else units
+            assert summary.loc[model, field] == pytest.approx((pool.razao_mspe_pos_pre >= treated.razao_mspe_pos_pre).mean())
+        controls = units[~units.tratado]
+        assert np.array_equal(controls.incluido_filtro_20, controls.mspe_pre < 20 * treated.mspe_pre)
+        assert tuple(summary.loc[model, ["p_valor_todos", "p_valor_filtrado", "n_placebos_filtrados"]]) == pytest.approx(expected[model])
+        reference = data["scm_series"].query("modelo == @model").sort_values("ano")
+        observed = series[series.tratado].sort_values("ano")
+        assert np.allclose(reference.sintetico, observed.sintetico, atol=1e-12)
+        assert np.allclose(reference.observado, observed.observado, atol=1e-12)
+
+
+def test_placebo_graphs_keep_units_filters_and_intervention(data):
+    from article_placebos import selected_placebos, gap_figure, mspe_figure
+    for model, metadata in SCM_MODELS.items():
+        for filtered in [False, True]:
+            units, series = selected_placebos(data, model, filtered)
+            fig = gap_figure(data, model, filtered)
+            treated = series[series.tratado].sort_values("ano")
+            assert np.allclose(fig.data[1].y, treated.gap * metadata["scale"])
+            assert set(fig.data[0].customdata) - {None} == set(units[~units.tratado].unidade)
+            assert [shape.x0 for shape in fig.layout.shapes if shape.type == "line" and shape.x0 == shape.x1] == [2017]
+            assert fig.layout.yaxis.title.text == ("Gap (pontos percentuais)" if metadata["scale"] == 100 else "Gap (unidades logarítmicas)")
+            bars = mspe_figure(data, model, filtered).data[0]
+            assert bars.type == "bar"
+            assert len(bars.x) == len(units)
+            assert np.allclose(bars.x, units.sort_values("razao_mspe_pos_pre").razao_mspe_pos_pre)
+            assert "TRT médio" in bars.y
+
+
+def test_placebo_navigation_all_six_models_and_both_comparisons(data):
+    from article_data import number
+    app = AppTest.from_file(str(DATA_DIR.parents[1]/"app.py"), default_timeout=90).run()
+    app.switch_page("pages/05_Placebos.py").run()
+    assert_no_errors(app)
+    assert len(app.dataframe[0].value) == 6
+    assert "Nenhum dos seis modelos" in app.info[0].value
+    for model in SCM_MODELS:
+        for label, field, count_field in [
+            ("Todos os 12 placebos", "p_valor_todos", "n_placebos"),
+            ("Filtro de ajuste pré-intervenção", "p_valor_filtrado", "n_placebos_filtrados"),
+        ]:
+            app.selectbox(key="placebo_model").set_value(model)
+            app.radio(key="placebo_comparison").set_value(label).run()
+            assert_no_errors(app)
+            row = data["scm_placebo_resumo"].set_index("modelo").loc[model]
+            assert app.metric[1].value == number(row[field], 3)
+            assert app.metric[2].value == str(int(row[count_field]))
+            assert len(app.get("plotly_chart")) == 2
+            headings = [h for h in app.subheader if h.value.startswith("Figura de apoio")]
+            assert len(headings) == 2
+            assert all(model in h.proto.help for h in headings)

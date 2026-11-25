@@ -83,6 +83,20 @@ def validate_data(data: dict[str, pd.DataFrame]) -> None:
     series = data["scm_series"]
     assert np.allclose(series.observado - series.sintetico, series.gap, atol=1e-12)
     assert series.groupby("modelo").size().eq(15).all()
+    placebo_summary = data["scm_placebo_resumo"]
+    assert set(placebo_summary.modelo) == set(SCM_MODELS)
+    assert placebo_summary.status.eq("ok").all()
+    assert placebo_summary.n_placebos.eq(12).all()
+    assert placebo_summary[["p_valor_todos", "p_valor_filtrado"]].gt(0).all().all()
+    assert placebo_summary[["p_valor_todos", "p_valor_filtrado"]].le(1).all().all()
+    placebo_units = data["scm_placebo_mspe"]
+    assert set(placebo_units.unidade) == allowed
+    assert placebo_units.groupby("modelo").size().eq(13).all()
+    assert placebo_units.groupby("modelo").tratado.sum().eq(1).all()
+    placebo_series = data["scm_placebo_series"]
+    assert placebo_series.groupby(["modelo", "unidade"]).size().eq(15).all()
+    assert set(placebo_series.modelo) == set(SCM_MODELS)
+    assert np.allclose(placebo_series.observado - placebo_series.sintetico, placebo_series.gap, atol=1e-12)
     annual = data["markov_series"]
     assert annual[["prob_regime_baixo", "prob_regime_alto"]].ge(-1e-10).all().all()
     assert annual[["prob_regime_baixo", "prob_regime_alto"]].le(1 + 1e-10).all().all()

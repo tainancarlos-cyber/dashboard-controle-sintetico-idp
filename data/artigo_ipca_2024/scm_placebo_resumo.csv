@@ -1,0 +1,7 @@
+modelo;status;n_placebos;n_placebos_filtrados;n_descartados;razao_mspe_tratado;p_valor_todos;p_valor_filtrado;menor_p_possivel_todos;menor_p_possivel_filtrado;criterio_filtro
+H1_lndpj;ok;12;12;0;4,53903376910091;0,615384615384615;0,615384615384615;0,0769230769230769;0,0769230769230769;MSPE pré do placebo < 20 vezes o MSPE pré do tratado
+H2_share_odck;ok;12;12;0;3,11693652134551;0,538461538461538;0,538461538461538;0,0769230769230769;0,0769230769230769;MSPE pré do placebo < 20 vezes o MSPE pré do tratado
+H2_ln_odck_dpe;ok;12;11;1;3,83125055609563;0,461538461538462;0,5;0,0769230769230769;0,0833333333333333;MSPE pré do placebo < 20 vezes o MSPE pré do tratado
+H2_ln_odck_drh;ok;12;11;1;3,6340668094363;0,384615384615385;0,416666666666667;0,0769230769230769;0,0833333333333333;MSPE pré do placebo < 20 vezes o MSPE pré do tratado
+H3_share_dk;ok;12;7;5;8,17347611274201;0,153846153846154;0,25;0,0769230769230769;0,125;MSPE pré do placebo < 20 vezes o MSPE pré do tratado
+H3_lndk;ok;12;11;1;7,40715979126084;0,230769230769231;0,25;0,0769230769230769;0,0833333333333333;MSPE pré do placebo < 20 vezes o MSPE pré do tratado

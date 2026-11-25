@@ -76,7 +76,7 @@ def overview():
     cols[3].metric("DPJ real · 2016–2024", number(table3(data).iloc[0]["Variação média"]) + "%", help="Média simples das variações individuais dos 24 TRTs.")
     st.subheader("Como a análise se organiza")
     st.markdown("""
-    1. **Controle sintético:** constrói o contrafactual do TRT médio com 12 tribunais de justiça doadores. É a principal análise da trajetória e da composição do gasto.
+    1. **Controle sintético:** constrói o contrafactual do TRT médio com 12 tribunais de justiça doadores. É a principal análise da trajetória e da composição do gasto, complementada pelos testes de placebo.
     2. **Markov Switching:** identifica regimes nas séries observadas e examina a corroboração temporal dos achados, sobretudo nos indicadores de composição.
     3. **Produtividade e escala:** descreve a evolução da despesa, da atividade e do desempenho dos 24 TRTs, considerando possíveis explicações alternativas.
     """)
@@ -148,7 +148,8 @@ def synthetic_method():
     st.caption("O indicador de proximidade corresponde à média anual do percentual de TRTs dentro da faixa.")
     st.info("A interpretação depende do ajuste anterior à intervenção e da comparabilidade institucional entre TRTs e TJs. Na H1, o afastamento de 2016 exige atenção. O marco de 2023 contextualiza a mudança de regime fiscal e não constitui uma segunda intervenção estimada separadamente.")
     with st.expander("Validação por placebos"):
-        st.markdown("As saídas gráficas de placebos da execução disponível ficaram em branco. A validação por permutação permanece pendente; este site não apresenta p-valores nem classifica os efeitos como estatisticamente significativos.")
+        st.markdown("Os seis modelos foram avaliados por placebos no espaço: cada TJ é tratado ficticiamente em 2017 e comparado com os outros 11 doadores. Nenhum apresentou p-valor inferior a 0,05, com ou sem o filtro de ajuste pré-intervenção.")
+        st.page_link("pages/05_Placebos.py", label="Examinar os testes de placebo e seus gráficos")
 
 
 def synthetic_results():
@@ -170,6 +171,8 @@ def synthetic_results():
         st.markdown("As três especificações indicam menor posição relativa das despesas discricionárias em relação ao contrafactual. Os afastamentos negativos tornam-se, em geral, mais pronunciados a partir de 2020.")
     else:
         st.markdown("Os níveis reais das despesas de capital apresentam gaps positivos em 2017–2020 e negativos em 2021–2024. A participação na despesa total ficou, em média, abaixo da sintética no período pós-intervenção.")
+    st.caption("Os testes de placebo não apresentaram significância a 5%. A comparação dos gaps deve ser interpretada em conjunto com essa evidência e com a qualidade do ajuste pré-intervenção.")
+    st.page_link("pages/05_Placebos.py", label="Ver os placebos e a comparação das razões MSPE")
     for definition in FIGURES:
         if SCM_MODELS[definition["model"]]["hypothesis"] == hypothesis:
             chart(scm_spec(data, definition), f"article_{definition['number']}", model=definition["model"])

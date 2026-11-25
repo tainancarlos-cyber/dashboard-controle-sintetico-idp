@@ -5,7 +5,7 @@ Dashboard da aplicação estatística utilizada no artigo, com os resultados rev
 ## Conteúdo
 
 - Média anual dos 24 TRTs; TST excluído; 12 TJs doadores efetivos.
-- Seis especificações de controle sintético e seis modelos de Markov Switching.
+- Seis especificações de controle sintético, seus placebos no espaço e seis modelos de Markov Switching.
 - Produtividade e escala: 24 TRTs, 360 observações tribunal-ano, 2010–2024.
 - Gráficos 1 a 8 conforme a ordem do artigo, com as mesmas imagens de alta resolução inseridas no documento. Os gráficos de GAP são de barras, sem controles de download na interface.
 - Figuras de apoio de Markov e produtividade, sem atribuição de novos números aos gráficos do artigo.
@@ -32,4 +32,4 @@ Os testes conferem MSPE, gaps, deflação, amostras, crescimento real, média do
 
 Participações são mostradas em % e seus gaps em pontos percentuais. Os níveis reais usam ln(1 + despesa real). Crescimento real usa 100 vezes a diferença anual desse logaritmo. A corroboração por Markov concentra-se nos indicadores de composição; os modelos de crescimento real não mostram aumento da probabilidade média do regime baixo em 2017–2024.
 
-A validação por placebos permanece pendente: suas saídas disponíveis estavam em branco. A aplicação não publica p-valores nem classificações automáticas de significância. A qualidade do ajuste pré-intervenção e as diferenças institucionais entre os tribunais devem ser consideradas.
+A aba Placebos apresenta 72 estimações nos seis modelos: cada um dos 12 TJs é pseudotratado em 2017 e comparado com os outros 11 TJs. As trajetórias principais do TRT médio são preservadas. Os gráficos e testes incluem versões com todos os placebos e com filtro de MSPE pré inferior a 20 vezes o do tratado. O p-valor inclui o TRT médio na contagem; nenhum dos seis modelos apresentou p < 0,05. A qualidade do ajuste pré-intervenção e as diferenças institucionais entre os tribunais devem ser consideradas.

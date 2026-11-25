@@ -312,6 +312,72 @@
         "ano",
         "fator_ipca_dez2024"
       ]
+    },
+    "scm_placebo_resumo.csv": {
+      "origem": "Controle_Sintetico_TRT_Medio_sem_TST_IPCA_2024/07_testes_placebo",
+      "arquivos_origem": {
+        "resumo_testes_placebo.csv": "8db631c8c27b59f934b7e19dc2b06d0be829931a520ffa8393e99398996d91ba"
+      },
+      "sha256": "7772a5b66f6d17e6c6c0753d5747dc06847ee42e4f5ada4012e1d94e037d8611",
+      "linhas": 6,
+      "colunas": [
+        "modelo",
+        "status",
+        "n_placebos",
+        "n_placebos_filtrados",
+        "n_descartados",
+        "razao_mspe_tratado",
+        "p_valor_todos",
+        "p_valor_filtrado",
+        "menor_p_possivel_todos",
+        "menor_p_possivel_filtrado",
+        "criterio_filtro"
+      ]
+    },
+    "scm_placebo_mspe.csv": {
+      "origem": "Controle_Sintetico_TRT_Medio_sem_TST_IPCA_2024/07_testes_placebo",
+      "arquivos_origem": {
+        "TRT_MEDIO_H1_lndpj_mspe_por_unidade.csv": "f62d1b8221eebc8a5f901236a0ed97c7f117d4c8733a284d49ac670eed99da50",
+        "TRT_MEDIO_H2_share_odck_mspe_por_unidade.csv": "b22d79ea4f568c9c3cd628aa7bedfaebc6268c7ef7e670da45ba88d718dccf9d",
+        "TRT_MEDIO_H2_ln_odck_dpe_mspe_por_unidade.csv": "761498d5138e14068f798e06c39df0ae91572d54d629d833013c41ce10d7e0cd",
+        "TRT_MEDIO_H2_ln_odck_drh_mspe_por_unidade.csv": "266eb1bfdec10488848da6c3926530ca366104c5a3f7501f15fa67e1f81d6e8b",
+        "TRT_MEDIO_H3_lndk_mspe_por_unidade.csv": "5fbccfab68a4554156a5cd0f7f37ef4a4c9767d3c55e423623a8b90a5b6fb18b",
+        "TRT_MEDIO_H3_share_dk_mspe_por_unidade.csv": "5d86029f958463d4cbc8169c3952f919a209d23746a7a3f03752d76d6d6d4220"
+      },
+      "sha256": "0534078a61c3a1c9ae95a7165cd4c95cf5936cae8c546c428d1f0d96144c9784",
+      "linhas": 78,
+      "colunas": [
+        "razao_mspe_pos_pre",
+        "unidade",
+        "modelo",
+        "tratado",
+        "mspe_pre",
+        "mspe_pos",
+        "incluido_filtro_20",
+        "motivo_exclusao"
+      ]
+    },
+    "scm_placebo_series.csv": {
+      "origem": "Controle_Sintetico_TRT_Medio_sem_TST_IPCA_2024/07_testes_placebo",
+      "arquivos_origem": {
+        "TRT_MEDIO_H1_lndpj_gaps_por_unidade.csv": "af6cfe974289234ba131807d1f70bd9f4337e50087233c7a5bd8f5bd3c3125fa",
+        "TRT_MEDIO_H2_share_odck_gaps_por_unidade.csv": "956745390316a14731fd825e2765eec301bf72673b17153141933c4a72eaf1e9",
+        "TRT_MEDIO_H2_ln_odck_dpe_gaps_por_unidade.csv": "4784ba900ed19915d2014cb519223e20ad8f90d900fec3a9f74baae18aa39f48",
+        "TRT_MEDIO_H2_ln_odck_drh_gaps_por_unidade.csv": "cbe44792f182a5c92dbb3b896e0aeaa300b004f2f2bdbdac45205083b5eab9e2",
+        "TRT_MEDIO_H3_lndk_gaps_por_unidade.csv": "9ceb8e3417764480cce1432c90b86006a908398e4dcf521054443a90b990754e",
+        "TRT_MEDIO_H3_share_dk_gaps_por_unidade.csv": "f058875ce64dc742c032ebc008a9244e2673982600c05f749cf0f71a1fed3ea5"
+      },
+      "sha256": "8042b83908be4d9775840afde40777a3ca1512919418502b3316c8ebf5bc8822",
+      "linhas": 1170,
+      "colunas": [
+        "ano",
+        "unidade",
+        "observado",
+        "sintetico",
+        "gap",
+        "tratado",
+        "modelo"
+      ]
     }
   },
   "doadores": [
@@ -329,6 +395,23 @@
     "TJPI"
   ],
   "fonte_ipca": "https://ftp.ibge.gov.br/Precos_Indices_de_Precos_ao_Consumidor/IPCA/Serie_Historica/ipca_SerieHist.zip",
-  "validacao_placebos": "Não verificada: saídas gráficas do R em branco; não são apresentados p-valores.",
-  "normalizacao_sha256": "Quebras de linha LF (CRLF convertido em LF antes da verificação)."
+  "validacao_placebos": "Seis modelos, 72 placebos no espaço. MSPEs e p-valores conferidos com as trajetórias principais preservadas.",
+  "normalizacao_sha256": "Quebras de linha LF (CRLF convertido em LF antes da verificação).",
+  "procedimento_placebos": {
+    "intervencao": 2017,
+    "pre": [
+      2010,
+      2016
+    ],
+    "pos": [
+      2017,
+      2024
+    ],
+    "doadores": 12,
+    "doadores_por_placebo": 11,
+    "trt_medio_como_doador": false,
+    "estatistica": "MSPE pós / MSPE pré",
+    "filtro": "MSPE pré do placebo < 20 vezes o MSPE pré do TRT médio",
+    "p_valor": "Proporção de unidades, incluindo o TRT médio, com razão MSPE maior ou igual à do TRT médio."
+  }
 }
